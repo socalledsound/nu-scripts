@@ -3,25 +3,13 @@
 [SC]
 [VO]
 
-Welcome, Reactors!
+Hello, everyone! In this course, you will be learning to use the React.js front-end library, which means you will be writing a lot of JavaScript.
 
-welcome to the course, i think i'll write this last.
+At the time of this writing, React is the number 1 front-end library, by a mile.
 
-react big picture/javascript framework.
-virtual dom
-user interface
+Why?
 
-## video 1 react core principles
-
-- this could actually be in video 1 to start
-
-react is a javascript framework that helps us create user interfaces
-
-functional (declarative) component-based UI layer for single page applications.
-
-1. component : a component is a function that returns a DOM node.
-2. JSX : jsx is a markup language that lets us write html in javascript
-3. the virtual dom :
+List the reasons here.
 
 There's a big difference between learning how to write React and learning how to write react well.
 IN this course, you'll learn both! And, hopefully, have fun doing it!
@@ -30,6 +18,11 @@ We're going to build a big, challenging project as well as several smaller proje
 As we go, you should try to always build your own versions
 of what we're doing, with small modificaitons, make this material your own.
 
+welcome to the course, i think i'll write this last.
+
+react big picture/javascript framework.
+virtual dom
+user interface
 
 # OLD SCRIPT:
 

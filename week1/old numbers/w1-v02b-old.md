@@ -1,34 +1,9 @@
 ## video 2b react without react 2: performing DOM manipulation -- 7.5 mins?
 
-[SC]
+<!-- [SC]
 
 [VO]
-Ok. Enough of the abstract talk! Let's write some code. Open up your vscode editor and go the file menu and select new window, or just use the key command command shift N.
-
-[SC]
-
-[VO]
-Then, click 'open' like I am here, but instead of opening a new folder, let's go ahead and make a new one, on the Desktop, like I'm doing here.
-
-[SC]
-show the file browser and the folder name
-[VO]
-After you do this, you should see the title of your folder in all caps in the file browser, as I'm showing here.
-
-Now, obviously, it would be easier to just make a file in vs code, without the enclosing folder and all that jazz, but the reason that I always, always, always take the time to make a new folder is that project organization is super important! And this will become even more important as you start to build applications. So, now is as good a time as any to be sure you're re-inforcing good, simple habits, which will serve you well in your career.
-
-[SC]
-
-show creating the file
-[VO]
-
-Now, to make sure that we make a new file in that folder, let's click this new file button in our vs code editor, and call our new file index.html.
-
-[SC]
-
-[VO]
-
-One of my favorite things about vs code is that it has support for emmet, which is an awesome plugin for writing html, built right in so, in our index.html file we can just type an exclamation point and you should see a pop up window that will tell you this is an accepted emmet abbreviation, and then if you hit return while that popup is active, you'll get a basic template for an html page.
+Ok. Enough of the abstract talk! Let's write some code.
 
 [SC]
 
@@ -43,7 +18,7 @@ Finally, go to the body of your html page and type div#root then hit the return 
 [SC]
 
 [VO]
-And that's all we really need, on the html side, to build a javascript web app.
+And that's all we really need, on the html side, to build a javascript web app. -->
 
 [SC]
 animation here?

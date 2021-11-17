@@ -1,40 +1,6 @@
-## video 2a react without react 1: reviewing DOM manipulation -- 7.5 mins?
+## OLD
 
-#### FROM OUTLINE:
-
-    PROJECT: hi there : https://github.com/socalledsound/hi-without-react
-    this will be at moodle
-    (talk them through this download onscreen)
-    JS: DOM manipulation
-        -- look at the index.html.
-        -- getElement, createElement, element properties, appendChild
-        -- we use camelCase when manipulating DOM properties with javascript
-        -- React provides us with a thing called JSX, which we'll see in a bit, which is basically a shorthand for writing this kind of code
-        -- React also has an important idea called the virtual DOM, which we'll explore in a bit.
-
-react 2013 what was before?
-
-- html css js
-
-####
-
-[SC]
-
-[VO]
-
-[SC]
-[VO]
-
-Welcome back.
-
-In the last video I gave a very high level look at what React is. I used a lot of big and somewhat confusing ideas, like 'declarative', 'composing with functions' and 'the virtual dom'.
-
-These are important exciting ideas, but if you're relatively new to javascript, they can be a little confusing, and maybe even end up making React a little more confusing than it needs to be.
-
-So in these next few videos, I'm going to show you a couple of fundamental things about creating react apps, in javascript. But -- we're not going to use React! I call it 'react without react'.
-
-[SC]
-[VO]
+Let's load on now
 
 So, the first sexy but confusing concept in React is this idea of the virtual DOM. And I want to tell you- you don't have to thoroughly understand the virtual DOM in order to use it. That's actually the main idea behind the 'declarative' approach to writing code, which was another big idea that I mentioned in the first video.
 
