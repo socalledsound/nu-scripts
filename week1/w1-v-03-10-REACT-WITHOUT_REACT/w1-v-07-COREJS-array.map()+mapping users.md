@@ -125,7 +125,18 @@ const newNumbers = numbers.map((number, idx) => number + idx)
 
 [VO]
 
-Now, In order to use this method, and the other methods like it that we'll learn soon, all you really need to know is this syntax. But, in order to really understand what's going on here, and to understand why we call this array method a 'higher order function', in the next video I'd like to show you how to implement your own Array class, complete with a map method. I'll see you there.
+Now, In order to use this method, and the other methods like it that we'll learn soon, all you really need to know is this syntax. But, if you want to learn more about how Array.map() works,
+I've made an extra optional video at the end of this unit in which we implement our own Array class and build Array.map() from scratch.
+
+But first, let's get a little practice with mapping an array.
+
+[SC]
+
+[VO]
+
+which
+
+in order to really understand what's going on here, and to understand why we call this array method a 'higher order function', in the next video I'd like to show you how to implement your own Array class, complete with a map method. I'll see you there.
 
 And
 

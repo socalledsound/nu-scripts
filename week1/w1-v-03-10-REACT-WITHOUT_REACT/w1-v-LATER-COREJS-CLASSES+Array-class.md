@@ -15,7 +15,7 @@ The JavaScript Array class
 [VO]
 But what does this actually mean?
 
-And what's a class?
+And more importantly, what's a class?
 
 [SC]
 
@@ -250,4 +250,5 @@ And this isn't a real implementation of map, it's oversimplified. But all the sa
         }
 
 [VO]
+
 And what we're going to do is,
