@@ -1,12 +1,3 @@
-## w1 v3 CORE JS - reviewing DOM manipulation -- 7.5 mins?
-
-[SC]
-hi there
-[VO]
-Welcome back. In this video, we're going to make the page you see here.
-
-And to do it, we're going to use DOM manipulation. But first, let's review what the DOM is.
-
 [SC]
 DOM graphic here
 [VO]

@@ -27,7 +27,7 @@ becomes
 <div className='hello'>👋 hi there</div>
 
 [VO]
-
+We'll spend a lot more time learning about JSX
 [SC]
 [VO]
 VIRTUAL DOM - we'll talk about this more in a minute

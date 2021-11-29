@@ -2,6 +2,8 @@
 
 https://reactjs.org/docs/strict-mode.html
 
+https://reactjs.org/docs/jsx-in-depth.html
+
 [SC]
 react web page
 
@@ -101,8 +103,32 @@ At least, familiar enough, at this point, to not run away screaming.
 First, we've got our imports, and we start by importing React and ReactDOM from the folders inside our node_modules folder. Thanks to the webpack configuration that CRA created for us, we don't need to give an absolute path, we can just give the name of the folder in node_modules where the library can be found.
 
 [SC]
+import './index.css';
+[VO]
+On the next line, we're importing a css file, which you can also find in this directory, take a look at it, it's just normal good old fashioned css. Thanks to CRA's build tools, you can just write normal css in a dot css file and import it like you would a javascript file. As we'll see soon, you can also import images this way.
+
+The ./ just means, 'the filename that follows will be in the current directory.' We'll be using that, and other pathname navigation a lot in our React code, so if you need to brush up on navigating through directories using pathnames, you can see this video (make a video on this, too!).
+
+[SC]
+import App from './App';
+[VO]
+Next, we import an App Component, which is in the file called App.js. We'll take a look at that in the next video. For now, just notice that we're importing that code, and when we we import javascript files in React -- thanks again to CRA's build tools! -- we can omit the .js.
+
+[SC]
+import reportWebVitals from './reportWebVitals';
+[VO]
+And finally, we import a function called reportWebVitals, from the file called, of course, reportWebVitals. You can take a look at it if you like, but we're not going to bother with that right now -- probably better to learn how to build websites before we start tracking user metrics, right?
+
+[SC]
 
 [VO]
-On the next line, we're importing a css file. This is one way to use css in a React application, just write normal css and import it.
+Instead, we're going to stroll down the page to something that hopefully looks just a little bit familiar already.
 
-The ./
+See how we pass two things into a function called render, which is actually a method fo the ReactDOM library? That function is, of course, a lot more sophisticated than the render function we wrote before, it's where React's virtual DOM magic happens.
+
+But, all we really need to know to make that magic work is that we need to pass in two things. One, will be our App component, adn the other will be a reference to the root div in our index.html, just like we did before.
+
+[SC]
+console.log(typeof App)
+[VO]
+But wait, you say! This isn't a function! It's a weird html looking thing! And while that's true...if you console.log the typeof App, you'll find that it IS a function. Weird, huh? Just like in our little warmup exercise, it's a function that returns a div. So what's going on here? To find out, we'll have to learn about JSX, which we'll do in the next video. See you there.
