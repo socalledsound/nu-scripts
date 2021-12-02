@@ -131,4 +131,94 @@ But, all we really need to know to make that magic work is that we need to pass 
 [SC]
 console.log(typeof App)
 [VO]
-But wait, you say! This isn't a function! It's a weird html looking thing! And while that's true...if you console.log the typeof App, you'll find that it IS a function. Weird, huh? Just like in our little warmup exercise, it's a function that returns a div. So what's going on here? To find out, we'll have to learn about JSX, which we'll do in the next video. See you there.
+But wait, you say! This isn't a function! It's a weird html looking thing! And while that's true...if you console.log the typeof App, you'll find that it IS a function. Weird, huh? Just like in our little warmup exercise, it's a function that returns a div. So what's going on here?
+
+[SC]
+<App />
+
+[VO]
+This isn't html. It's actually JSX, which is a syntax extension for javascript that lets you write something that looks a lot like html.
+
+In order to use JSX, you need a transpiler, like the babel build tool that create-react-app installed and configured for us.
+
+It let's us write javascript alongside html.
+
+[SC]
+<React.StrictMode>
+<App />
+</React.StrictMode>
+[VO]
+
+And it lets us nest React components, similar to the way we nest html elements.
+
+-- one more line here about the different ways JSX handles components
+-- might also need a line above reminding them what they already know about components
+
+In our index.js file, we're wrapping our App inside a component called React.StrictMode, which isn't anything that will get displayed in our website, it's some extra React functionality. Anything that we wrap inside it will run in what's called 'strict mode', meaning that React will give us feedback if we write code that generates unexpected side effects, or we use libraries or techniques that are deprecated.
+
+[SC]
+
+    ReactDOM.render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+        document.getElementById('root')
+        );
+
+[VO]
+In other words, when we wrap our app inside the StrictMode component, we get extra funcationality.
+
+And this is a great example of declarative programming!
+
+We actually don't need to know much about what StrictMode is or what it does to leverage it's many tools, it will just sit there in the backgropund and let us know if we do something wrong.
+
+[SC]
+ReactDOM.render(
+
+            <App />
+        ,
+        document.getElementById('root')
+        );
+
+[VO]
+
+Generally, it's a good idea to use strict mode but, you don't have to! You can delete it entirely, and just pass your app and the target dom node for your app in to ReactDOM.render().
+
+[SC]
+
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import './index.css';
+    import App from './App';
+    import reportWebVitals from './reportWebVitals';
+
+    const Hi = () => {
+    return (
+        <div>
+            hi there!
+        </div>
+    )
+    }
+
+    ReactDOM.render(
+    <>
+        <Hi />
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    </>
+    ,
+    document.getElementById('root')
+    );
+
+[VO]
+Or, you can just wrap part of your app in strict mode. Here you can see that I've written a super small component named Hi that just returns a div with the text 'hi there!'. Remember, components are functions that return a div, and thanks to JSX, we can write those divs write in our page.
+
+I'm wrapping the App in strict mode, just like before, but since the component named Hi isn't inside the strictMode JSX, it won't run in strict mode.
+
+Then, notice that I need to wrap the whole thing in an empty JSX tag. I could actually wrap it anything I want but the important thing is, we can only pass
+
+[SC]
+
+[VO]
+wrap this up and start the next video. maybe skip the bit about strictmode, or streamline it massively
