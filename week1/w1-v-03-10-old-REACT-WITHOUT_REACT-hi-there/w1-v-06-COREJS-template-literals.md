@@ -7,7 +7,7 @@ newDiv.innerText = '👋 hi there,' + name
 newDiv.style.color = col
 newDiv.style.fontSize = '10rem'
 newDiv.style.marginTop = '20vh'
-return newDiv
+return newDivz
 }
 [VO]
 

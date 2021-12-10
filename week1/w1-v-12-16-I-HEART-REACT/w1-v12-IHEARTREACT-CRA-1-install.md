@@ -16,16 +16,23 @@
 
 Hello again. Now that we've reviewed the idea of DOM manipulation using javascript and set up our environment, we're ready to actually get started building react applications.
 
-In the rest of this course, we'll build several small react applications and one big react application.
+[SC]
+show the nucampsite
+[VO]
+The main app that we're going to build will be a fully featured react site with multiple pages and animations. You can see one page of it here.
 
-In the big react application, you'll be able to learn a
+[SC]
 
-To start, we're going to build a small React applicaiton.
+[VO]
+But, along the way, we'll also build several smaller applications. Our goal is to give you a lot of practice building React applications, so that you feel comfortable building your own!
+
+[SC]
+
+[VO]
+And to keep things manageable, our first app is going to be small, and simple. You can see it here.
 
 [SC]
 [VO]
-We'll use React to make a page full of hearts like the one you see here.
-
 Not too sophisticated, I know, but I think it will be a great way to get comfortable with the basic concepts of React. Then, we'll get started building more complicated things.
 
 [SC]
@@ -47,18 +54,22 @@ Let's run it now, and see what it does.
 
 ###
 
-need to make sure this is platform inclusive
+need to make sure this part is platform inclusive
 do we need a video on the terminal or are they familiar with it?
+
+##
 
 Open your terminal. type cd Desktop and then enter to change directories into your Desktop folder. Make sure you have a good strong internet connect, then type the command
 
 npx create-react-app heartz
 
-and hit enter to run it. Here, we're using
+and hit enter to run it. Here, we're using the package runner called npx.
+
+when we run it, it will check our system to see if the create-react-app tool is installed, and if it isn't (hopefully it isn't), then it will download the latest version and run it.
+
+Then, we give the name of the app that we want to build.
 
 ###
-
-##### do we want to have videos on webpack? babel?
 
 [SC]
 terminal doing its magic

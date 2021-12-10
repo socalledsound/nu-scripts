@@ -1,6 +1,12 @@
 [SC]
 DOM graphic here
 [VO]
+Welcome back. We're going to start with what is perhaps the most basic of javascript basics: the DOM.
+
+[SC]
+DOM graphic here
+[VO]
+
 DOM is short for the Document Object Model, and it's the very first thing we need to know about in order to make a javascript application, because in order to create and modify web pages with javascript, we use the DOM, or more specifically, we use a variety of web APIs that are all bundled together as part of the DOM.
 
 [SC]
@@ -25,7 +31,7 @@ Open up your vscode editor and go the file menu and select new window, or just u
 [SC]
 making a new folder
 [VO]
-Then, click 'open' like I am here, but instead of opening a new folder, let's go ahead and make a new one, on the Desktop, like I'm doing here.
+Then, click 'open' like I am doing here, but instead of opening a new folder, let's go ahead and make a new one, on the Desktop, like I'm doing here.
 
 [SC]
 show the file browser and the folder name
@@ -83,7 +89,7 @@ sc - blank page then the developer tools
 
 Now, this is unusual. Because in this case, if all went well... you should see a blank page.
 
-Because there isn't anything in our div. But that's ok, it's plenty for us to see the DOM.
+Because there isn't anything in our div. But that's ok -- we know there's a div there, and we can see it in the DOM, which will give us x-ray specs into this web page.
 
 Open up your chrome developer tools (cmd alt i) and let's have a look. The DOM is what we see under the elements tab.
 
@@ -96,7 +102,7 @@ Granted, in this case, it's looks exactly like what we've already written in our
 animation of inserting app into DOM node
 [VO]
 
-And that's exactly how React works -- we access the DOM node for a div and we insert content into that node. In fact, the html page that we've already written is a slightly simplified version of what the html file for most React apps looks like, just, basically a div with an id of root that acts us a container for our application.
+And, by the way, this is fundamentally the same way that React renders web pages -- we access the DOM node for a div and we insert content into that node. In fact, the html page that we've already written is a slightly simplified version of what the html file for most React apps looks like, just, basically a div with an id of root that acts us a container for our application.
 
 [SC]
 hi there
@@ -125,31 +131,25 @@ So, if the browser finds an element an ID of 'root' in the DOM, it will assign i
 const newDiv = document.createElement('div')
 [VO]
 
-We can also make DOM nodes with the Document API.
+We can also create DOM nodes with the Document API.
 
 Let's make another constant variable named newDiv, and set it equal to the return value of another DOM method, document.createElement. So we'll say
 
 const newDiv = document.createElement() and pass in div in quotes, just like this, and now we have a new div.
 
 [SC]
-newDiv.innerText = '👋 hi there, Chris!'
+newDiv.innerText = 'HELLO, I LOVE YOU'
 [VO]
 And now that we've created an HTML element, we have a bunch more methods that we can use.
 
-You can set the innerText property of our new div to '👋 hi there' (you can copy the emoji hand from the lesson page or just do a google search), or any other message that you prefer.
-
-[SC]
-div.style.color = 'green'
-div.style.fontSize = '10rem'
-div.style.marginTop = '20vh'
-
-[VO]
-And we can style that element, like this. Notice how the css properties are all in camel case and they're all properties of a style object? You'll see this in React, and hopefully the reason for that syntax will make more sense, now that you've done it in vanilla JS.
+You can set the innerText property of our new div to 'hello world' or, a message of self-affirmation which I prefer, 'HELLO, I LOVE YOU'. Or you can write any message you like.
 
 [SC]
 root.appendChild(newDiv)
 [VO]
-And to add it to the dom, we'll use our root variable, which, since it is assigned to a DOM node, has a method called appendChild(). We can pass our newDiv into that function and voila - if you check your web browser, and you should see our message!
+Finally, to see our newDiv on the page, we have to add it to the DOM.
+
+We'll use our root variable, which, since it is assigned to a DOM node, has a method called appendChild(). We can pass our newDiv into that function and voila - if you check your web browser, and you should see our message!
 
 [SC]
 check console
@@ -157,11 +157,52 @@ check console
 And if you check the console, you should see that our newDiv is now a child of the root div.
 
 [SC]
+newDiv.style.backgroundColor = 'pink'
 
 [VO]
-As I've already said -- on a very basic level, this is how React works, by utilizing the DOM to inject various types of content into a root div.
+But this is pretty plain. We can also add styling in javascript.
+We can add inline style properties to that element, like this. Notice how the css property background-color becomes a camel case key named backgroundColor. Also, notice that it's a property that's part of a style object. And it's also very important that the value you assign to the key be inside quotes. You'll see something a lot like this in React, and hopefully the reason for that syntax will make more sense, now that you've done it in vanilla JS.
 
-But React improves our DOM manipulating experience in several really important ways.
+If you save this file and check the browser, you should see the background color applied!
+
+[SC]
+newDiv.style.left = '300px'
+newDiv.style.top = '300px'
+[VO]
+
+[VO]
+You can write almost any css property in this way. let's go ahead and add two more, values for left and top, because we're going to use absolute positioning for our hearts.
+
+[SC]
+newDiv.className = 'message'
+[VO]
+Another way to add styles -- and you'll often use these methods together, like we're going to do here -- is by adding a class name to your element.
+
+[SC]
+
+    <style>
+        .message{
+            position: absolute;
+            padding: 1rem;
+            border-radius: 100px;
+        }
+
+    </style>
+
+[VO]
+Then, you can write your css either in a seperate css file and link to it, or, as I'll do here, just write a style tag in your index.html and add the class there. I'll write that css class of message and give our message absolute positioning, some padding, and a border radius of 100 pixels.
+
+[SC]
+show page
+[VO]
+And now you should see your text again, but with a little styling.
+
+[SC]
+
+[VO]
+Now, on a very basic level, this is how React works. We create our page elements in javascript and utilize the DOM to inject various types of content into a root div.
+
+But React improves our DOM manipulating experience in several really important ways. We'll be exploring all of these ways very soon, but right now, as we explore react without react, I want to introduce you to what I think is probably the most important benefit that React brings.
 
 [SC]
 FUNCTIONAL JAVASCRIPT
@@ -169,11 +210,11 @@ FUNCTIONAL JAVASCRIPT
 
 And the first most important thing that React does isn't the virtual DOM, or JSX or Hooks or any of the fancy and mysterious things you've probably heard about.
 
-The first best most important thing that React does, is it encourages us to write good javascript. It encourages us to write bug-free, modular, reusable code. And how does it do this? Primarily, by making sure that we follow good functional programming principles.
+The first best most important thing that React does, is it encourages us to write good javascript. It encourages us to write bug-free, modular, reusable code. And how does it do this? Primarily, by encouraging us to follow good functional programming principles.
 
-And the first and most important of these is that we organize our user interface into a bunch of small chunks, which React calls components, each of which is a function that returns a single DOM node.
+And the first and most important of these principles is that we organize our user interface into a bunch of small chunks, which React calls components, each of which is a function that returns a single DOM node.
 
-So, in the next video, we're going to talk a little about functions and functional programming and we're going to take this code that we've written and write it as a function. I'll see you there.
+So, in the next video, we're going to talk a little about functions and functional programming and we're going to take this code that we've written and re-write it as a function, that we can use to display any message we like. I'll see you there.
 
 # END
 

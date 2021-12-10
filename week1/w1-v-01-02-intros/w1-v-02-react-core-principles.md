@@ -5,15 +5,9 @@ functional (declarative) component-based UI layer for single page applications.
 1. component : a component is a function that returns a DOM node.
 2. JSX : jsx is a markup language that lets us write html in javascript
 3. the virtual dom :
-
+4. keep your view seperate from your application logic/data
 [SC]
-LIST OF REACT BENEFITS
-BIGGEST ECOSYSTEM - everybody uses React, so we get all of that shared knowledge
-GREAT DEVELOPER TOOLS - create-react-app, debugging tools
-JSX
-VIRTUAL DOM
-COMPONENTS
-FUNCTIONAL JAVASCRIPT
+
 
 [SC]
 JSX. - helps us create new elements

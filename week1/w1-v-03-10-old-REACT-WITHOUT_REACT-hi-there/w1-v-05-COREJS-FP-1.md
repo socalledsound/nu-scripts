@@ -66,7 +66,7 @@ const WelcomeMessage
 
 [VO]
 
-So I'll start by creating a constant that starts with a capital letter, because I'm trying to make this as React-like as possible and in React, by convention, we use capital letters to name our these functions that return DOM nodes, which, again, are called components in React.
+So I'll start by creating a constant that starts with a capital letter, because I'm trying to make this look as React-like as possible and in React, by convention, we use capital letters to name these functions that return DOM nodes, which, again, are called components in React.
 
 [SC]
 const WelcomeMessage = (name) => {

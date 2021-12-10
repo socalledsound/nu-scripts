@@ -9,7 +9,21 @@ At the time of this writing, React is the number 1 front-end library, by a mile.
 
 Why?
 
-List the reasons here.
+[SC]
+LIST OF REACT BENEFITS
+BIGGEST ECOSYSTEM - everybody uses React, so we get all of that shared knowledge
+GREAT DEVELOPER TOOLS - create-react-app, debugging tools
+JSX
+VIRTUAL DOM
+COMPONENTS
+FUNCTIONAL JAVASCRIPT
+[VO]
+
+Discuss the reasons
+
+[SC]
+
+[VO]
 
 There's a big difference between learning how to write React and learning how to write react well.
 IN this course, you'll learn both! And, hopefully, have fun doing it!
