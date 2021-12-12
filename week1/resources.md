@@ -1,3 +1,7 @@
+## reconciliation
+
+https://reactjs.org/docs/reconciliation.html
+
 https://eloquentjavascript.net/04_data.html
 https://jrsinclair.com/articles/2016/gentle-introduction-to-functional-javascript-intro/
 

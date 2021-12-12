@@ -3,8 +3,6 @@
         root.appendChild(HeartMessage('you are bear', '100px', '500px', 'lightblue'))
     }
 
-
-
 [SC]
 function logMessage(punctuation){
 return (msg) => console.log(msg + punctuation)

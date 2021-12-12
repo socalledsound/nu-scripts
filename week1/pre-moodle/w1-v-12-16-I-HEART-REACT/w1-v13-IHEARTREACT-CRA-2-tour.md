@@ -170,7 +170,7 @@ In other words, when we wrap our app inside the StrictMode component, we get ext
 
 And this is a great example of declarative programming!
 
-We actually don't need to know much about what StrictMode is or what it does to leverage it's many tools, it will just sit there in the backgropund and let us know if we do something wrong.
+We actually don't need to know much about what StrictMode is or what it does to leverage it's many tools, it will just sit there in the background and let us know if we do something wrong.
 
 [SC]
 ReactDOM.render(
@@ -183,6 +183,15 @@ ReactDOM.render(
 [VO]
 
 Generally, it's a good idea to use strict mode but, you don't have to! You can delete it entirely, and just pass your app and the target dom node for your app in to ReactDOM.render().
+
+[SC]
+
+[VO]
+But as I said, generally, you want to just leave it there, and let it do it's thing.
+
+If you want to learn more about some of the finer points of StrictMode, there's a video in the further resources section for this week.
+
+##
 
 [SC]
 

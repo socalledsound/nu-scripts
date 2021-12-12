@@ -6,8 +6,7 @@ functional (declarative) component-based UI layer for single page applications.
 2. JSX : jsx is a markup language that lets us write html in javascript
 3. the virtual dom :
 4. keep your view seperate from your application logic/data
-[SC]
-
+   [SC]
 
 [SC]
 JSX. - helps us create new elements
