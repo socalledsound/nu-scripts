@@ -14,10 +14,20 @@ We'll build a large, professional-grade application that will challenge your ski
 [SC]
 REACTSTRAP
 [VO]
+We'll use reactstrap -- bootstrap for React -- for our styling
+
+[SC]
+HOOKS
+[VO]
+You'll learn react Hooks
+
+[SC]
+React Router
 
 [SC]
 
 [VO]
+And along the way, you'll learn a lot about javascript.
 
 [SC]
 JS logo
@@ -38,6 +48,8 @@ But let me tell you, the things I learned about javascript from learning React a
 So this course will begin with a brief introduction to functional programming in javascript.
 
 We're calling it 'React Without React', because what will build in the first section of the course won't use React but, honestly, it will look a lot like React code, if you squint. Hopefully it will be a great way to ground you in the fundamentals of javascript that you need to thrive as a React developer and
+
+# end
 
 [SC]
 

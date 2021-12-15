@@ -1,5 +1,7 @@
 # w1-v12 - CRA2-anatomy of a react app
 
+# i could also lean on Minae's version of this and not do it....
+
 https://reactjs.org/docs/strict-mode.html
 
 https://reactjs.org/docs/jsx-in-depth.html

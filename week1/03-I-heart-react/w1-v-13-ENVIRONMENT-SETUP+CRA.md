@@ -1,4 +1,8 @@
+# maybe just use the old one but update it a bit? video/ no video?
+
 # video 6 CRA 3 mins
+
+https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable
 
 ##### (hearts video 1)
 
