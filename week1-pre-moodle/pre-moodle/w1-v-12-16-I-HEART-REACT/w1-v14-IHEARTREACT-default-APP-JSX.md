@@ -8,15 +8,24 @@ might be a little long?
 JSX
 [VO]
 
-In the last video, you saw that our App was wrapped in JSX, and I mentioned that it's a 'syntax extension for javascript'.
+In the last video, you saw that our App component was wrapped in JSX, and I mentioned that it's a 'syntax extension for javascript'.
 
-And we saw that wrapping our App function in JSX syntax transformed it, turning it into a React element.
+[SC]
+JSX => babel compiler
 
-And we learned that the scaffolding set up by create react app -- notably the Babel compiler -- interprets that syntax and turns it into javascript.
+[VO]
+And I mentioned that the Babel compiler interrprets that JSX syntax and turns it into valid javscript so that the browser can read it.
 
-So JSX is, essentially, a shorthand notation for writing the javascript which we'll use to create our web page. And it looks a lot like HTML, which is nice, and really simplifies our lives as developers.
+[SC]
 
-It's tremendously useful and, once you get used to it, it's a great way to write web pages!
+[VO]
+
+[SC]
+
+[VO]
+Using JSX, we can
+
+While JSX might take a little getting used to, it's tremendously useful and one of the absolute bestest things about using React. I think that once you get used to it, you'll agree that it's a great way to write web pages.
 
 So, let's start getting used to it now.
 

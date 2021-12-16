@@ -1,6 +1,7 @@
 # hello, and the outline of the course
 
 [SC]
+
 [VO]
 Hello, everyone! And welcome.
 
@@ -14,17 +15,33 @@ We'll build a large, professional-grade application that will challenge your ski
 [SC]
 REACTSTRAP
 [VO]
-We'll use reactstrap -- bootstrap for React -- for our styling
+We'll use reactstrap -- bootstrap for React -- for our styling.
+
+[SC]
+REACT SPRING
+[VO]
+And React Spring for animations.
+
+[SC]
+React Router DOM
+[VO]
+We'll use React Router for site navigation
+
+[SC]
+Formik
+[VO]
+And Formik to handle forms.
 
 [SC]
 HOOKS
 [VO]
-You'll learn react Hooks
+You'll learn React Hooks for component level logic
 
 [SC]
-React Router
-
-[SC]
+REDUX
+REDUX TOOLKIT
+[VO]
+And Redux and redux toolkit for global state.
 
 [VO]
 And along the way, you'll learn a lot about javascript.
@@ -38,16 +55,45 @@ Did I just say javascript? Wait let me say that again. Javascript. JAVASCRIPT!
 React === javascript
 [VO]
 Learning React means learning to write javascript at a high level!
-I know that you've already learned a little javascript, maybe even a lot.
-When I myself started learning React, I thought I was pretty good at javascript.
-But let me tell you, the things I learned about javascript from learning React and Redux just absolutely blew my mind, because React leans very heavily on the declarative and functional style of javascript. To write it well you'll need to be well-versed in this style.
+
+I know that you've already learned a little javascript and some of you may have even learned a lot of javascript. Your javascript knowledge will serve you well with React.
+
+When I myself started learning React, I actually thought I was pretty good at javascript, and people had been paying me to be pretty good at javascript for quite a few years.
+
+But let me tell you, the things I learned about javascript from learning React and Redux just absolutely blew my mind, because React leans very heavily on the declarative and functional style of javascript. To write it well you'll need to be well-versed in this style of javascript.
 
 [SC]
 
 [VO]
-So this course will begin with a brief introduction to functional programming in javascript.
+So this course will begin with a brief introduction to functional programming in javascript, where you'll learn about pure functions, higher order functions, closures and not mutating data and everything else that you absolutely need to know about declarative javascript before you tackle React.
 
-We're calling it 'React Without React', because what will build in the first section of the course won't use React but, honestly, it will look a lot like React code, if you squint. Hopefully it will be a great way to ground you in the fundamentals of javascript that you need to thrive as a React developer and
+We're calling it 'React Without React', because what we'll build in the first section of the course won't use React but, honestly, it will look a lot like React code, if you squint. Our hope is that it will be a great way to ground you in the fundamentals of javascript that you need to thrive as a React developer and will also prepare you for React by helping you understand how it does its magic.
+
+[SC]
+HEARTS
+LOGIN
+
+[VO]
+And throughout the course, you'll also build several smaller projects.
+
+Small projects are great, because they allow us to practice specific skills, give us practice taking a React project from nothing to something and, hopefully, will give you the experience that you need to feel confident getting started with your own projects, because at the end of the day, those personal projects are what will define your success as a React developer!
+
+[SC]
+REACT LOGO
+[VO]
+
+Honestly, I really love React, I think it's a really fun way to build web sites. And I hope that by the end of this course, you'll feel the same way.
+
+You're going to learn a lot in this course and it's going to be challenging but the biggest challenge of all is the challenge you need to present to yourself, to take the skills you learn here and build stuff!
+
+So remember: always be working on your portfolio project or projects, even if you don't feel that you have the skills to do it -- you'll GET the skills by doing the work.
+
+And, as always, remember the 20 minute rule. Reach out for help, either to your instructor, or in the React slack channel. And remember to share your work with your peers! Let's inspire each other to become great React developers!
+
+[SC]
+why React?
+[VO]
+In the next video, we'll begin by looking at some of the benefits that React brings to the table. I'll see you there.
 
 # end
 
@@ -66,17 +112,6 @@ FORMIK
 
 DECLARATIVE JAVASCRIPT
 FUNCTIONAL PROGRAMMING
-
-Honestly, I really love React, I think it's a really fun way to build web sites. And I hope that by the end of this course, you'll feel the same way, and will be super jazzed to create your own projects with React.
-
-And in that spirit, I want to start this course with an enthusiastic reminder that this is YOUR course.
-
-Or, it can be. And it should be.
-
-You're going to learn a lot in this course and it's going to be challenging but the biggest challenge of all is the challenge you need to present to yourself, to take the skills you learn here and build stuff!
-
-Be sure to make it yours! The best part about Nucamp isn't the videos and it isn't the exercises.
-Wherever possible, this course will give you exercises and challenges
 
 [SC]
 

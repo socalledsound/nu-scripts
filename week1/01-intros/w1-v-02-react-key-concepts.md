@@ -8,25 +8,35 @@ So, before we talk about anything else, I want to start with this question.
 Why React?
 
 [SC]
-React === challenging (and fun!)
+
 [VO]
 
-It's a question that lots of people have asked, and it's a question that I can almost guarantee you will ask, if you haven't already. And as this course gets harder, I want you to try to remember the answers to that question I'm going to give here. Because this course will be challenging! React is challenging!
+It's a question that lots of people have asked, and it's a question that I can almost guarantee you will ask, if you haven't already.
 
 [SC]
+why, #$%\*&?!# React!
+[VO]
+And as this course goes along, at times, it might even morph into something like this!
+
+When that happens, I want you to try to remember the answers to that question I'm going to give here.
+
+[SC]
+Why React?
 React === modern javascript
 [VO]
-But React is also super fun, and it's particularly fun if you embrace the challenge and remember that as you learn React, you're becoming a knowledgeable javascript developer, and you're joining the huge community of professional developers who have embraced modern, declarative javascript. Learning React is the best way to get good at javascript.
+React can be challenging for javascript beginners.
+But React is also super fun!
+And it's particularly fun if you embrace the challenge and remember that as you learn React, you're becoming a knowledgeable javascript developer, and you're joining the huge community of professional developers who have embraced modern, declarative javascript. Learning React is the best way to get good at javascript.
 
 [SC]
 React === the biggest ecosystem
 [VO]
-Because for better or worse -- mostly for better, I'd argue -- React is currently the most popular front end javascript library. There are a lot of good ones, and I recommend learning several of them, but React is absolutely the best place to start simply because so many people use it. That means that there are countless tutorials and code-alongs out there, and it means that you can lean on the work of other developers.
+Because for better or worse -- mostly for better, I'd argue -- React is currently the most popular front end javascript library. There are a lot of good ones, and I recommend learning several of them, but React is absolutely the best place to start simply because so many people use it. That means that there are countless tutorials and code-alongs out there, many useful third-party tools and questions you may have about how to do something in React will almost certainly find answers on the internets.
 
 [SC]
 React === jobs
 [VO]
-And there's also a LOT of jobs postings out there that require React knowledge. And part of the reason for that is, of course, because React is great for building web sites. You've probably heard of Facebook (or, I guess, Meta?). They invented and then open-sourced React and it's in heavy use not just on Facebook but on all of its affiliated sites.
+Another great reason to learn and use React is that there are typically a LOT of jobs postings out there that require React knowledge. And part of the reason for that is, of course, because React is great for building web sites. You've probably heard of Facebook (or, I guess, Meta?). They invented and then open-sourced React and it's in heavy use not just on Facebook but on all of its affiliated sites.
 
 [SC]
 knowledge of React === knowledge of javascript
@@ -34,30 +44,43 @@ knowledge of React === knowledge of javascript
 But another reason that you so commonly see knowledge of React as a pre-requisite for jobs is that if you are able to write great React code, it demonstrates your knowledge of javascript more broadly. Because at the end of the day, React is mostly just javascript. So if you can build a React site and understand how it works, you'll probably be able to quickly pick up other libraries, advance your career, and be a benefit to your co-workers.
 
 [SC]
+Why React?
 
-Why did React become so popular?
+So why did React become so popular?
 
 [VO]
-So all of this begs another question. How and why did React become the standard for front end javascript libraries? Obviously, being born at facebook helped. But why, after it's introduction in 2013, did React so quickly take over the web?
+So, if one of the great reasons to use React is that everybody uses react -- the next obvious question is, WHY does everybody use React? How and why did React become the standard for front end javascript libraries? Obviously, being born at facebook helped. But why, after it's introduction in 2013, did React so quickly take over the web?
 
 [SC]
-OPEN SOURCE
+(relatively) easy to learn
 [VO]
 
 [SC]
 GREAT DEVELOPER TOOLS
 [VO]
+Alongside that, React comes with great developer tools. As we'll soon see, React ships with a great set of developer tools, that make it easy to get up and running and stay up and running, and let you focus more on your development and less on troubleshooting your build tools.
 
 [SC]
-ONE WAY DATA FLOW
+DECLARATIVE USER INTERFACE (JSX)
 [VO]
+And React also speeds up development time by encouraging declarative user interface development, using an HTML-like syntax right in javascript.  Declarative means that, rather than describing the interface 
 
 [SC]
 COMPONENTS
 [VO]
 
 [SC]
-DECLARATIVE APPROACH TO USER INTERFACE RENDERING
+ONE WAY DATA FLOW
+[VO]
+
+
+
+[SC]
+
+[VO]
+
+[SC]
+THE VIRTUAL DOM
 [VO]
 
 [SC]
