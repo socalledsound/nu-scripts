@@ -150,6 +150,7 @@ And can use javascript in JSX inside curly braces. On this page, we're setting t
     <HeartMessage message='me my <3'>
 
 [VO]
+
 And, we can also define our own properties, like I'm doing here. We can use the properties to send data from a parent component to a child component.
 
 In the next video, we'll get some practice with JSX, and rewrite our HeartMessage function from before, as a React component.

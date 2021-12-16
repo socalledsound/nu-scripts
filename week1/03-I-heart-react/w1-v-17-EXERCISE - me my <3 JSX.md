@@ -171,6 +171,8 @@ So it should look something like this. And, still, squiggly. Let's fix that now.
 [VO]
 Let's go down to our App component, delete the div in the return statement and replace it with an instance of a HeartMessage, into which we'll pass our very first custom property, or prop. In our HeartMessage, we are pulling a key of msg off of our props object, so let's call our prop msg and set it equal to the message variable.
 
+And, one thing that I want you to pay attention to here, on a very nitpicky code styling level -- when we write a prop specification, we don't leave any spaces between the prop name and the value that we're assigning it to. It doesn't actually affect whether the code works, but it's good style, and it's really a good idea to get in the habit of writing with good style if you want to work with other people.
+
 [SC]
 
 [VO]
@@ -178,7 +180,41 @@ If you save this and look at your web browser, it should, basically look exactly
 But, you've written your first JSX. And perhaps more importantly, we've written a few of these things called components.
 
 [SC]
-HEART
+
+    const App = () => {
+    return (
+        <Header />
+        <HeartMessage msg={message}/>
+    )
+    }
 
 [VO]
-In a minute, we're going to use components to make a heart. But, first, let's talk about CSS and react. I'll see you in the next video.
+And now, I've got a challenge for you. Can you write another component, on your own? It will be called Header and I want you to render it just above our HeartMessage.
+
+[SC]
+
+    const App = () => {
+        return (
+            <>
+                <Header />
+                <HeartMessage msg={message}/>
+            </>
+        )
+    }
+
+[VO]
+But, remember, components have to return just one element. So we can indent these two components one level and wrap them in an empty div. Or, even better, we can just use an empty element, which in React is called a Fragment. Fragments are great because they create minimal overhead for the virtual DOM.
+
+[SC]
+I ❤️ React
+[VO]
+
+In your component I want you to return a single div with the text 'I ❤️ React'. You can get the emoji from this page, or if you do an internet search for heart emoji, you can find it quite easily.
+
+[SC]
+
+ <div className='App-header' >I ❤️ React</div>
+[VO]
+Finally, I want you to give the div in your header a class name of 'App-header', which, by the way, is a class that's specified in the App.css file.  So your div will look something like this.
+
+Got it? Ok. Get to work and I'll see you in the next video when you're done with that Header component. Don't take too much time with it, if it's not doing quite what you want, just join me in the next video, where I'll write it and also talk about some of the ways we can style a React component. I'll see you there.
