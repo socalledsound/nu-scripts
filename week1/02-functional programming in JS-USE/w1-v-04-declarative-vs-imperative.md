@@ -1,5 +1,5 @@
 [SC]
-
+DECLARATIVE VS IMPERATIVE
 [VO]
 
 [SC]
@@ -25,6 +25,7 @@
 [SC]
 
 [VO]
+HTML -- and I would say, any markup language -- is a great example of a declarative language.
 
 # notes below
 

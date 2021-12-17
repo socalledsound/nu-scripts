@@ -103,9 +103,9 @@ DOM manipulation
 And that's how vanilla DOM manipulation works. And did you notice? It's highly imperative. Every single change that I made was made with very explicit code, line by line. On the plus side: it wasn't too hard to think through, it's easy to see what's happening, but can you imagine coding a whole page of emojis in this way? Or even, say, five emojis?
 
 [SC]
-
+👊⬆️🐰📤🎩
 [VO]
-In the next video, we're going to pull a rabbit out of our hat, and we're going to try to do it declaratively. In other words, we're going to write a function that will take this string of emojis that I got from emojisaurus, and render it to the screen, and we're going to try to do it at least a little bit declaratively.
+In the next video, we're going to try to pull a rabbit out of our hats, and we're going to try to do it declaratively. In other words, we're going to write a function that will take this string of emojis that I got from emojisaurus, and render it to the screen, using DOM manipulation, like we did above. But instead of taking the imperative approach, we're going to try to do it at least a little bit declaratively. I think it'll be fun and I think it will also help clear up some of the differences between the imperative and declarative approaches. And, it will also set you up nicely to understand how React works its magic. I'll see you there.
 
 # end
 
