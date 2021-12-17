@@ -75,17 +75,52 @@ HeartMessage
 And, then we'll also write a Heart function, which will combine these shapes and also display the HeartMessage function that we've already written.
 
 [SC]
-
+HEART SHAPE WITH CIRCLES AND SQUARE
 [VO]
 And when we're done, we'll have a Heart, which we can re-use anywhere and everywhere we want.
-[SC]
-
-[VO]
 
 [SC]
+diagram:
+data => HEART => HEARTCHILDREN
 
 [VO]
+Now, an important and extremely helpful -- but sometimes confusing -- aspect of building an app using components is, the flow of data. This exercise will give you a chance to practice this, but it might be a little bit weird at first!
+
+But it's a pattern that you'll use again and again in React, so it's a good idea to get some practice with it. Understanding and properly managing the flow of data in a react app is probably the most important thing that you'll need to do to successfully and enjoyably build react apps.
+
+[SC]
+const heartData = {
+color: 'blue',
+message: 'i love you',
+x:
+}
+const App = () => {
+return (
+<Heart data={heartData}>
+)
+}
+[VO]
+Very often, you'll bring in some data at the highest level of your app, and then pass it in to one or more container components, like for instance, our Heart component. SO here we've got an object with some data, and we pass it in to a Heart component as a prop named data.
 
 [SC]
 
+    const Heart = (props) => {
+    // there's a prop called data! it's an object!
+    // props.data = {
+    //   color: 'blue',
+    //   message: 'i love you',
+    //   x: 500,
+    //   y: 500,
+    // }
+    return (
+    <>
+    <Square col={props.data.color} x={props.data.x} y={props.data.y}/>
+    <Circle col={props.data.color} x={props.data.x+60} y={props.data.y - 60}/>
+    <Circle col={props.data.color} x={props.data.x-60} y={props.data.y - 60}/>
+    <HeartMessage col={props.color} msg={props.data.message} x={props.data.x + 40} y={props.data.y + 40}/>
+    </>
+    )
+    }
+
 [VO]
+And then, inside the Heart component, we can pass it to the props that need it

@@ -158,23 +158,29 @@ It's really your choice, whether to declare the object at the top of the file, o
      const MyComponent = () => {
      return (
      <div style={{
-          backgroundColor: getRandomColor(),
+          backgroundColor: someRandomColorValue,
           color: 'white',
      }}>
      )
      }
 
 [VO]
-But, a really nice thing about being able to write styles inline, is that we can apply styles dynamically,using javascript expressions. So, if I want to apply a random background color every time this component updates loads, I can simply pass in a function invocation. Remember this function from earlier this week? Let's use it now to style our HeartMessage component.
+But, a really nice thing about being able to write styles inline, is that we can apply styles dynamically,using javascript expressions. So, if I want to apply a random background color every time this component updates loads, I can do that, with javascript.
 
 [SC]
 
      const getRandomColor = () => `#${Math.floor(Math.random() * 2 ** 24).toString(16)}`
 
 [VO]
-So, you can just copy and paste it either from your existing code, or from the assignment page. Or write it along with me, for a little practice.
 
-So I'll declare an arrow function near the top of the page and it will be called getRandomColor and it's just going to return a template literal which will be first of all the backticks, and inside them first a hashtag and then a dollar sign and set of curly braces. and inside the curly braces I can write Math.floor, to clean up any fractional values and then we'll pass in a random 24 bit number, and then convert that to a hexidecimal with toString(16). Easy peasy.
+Remember the getRandomColor function from earlier this week? Let's use it now to style our HeartMessage component.
+
+[SC]
+
+[VO]
+Now, we'll use that function to generate a random color. Right below the constant variable named message, I'll make another one named bgCol and set it equal to the return value of our function.
+And let's add one more value, a position.
+I won't make you write that one again
 
 [SC]
 typing:
@@ -182,11 +188,13 @@ typing:
      const HeartMessage = (props) => {
      return (
      <div style={{
-          backgroundColor: getRandomColor(),
-          padding: '2rem',
-          margin: '2rem',
-          width: '4rem',
+          backgroundColor: props.color,
+          padding: '0.6rem',
           borderRadius: '0.8rem',
+          position: 'absolute'
+          left: `${props.x}px`,
+          top: `${props.y}px`,
+
           }}>
           {props.msg}
      </div>
@@ -194,7 +202,7 @@ typing:
      }
 
 [VO]
-Now, we'll use that in our HeartMessage component, with inline styling. We'll add the style prop and then the curly brace to let the interpreter know that what follows will be javascript, and then finally the style object. And we'll give that a key of background color, which we'll set to the return value of our getRandomColor function, and then we'll also add some more keys.
+with inline styling. We'll add the style prop and then the curly brace to let the interpreter know that what follows will be javascript, and then finally the style object. And we'll give that a key of background color, which we'll set to the return value of our getRandomColor function, and then we'll also add some more keys.
 
 (tlak about each key as you add it)
 

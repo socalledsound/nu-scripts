@@ -55,3 +55,5 @@ But of course we don't want to input all of these values -- we'll use a loop to 
 But first, we need to modify this function just a little bit. I'll explain how and why in the next video, when I show you about a tremendously useful ES6 feature called template literals. I'll see you there.
 
 # end
+
+So I'll declare an arrow function near the top of the page and it will be called getRandomColor and it's just going to return a template literal which will be first of all the backticks, and inside them first a hashtag and then a dollar sign and set of curly braces. and inside the curly braces I can write Math.floor, to clean up any fractional values and then we'll pass in a random 24 bit number, and then convert that to a hexidecimal with toString(16). Easy peasy.
