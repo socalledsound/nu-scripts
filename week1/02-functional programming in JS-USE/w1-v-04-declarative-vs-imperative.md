@@ -1,6 +1,9 @@
 [SC]
+
 DECLARATIVE VS IMPERATIVE
+
 [VO]
+One big word that I've been using a lot -- and you constantly hear this word kicked around when people are talking about React -- is 'declarative'. And alongside it, you often hear it's archrival, 'imperative'. In this video I want to talk a bit about the difference between declarative and imperative programming, so that the notion of the 'declarative approach to building user interfaces' which React is so famous for offering actually starts to make a little sense.
 
 [SC]
 
