@@ -59,20 +59,31 @@ If you look around the internet with this perspective, it all starts to make new
 
 [SC]
 
-square
-circle
-circle
+Heart diagram
+
 [VO]
-But back to our heart, which we can make in a similar way, by coding some small pieces, and then combining them. We'll need to write two functions. A square, and a circle, which we can use twice.
+But back to our heart, which we can make in a similar way, by coding some small pieces, and then combining them.
 
 [SC]
-Heart
-Circle
-Circle
-Square
-HeartMessage
+
+square = () => square div
+circle = () => circlular div
+
+We'll need to write two functions. A square, and a circle, which we can use twice.
+
+[SC]
+
+    Heart = () => {
+        return (
+            Circle
+            Circle
+            Square
+            HeartMessage
+        )
+    }
+
 [VO]
-And, then we'll also write a Heart function, which will combine these shapes and also display the HeartMessage function that we've already written.
+And, then we'll also write a Heart function, which will combine these shapes and also display the HeartMessage that we've already written.
 
 [SC]
 HEART SHAPE WITH CIRCLES AND SQUARE
@@ -89,18 +100,21 @@ Now, an important and extremely helpful -- but sometimes confusing -- aspect of 
 But it's a pattern that you'll use again and again in React, so it's a good idea to get some practice with it. Understanding and properly managing the flow of data in a react app is probably the most important thing that you'll need to do to successfully and enjoyably build react apps.
 
 [SC]
-const heartData = {
-color: 'blue',
-message: 'i love you',
-x:
-}
-const App = () => {
-return (
-<Heart data={heartData}>
-)
-}
+
+    const heartData = {
+    color: 'blue',
+    message: 'i love you',
+    x: 500,
+    y: 500,
+    }
+    const App = () => {
+    return (
+    <Heart data={heartData}>
+    )
+    }
+
 [VO]
-Very often, you'll bring in some data at the highest level of your app, and then pass it in to one or more container components, like for instance, our Heart component. SO here we've got an object with some data, and we pass it in to a Heart component as a prop named data.
+Very often, you'll bring in some data at the highest level of your app, and then pass it in to one or more container components, like for instance, our Heart component. So here we've got an object with some data, and we pass it in to a Heart component as a prop named data.
 
 [SC]
 
@@ -123,4 +137,19 @@ Very often, you'll bring in some data at the highest level of your app, and then
     }
 
 [VO]
-And then, inside the Heart component, we can pass it to the props that need it
+And then, inside the Heart component, we can pass it to the components that need it. We'll pass the Heart's props down to its children. We can rename the prop names as we pass them in, and we can also modify they data if necessary.
+
+So, our entire Heart component has an x and y position, but you can see that each of the components that make up the pieces will be positioned at slightly different places.
+
+[SC]
+
+    const HeartMessage = (props) => {
+        <div style = {{
+
+        }}>
+    }
+
+[VO]
+Inside the child components, we simply utilize the data that has been passed in, without any further changes.
+
+Sometimes these are called 'dumb' components, because they just faithfully

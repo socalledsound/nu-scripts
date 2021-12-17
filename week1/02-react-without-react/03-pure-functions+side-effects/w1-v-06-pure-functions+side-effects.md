@@ -149,7 +149,7 @@ And we always try to pass our data in to a function in which we want to use it, 
 Many of the design choices of both the React and Redux libraries are premised upon this principle.
 
 [SC]
-
+const sum = (a,b) => a + b
 [VO]
 
 A function that returns a value and doesn't modify or utilize any data from outside of its scope is known as a pure function, because if we run it with the same inputs, the result will always be the same. Notice that it's not working with any data that exists outside the scope of the function.
@@ -166,18 +166,32 @@ console.log(msg)
 }
 
 [SC]
-This function is also not a pure function, because it doesn't have a return value and it generates what's known as a side effect -- it renders something to the console.
+This function is also not a pure function, first, because it doesn't have a return value. More importantly, it generates what's known as a side effect -- it affects something outside of its scope. IN this case, by rendering something to the console.
 
-Side effects happen when a function relies on or modifies something outside of its scoope. So, for instance, logging to the console, or taking in user input, or even using the DOM, all of these things are side effects, because the function can't really know or predict the status of those things.
+Side effects happen when a function relies on or modifies something outside of its scoope.
 
-Now....it's probably immediately obvious that just about everything cool about a web site is, therefore a side effect. They are unavoidable and, we wouldn't want to avoid them. But what we can do is, be careful with them.
+So, for instance, logging to the console, or taking in user input, or even using the DOM, all of these things are side effects, because the function can't really know or predict the status of those things.
+
+Now....it's probably immediately obvious that just about everything neat or useful about a web site is, therefore a side effect. They are unavoidable and, we wouldn't want to avoid them. But what we can do is, be careful with them.
 
 [SC]
 
-    const PseudoComponent = () => {
-    const div = document.createElement('div')
-    return div
+    const MyReactComponent = () => {
+        return (
+            <div>hi there!</div>
+        )
     }
 
 [VO]
-React helps us be careful with side effects by forcing us to structure our code using components. A component is, basically, a function which must return a single HTML element.
+React helps us be careful with side effects by forcing us to structure our code using functions that have strict limitations on what they can return -- a React component is a function which must return a single React element.
+
+[SC]
+
+[VO]
+And in other important ways that we'll learn about soon, React makes it hard for us to write code that mutates data.
+
+When you're
+
+There will be times when you think to yourself, jeez, does it have to be this hard?
+
+At those times, try to remember that the reason it

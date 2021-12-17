@@ -175,12 +175,32 @@ But, a really nice thing about being able to write styles inline, is that we can
 
 Remember the getRandomColor function from earlier this week? Let's use it now to style our HeartMessage component.
 
+If you have it handy from react without react, you can just paste it in here at the top.
+Or, you can pause the video and re-write it.
+
 [SC]
 
+const message = 'cool cud'
+const bgCol = getRandomColor()
+const x = window.innerWidth/2
+const y = window.innerHeight/2
+
 [VO]
-Now, we'll use that function to generate a random color. Right below the constant variable named message, I'll make another one named bgCol and set it equal to the return value of our function.
-And let's add one more value, a position.
-I won't make you write that one again
+Now, we'll use that function to generate a random color.
+
+First, make sure you import both getRandomColor and getRandomPosition, at the top of your file.
+
+Right below the constant variable named message, I'll make another one named bgCol and set it equal to the return value of our function.
+And let's add two more values, an x and a y value.
+We're going to position our heart messages using absolute positioning, just like we did in react without react.
+For now, we can just put our message at the center of the screen.
+
+[SC]
+
+     <HeartMessage msg={message} col={bgCol} x={x} y = {y}/>
+
+[VO]
+Now, we have to update our HeartMessage element to receive these new props.
 
 [SC]
 typing:
@@ -202,9 +222,17 @@ typing:
      }
 
 [VO]
-with inline styling. We'll add the style prop and then the curly brace to let the interpreter know that what follows will be javascript, and then finally the style object. And we'll give that a key of background color, which we'll set to the return value of our getRandomColor function, and then we'll also add some more keys.
+And, finally, we need to bring them in to our HeartMessage component. We'll add the style prop and then the curly brace to let the interpreter know that what follows will be javascript, and then finally, inside that the style object. Pay particular attention to the double curly braces! It's weird, I know, but you'll get used to it.
+
+And we'll give that object a key of background color, which we'll set to props.col, and then we'll also add some more keys.
 
 (tlak about each key as you add it)
+
+[SC]
+
+[VO]
+et voila!  
+You should see our heart message on the screen, and every time you refresh the browser it will appear with a new background color.
 
 [SC]
 CSS in javascript
@@ -259,6 +287,12 @@ And, if that wasn't confusing enough, before we go, I want to also briefly menti
 And, after all of that work, maybe it's time for a cup of coffee or tea.
 
 [SC]
-COMPOSING WITH COMPONENTS
+COMPOSING WITH COMPONENTS diagram
 [VO]
-Give yourself a chance to rest your brain a little, because in the next video, we're going to tackle a big and very important idea: composing with components. I'll see you there.
+Now, give yourself a chance to rest your brain a little, take a little walk or have a cup of tea. Because in the next video, we're going to get conceptual and tackle a big and very important idea: composing with components. I'll see you there.
+
+## end
+
+## extra
+
+You should get used to keeping a utils file handy; as you progress in your career, it will get longer and more useful and you'll find good ways of keeping those functions nearby!
