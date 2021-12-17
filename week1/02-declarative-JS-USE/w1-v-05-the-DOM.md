@@ -52,28 +52,64 @@ Let's take a look at that linked javascript file now, you can see that that scri
     console.log(document)
 
 [VO]
-And in that file we see first, that we get a reference to the div with an id of root, using a DOM method called getElementById, which will search the document for any element with an id of 'root'.
+And in that file we see first, that we get a reference to the div that has an id of root, using a DOM method called getElementById, which will search the document for any element with an id of 'root'.
+
+[SC]
+const newDiv = document.createElement('div')
+[VO]
+Then in the next line I use another DOM method, createElement, which will create any type of HTML element that I specify.
+
+[SC]
+newDiv.innerText = '🐰'
+[VO]
+In the next line, I set the innerText to be a string that has an emoji
+
+[SC]
+newDiv.className = 'rabbit-lg'
+[VO]
+And then I set the className
+[SC]
+root.appendChild(newDiv)
+
+[VO]
+And finally I use the appendChild method. Notice how I'm using that method on the root, not on the newDiv, and I'm passing in the newDiv, so the newDiv will become a child of the root div, which means it will apear in the DOM and thus, on the web page.
+
+[SC]
+checking
+console.log(newDiv)
+[VO]
+I can console.log the newDiv and see,
+
+[SC]
+checking the console
+[VO]
+in my console, that it's an HTML element with a classname and the text of rabbit emoji.
+
+[SC]
+console.log(document)
+
+[VO]
+And I can console.log the entire document
+
+[SC]
+checking the console
+[VO]
+and see that, if I drill down through the different layers, that new div is indeed inside the root div.
+
+[SC]
+DOM manipulation
+[VO]
+
+And that's how vanilla DOM manipulation works. And did you notice? It's highly imperative. Every single change that I made was made with very explicit code, line by line. On the plus side: it wasn't too hard to think through, it's easy to see what's happening, but can you imagine coding a whole page of emojis in this way? Or even, say, five emojis?
 
 [SC]
 
 [VO]
-Then in the next line I use another DOM method, createElement, which will create any type of HTML element that I specify. All HTML
+In the next video, we're going to pull a rabbit out of our hat, and we're going to try to do it declaratively. In other words, we're going to write a function that will take this string of emojis that I got from emojisaurus, and render it to the screen, and we're going to try to do it at least a little bit declaratively.
 
-[SC]
+# end
 
-[VO]
-
-[SC]
-
-[VO]
-
-[SC]
-
-[VO]
-
-[SC]
-
-[VO]
+# old version below, too long and not as good
 
 If I add a script tag and log the document to the console, I can get a different look at this web page.
 

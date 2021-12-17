@@ -26,7 +26,7 @@ need more text here
 
 If you're new to functional javascript, you're in for a treat! It's a powerful and elegant way to write javascript code and it also can be pretty challenging. There will most likely be some brain benders coming your way over the next few weeks, and most of them will have to do with higher order functions of one kind or another.
 
-But at it's core, funcational programming actually a pretty simple idea: the goal is to write small and specific functions that can be combined and organized to create larger functions.
+But at it's core, functional programming actually a pretty simple idea: the goal is to write small and specific functions that can be combined and organized to create larger functions.
 
 So, maybe the first thing we should do is to review the humble and oh so powerful function.
 
@@ -177,9 +177,7 @@ Now....it's probably immediately obvious that just about everything neat or usef
 [SC]
 
     const MyReactComponent = () => {
-        return (
-            <div>hi there!</div>
-        )
+        return React.createElement('div', null, null)
     }
 
 [VO]
@@ -195,3 +193,50 @@ When you're
 There will be times when you think to yourself, jeez, does it have to be this hard?
 
 At those times, try to remember that the reason it
+
+# bring this back in:
+
+    const messages = []
+    for(let i = 0; i < messages.length; i++){
+        root.appendChild(HeartMessage('you are bear', '100px', '500px', 'lightblue'))
+    }
+
+[SC]
+function logMessage(punctuation){
+return (msg) => console.log(msg + punctuation)
+}
+
+[VO]
+
+And functions can also return other functions!
+
+[SC]
+DOUBLE MIND BLOWN EMOJI
+[VO]
+
+[SC]
+HIGHER ORDER FUNCTIONS
+[VO]
+When a function is returned from a function, or passed into a function as an input parameter, we call that a 'higher order function'. They can be a bit daunting at first but don't worry -- in this course and in your career as a React developer you'll get plenty of exposure to these ideas and, as with everything, with a little practice it will become second-nature.
+
+[SC]
+function logMessage(punctuation){
+return (msg) => console.log(msg + punctuation)
+}
+logMessage('!')('hi')
+
+[VO]
+If a function returns a function, then we can also invoke the function that it returns, as you can see here.
+
+[SC]
+function logMessage(punctuation){
+return (msg) => console.log(msg + punctuation)
+}
+const logMessageWithExclamation = logMessage('!')
+logMessageWithExclamation('hi)
+[VO]
+
+Or, we can assign the returned function to a new variable, and invoke it later. This is called partial application.
+
+[SC]
+TRIPLE MIND BLOWN EMOJI

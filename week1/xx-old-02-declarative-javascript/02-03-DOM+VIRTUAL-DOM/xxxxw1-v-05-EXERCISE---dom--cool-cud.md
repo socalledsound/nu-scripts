@@ -8,7 +8,7 @@ In the last video I talked a bit about DOM manipulation. In this video, we're go
 opening up vs code
 
 [VO]
-
+Now first of all, I want to just mention one thing
 Open up your vscode editor and go the file menu and select new window, or just use the key command command shift N to make a new Window in VS Code.
 
 [SC]

@@ -1,3 +1,33 @@
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+
+# notes below
+
 declarative vs imperative
 
 functions are the building blocks

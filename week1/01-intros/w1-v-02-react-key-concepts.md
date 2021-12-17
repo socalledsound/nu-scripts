@@ -63,29 +63,31 @@ Alongside that, React comes with great developer tools. As we'll soon see, React
 [SC]
 DECLARATIVE USER INTERFACE (JSX)
 [VO]
-And React also speeds up development time by encouraging declarative user interface development, using an HTML-like syntax right in javascript.  Declarative means that, rather than describing the interface 
+And React also speeds up development time by encouraging declarative user interface development, using an HTML-like syntax right in javascript. We'll talk more about what this means in the next video, but essentially, this means that we tell React what we kind of interface we want and it handles the details for us. This makes our code more predictable and less error-prone.
 
 [SC]
 COMPONENTS
 [VO]
+React is modular and encourages developers to think in terms of small, re-usable parts that can be combined to make a larger part, and also re-used to make completely different interfaces.
 
 [SC]
 ONE WAY DATA FLOW
 [VO]
-
-
-
-[SC]
-
-[VO]
-
+In React, data flows through components in a single direction: parent or 'container' components can update their child components, but the children can't update their parents. And if you have kids, or know anyone who does, I think you can easily see how, again, this makes our code less error-prone.
 [SC]
 THE VIRTUAL DOM
 [VO]
-
+And finally, React uses a virtual DOM, which manages updates to our user interface so that it updates only the parts of our interface that have changed, and it does all of this declaratively, so we don't really have to think about it. This speeds up development and, in many cases also makes the rendering of our app much more performant.
 [SC]
 FUNCTIONAL JAVASCRIPT
 [VO]
+In all of this, React and the react ecosystem leans heavily on functional, or declarative javascript. For many, React is the gateway to functional programming, and the popularity of React and it's declarative approach to building UI has led to an equally explosive growth in the popularity of the functional programming paradigm.
+
+To understand React and become a rockstar React developer, it really helps to understand the functional programming concepts on which is is based.
+
+So in the next section of this course, we'll take a brief look at the big ideas of functional programming, and introduce it's key concepts: composing using pure functions, avoiding data mutation and carefully managing side effects.
+
+In the next video, we'll start our journey into functional programming by talking a little bit about this 'declarative' idea that I keep mentioning as I talk about React, and the key differences between declarative and imperative program flow. I'll see you there.
 
 ## end
 
