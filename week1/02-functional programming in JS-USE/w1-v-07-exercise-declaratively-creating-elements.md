@@ -107,7 +107,7 @@ Ok, now we're ready to get started with some DOM manipulation.
 
 To start, let's just do this imperatively one time, like I did in the last video.
 
-# could also be, at the top, there's this DOM manipulation from the last video.
+# start with a stub that includes the DOM manipulation from the last video.
 
 [SC]
 

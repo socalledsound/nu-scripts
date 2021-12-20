@@ -46,7 +46,14 @@ I only need once piece of data, and a system that knows how to interpret it, and
 [SC]
 
 [VO]
-Now, an important thing to remember about the difference between declarative and imperative is that a declarative abstraction almost always has an imperative process underneath it. We can't change the fact that stuff needs to happen. But what we can do is, make getting that stuff done a little bit easier. And isn't that what computers are great at?
+Now, an important thing to remember about the difference between declarative and imperative is that a declarative abstraction almost always has an imperative process underneath it. We can't change the fact that stuff needs to happen. In the case of getting somewhere, I still need to know when and where to turn, and the same steps will happen.
+
+[SC]
+
+[VO]
+But, what the declarative approach makes possible is
+
+But what we can do is, make getting that stuff done a little bit easier. And isn't that what computers are great at?
 
 [SC]
 

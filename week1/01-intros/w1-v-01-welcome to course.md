@@ -10,7 +10,7 @@ In this course, you will be learning to use the React front-end library for buil
 [SC]
 
 [VO]
-We'll build a large, professional-grade application that will challenge your skills and introduce you to many of the most useful tools and techniques in the React ecosystem.
+We'll build a large, professional application that will challenge your skills and introduce you to many of the most useful tools and techniques in the React ecosystem.
 
 [SC]
 REACTSTRAP
@@ -41,7 +41,7 @@ You'll learn React Hooks for component level logic
 REDUX
 REDUX TOOLKIT
 [VO]
-And Redux and redux toolkit for global state.
+And Redux and redux toolkit for global state management.
 
 [VO]
 And along the way, you'll learn a lot about javascript.
