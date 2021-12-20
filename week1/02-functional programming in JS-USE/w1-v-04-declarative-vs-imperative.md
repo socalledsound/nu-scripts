@@ -9,6 +9,16 @@ One big word that I've been using a lot -- and you constantly hear this word kic
 
 [VO]
 
+
+
+[SC]
+
+smartphone < - > map
+
+[VO]
+And my favorite example of that distinction is in directions.  
+
+
 [SC]
 
 [VO]
