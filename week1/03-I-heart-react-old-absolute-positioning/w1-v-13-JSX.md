@@ -10,7 +10,7 @@ In this video, I want to take a deeper dive into JSX, go over it's syntax, and g
 [SC]
 <App />
 [VO]
-In the last video, you saw that our App component was wrapped in JSX, and I mentioned that it's a 'syntax extension for javascript'.
+In the last video, you saw that our in our index.js file. our App component was wrapped in JSX, and I mentioned that it's a 'syntax extension for javascript'.
 
 [SC]
 JSX => babel compiler
@@ -114,7 +114,7 @@ If you look carefully, you'll see that this function returns a single react elem
 [VO]
 As we've already learned, each of these html looking things are actually React elements, nodes on our virtual dom tree. These nodes get bundled together in our App, and then we pass them into the ReactDOM.render function and that render function decides how to update and build our web page as efficiently as possible.
 
-And do you notice -- we're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let the
+And do you notice -- we're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let take care of the details.
 
 [SC]
 

@@ -142,7 +142,7 @@ const HeartMessage = () => {
     }
 
 [VO]
-Up above the App component, let's make another component, called HeartMessage.
+Up above the App component, let's make another component, called Heart.
 
 You can see that those squiggles are back, because I've defined a function but I'm not using it anywhere. We'll use it very soon.
 

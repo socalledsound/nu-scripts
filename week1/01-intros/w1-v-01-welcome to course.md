@@ -52,7 +52,7 @@ JS logo
 Did I just say javascript? Wait let me say that again. Javascript. JAVASCRIPT!
 
 [SC]
-React === javascript
+(javascript) => React
 [VO]
 Learning React means learning to write javascript at a high level!
 
@@ -60,12 +60,14 @@ I know that you've already learned a little javascript and some of you may have 
 
 When I myself started learning React, I actually thought I was pretty good at javascript, and people had been paying me to be pretty good at javascript for quite a few years.
 
-But let me tell you, the things I learned about javascript from learning React and Redux just absolutely blew my mind, because React leans very heavily on the declarative and functional style of javascript. To write it well you'll need to be well-versed in this style of javascript.
+But let me tell you, the things I learned about javascript from learning React and Redux just absolutely blew my mind, because React leans very heavily on the declarative and functional style of javascript.
+
+If you understand the basics of this style of javascript, I guarantee that learning React will be a lot easier, React will make a lot more sense, and your path to becoming a rcokstar react developer will be quicker.
 
 [SC]
 
 [VO]
-So this course will begin with a brief introduction to functional programming in javascript, where you'll learn about pure functions, higher order functions, closures and not mutating data and everything else that you absolutely need to know about declarative javascript before you tackle React.
+So this course will begin with a brief introduction to functional programming in javascript, where you'll learn about pure functions, higher order functions and how to avoid mutating data, all things that you absolutely need to know about declarative javascript before you tackle React.
 
 We're calling it 'React Without React', because what we'll build in the first section of the course won't use React but, honestly, it will look a lot like React code, if you squint. Our hope is that it will be a great way to ground you in the fundamentals of javascript that you need to thrive as a React developer and will also prepare you for React by helping you understand how it does its magic.
 

@@ -2,6 +2,10 @@
 
 # i could also lean on Minae's version of this and not do it....
 
+# actually no
+
+# take my versions, shorten and combine with index.js
+
 https://reactjs.org/docs/strict-mode.html
 
 https://reactjs.org/docs/jsx-in-depth.html

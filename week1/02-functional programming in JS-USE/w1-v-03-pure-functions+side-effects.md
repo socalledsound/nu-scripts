@@ -8,7 +8,7 @@ FUNCTIONAL JAVASCRIPT
 
 Welcome back.
 
-In the last video, I introduced this idea of functional or declarative javascript, and also said that React utilizes functional javascript.
+In the last video, I talked about some of the big ideas of React, and made a big point out of the fact that React utilizes functional javascript.
 
 In fact, I think you could safely say that the wild growth of functional and declarative javascript over the last decade goes hand in hand with the wild and explosive growth of React -- the two are inextricably linked.
 
@@ -24,7 +24,9 @@ functions should avoid side effects
 [VO]
 need more text here
 
-If you're new to functional javascript, you're in for a treat! It's a powerful and elegant way to write javascript code and it also can be pretty challenging. There will most likely be some brain benders coming your way over the next few weeks, and most of them will have to do with higher order functions of one kind or another.
+If you're new to functional javascript, you're in for a treat! It's a powerful and elegant way to write javascript code and it also can be pretty challenging. There will most likely be some brain benders coming your way over the next few weeks.
+
+, and most of them will have to do with higher order functions of one kind or another.
 
 But at it's core, functional programming actually a pretty simple idea: the goal is to write small and specific functions that can be combined and organized to create larger functions.
 
@@ -65,64 +67,13 @@ const message = 'hi'
 console.log(message)
 }
 
-[VO]
-So, for starters, as you probably know, we can declare a function with the function keyword. The curly braces denote the scope of the function. Variables declared inside that function are not available elsewhere in the program. This is very useful for keeping our data safe and sound, as we'll see throughout this course.
-
-[SC]
 const logMessage = () => {
 const message = 'hi'
 console.log(message)
 }
 
 [VO]
-We can also use the arrow syntax to define functions. Personally, I prefere that syntax in many cases! It's usually shorter and...it looks cool, too.
-
-[SC]
-const logMessage = (msg) => {
-console.log(msg)
-}
-logMessage('hi')
-
-[VO]
-Functions can accept one or more parameters.
-
-[SC]
-const doSomethingXTimes = (x, func) => {
-for(let i = 0; i < x; i++){
-func()
-}
-}
-const sayHi = () => {
-console.log('hi)
-}
-
-doSomethingXTimes(3, sayHi)
-
-[VO]
-And, functions can be the input parameters of another function!
-
-[SC]
-MIND BLOWN EMOJI
-[VO]
-
-[SC]
-
-function sum(a,b){
-return a + b
-}
-
-const sum = (a,b) => {
-return a + b
-}
-
-[VO]
-functions can also return a value, like this....or, in the arrow syntax, like this
-
-[SC]
-const sum = (a,b) => a + b
-
-[VO]
-But if we want to return a value from a single line arrow function we can get rid of the curly braces and return a value like this.
+So, for starters, as you probably know, we can declare a function with the function keyword, or with the arrow syntax. The curly braces denote the scope of the function. Variables declared inside that function are not available elsewhere in the program.
 
 [SC]
 
@@ -140,13 +91,78 @@ Function scope is tremendously useful for keeping your data pure. This is called
 
 Here the variable named secret can't be accessed from outside of the scope of the function in which it is defined.
 
-One of the key benefits of functional programming is data integrity. In funcitonal programming, as we'll see, on of the key mantras is 'never mutate data'.
+[SC]
+const logMessage = (msg) => {
+console.log(msg)
+}
+logMessage('hi')
 
-So, for instance, we almost always declare our variables as constants, and then if we want to create a new variable based on that old variable, we simply make a new variable.
+[VO]
+Functions can accept one or more parameters.
 
-And we always try to pass our data in to a function in which we want to use it, rather than relying on a parent scope.
+[SC]
 
-Many of the design choices of both the React and Redux libraries are premised upon this principle.
+const doSomethingXTimes = (x, func) => {
+for(let i = 0; i < x; i++){
+func()
+}
+}
+
+const sayHi = () => {
+console.log('hi')
+}
+
+const beAmazed = () => {
+console.log('😲')
+}
+
+doSomethingXTimes(3, sayHi) // logs hi to the console three times
+doSomethingXTimes(3, beAmazed) // logs hi to the console three times
+
+[VO]
+And, functions can be the input parameters of another function! In other words, functions can be used inside other functions -- and we can pass them in just as we would a variable. So, here, we can write a function that executes any function that we pass in to it, three times.
+
+[SC]
+shocked face EMOJI x 3
+[VO]
+Not terribly useful, I'll admit, but I hope it gives you a hint of the possibilities inherent in this idea of composing software using functions.
+[SC]
+
+function sum(a,b){
+return a + b
+}
+
+const sum = (a,b) => {
+return a + b
+}
+
+[VO]
+functions can also return a value, like this....or, in the arrow syntax, like this
+
+[SC]
+const sum = (a,b) => a + b
+
+[VO]
+And if we want to return a value from a single line arrow function we can get rid of the curly braces and return a value like this.
+
+[SC]
+
+const saySomething = (msg) => console.log(msg)
+const logSurprisedFace = () => console.log('😲')
+const logSunglassesFace = () => console.log('😎')
+const saySomethingThenReact = (saySomething, reaction) => {
+return (msg) => {
+saySomething(msg)
+reaction()
+}
+}
+
+const saySomethingThenReactSurprised = saySomethingThenReact(saySomething, logSurprisedFace)
+const saySomethingThenReactPleased = saySomethingThenReact(saySomething, logSunglassesFace)
+saySomethingThenReact(saySomething, logSurprisedFace)('wait, what?')
+[VO]
+Remember how functions can be passed in as parameters? Well guess what? They can also be returned from other functions!
+Again, notice how I can compose with functions, making
 
 [SC]
 const sum = (a,b) => a + b
@@ -176,6 +192,15 @@ Now....it's probably immediately obvious that just about everything neat or usef
 
 [SC]
 
+[VO]
+As you'll see in this course, React leans on functional programming to help us keep our programs predictable by, first of all asking us to make sure that all side effects are carefully controlled; second, second, encouraging us to always avoid mutating our app's data; and third, encouraging us to make sure that the functions that make up our app are as pure as they possibly can be. And one of the key ways that React does this is by taking a declarative approach to building user interfaces.
+
+But what does this mean?
+
+# end
+
+[SC]
+
     const MyReactComponent = () => {
         return React.createElement('div', null, null)
     }
@@ -194,7 +219,7 @@ There will be times when you think to yourself, jeez, does it have to be this ha
 
 At those times, try to remember that the reason it
 
-# bring this back in:
+# bring this back in?:
 
     const messages = []
     for(let i = 0; i < messages.length; i++){
