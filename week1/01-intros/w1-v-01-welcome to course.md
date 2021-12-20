@@ -3,14 +3,14 @@
 [SC]
 
 [VO]
-Hello, everyone! And welcome.
+Hello and welcome to React!
 
-In this course, you will be learning to use the React front-end library for building web applications with javascript.
+<!-- In this course, you will be learning to use the React front-end library for building web applications with javascript. -->
 
 [SC]
 
 [VO]
-We'll build a large, professional application that will challenge your skills and introduce you to many of the most useful tools and techniques in the React ecosystem.
+In this course, we'll build a large, professional application that will challenge your skills and introduce you to many of the most useful tools and techniques in the React ecosystem.
 
 [SC]
 REACTSTRAP
@@ -43,42 +43,52 @@ REDUX TOOLKIT
 [VO]
 And Redux and redux toolkit for global state management.
 
+[SC]
+
 [VO]
-And along the way, you'll learn a lot about javascript.
+This big project will challenge you in all kinds of ways and will provide you with the knowledge and, hopefully, the confidence, to tackle React projects of any scale and scope.
+
+[SC]
+
+[VO]
+We'll also build a few smaller projects along the way. React is great, not just for big projects, but for prototyping, and these smaller projects will give you a chance to practice your skills, and hopefully also give you the confidence to make your own projects.
+
+[SC]
+
+[VO]
+You're going to learn a lot in this course and it's going to be challenging but the biggest challenge of all is the challenge you need to present to yourself, to take the skills you learn here and build stuff!
+
+So remember: always be working on your portfolio project or some small side project, even if you don't feel that you have the skills to do it -- you'll GET the skills by doing the work.
+
+[SC]
+
+[VO]
+And by far the biggest of those skills that you'll learn will be javascript.
 
 [SC]
 JS logo
 [VO]
-Did I just say javascript? Wait let me say that again. Javascript. JAVASCRIPT!
+Did I just say javascript? Yes, javascript.
+
+I know that you've already learned a little javascript and some of you may have even learned a lot of javascript. That javascript knowledge will serve you well with React.
 
 [SC]
 (javascript) => React
 [VO]
-Learning React means learning to write javascript at a high level!
-
-I know that you've already learned a little javascript and some of you may have even learned a lot of javascript. Your javascript knowledge will serve you well with React.
+But learning React means learning to write javascript at a higher level.
 
 When I myself started learning React, I actually thought I was pretty good at javascript, and people had been paying me to be pretty good at javascript for quite a few years.
 
 But let me tell you, the things I learned about javascript from learning React and Redux just absolutely blew my mind, because React leans very heavily on the declarative and functional style of javascript.
 
-If you understand the basics of this style of javascript, I guarantee that learning React will be a lot easier, React will make a lot more sense, and your path to becoming a rcokstar react developer will be quicker.
+If you can get comfortable this style of javascript, I guarantee that learning React will be a lot easier, React will make a lot more sense, and you will be on a solid path to becoming a rockstar react developer.
 
 [SC]
 
 [VO]
 So this course will begin with a brief introduction to functional programming in javascript, where you'll learn about pure functions, higher order functions and how to avoid mutating data, all things that you absolutely need to know about declarative javascript before you tackle React.
 
-We're calling it 'React Without React', because what we'll build in the first section of the course won't use React but, honestly, it will look a lot like React code, if you squint. Our hope is that it will be a great way to ground you in the fundamentals of javascript that you need to thrive as a React developer and will also prepare you for React by helping you understand how it does its magic.
-
-[SC]
-HEARTS
-LOGIN
-
-[VO]
-And throughout the course, you'll also build several smaller projects.
-
-Small projects are great, because they allow us to practice specific skills, give us practice taking a React project from nothing to something and, hopefully, will give you the experience that you need to feel confident getting started with your own projects, because at the end of the day, those personal projects are what will define your success as a React developer!
+This first section is sort of like 'React Without React', because what we'll build in the first section of the course won't use React but, honestly, it will look a lot like React code, if you squint. Our hope is that it will be a great way to ground you in the fundamentals of javascript that you need to thrive as a React developer and will also prepare you for React by helping you understand how it does its magic.
 
 [SC]
 REACT LOGO
@@ -86,11 +96,11 @@ REACT LOGO
 
 Honestly, I really love React, I think it's a really fun way to build web sites. And I hope that by the end of this course, you'll feel the same way.
 
-You're going to learn a lot in this course and it's going to be challenging but the biggest challenge of all is the challenge you need to present to yourself, to take the skills you learn here and build stuff!
+[SC]
+20 minute rule
+[VO]
 
-So remember: always be working on your portfolio project or projects, even if you don't feel that you have the skills to do it -- you'll GET the skills by doing the work.
-
-And, as always, remember the 20 minute rule. Reach out for help, either to your instructor, or in the React slack channel. And remember to share your work with your peers! Let's inspire each other to become great React developers!
+And, as always, remember the 20 minute rule. Reach out for help, either directly to your instructor, or in the React slack channel. And remember to share your work with your peers! Let's inspire each other to become great React developers!
 
 [SC]
 why React?

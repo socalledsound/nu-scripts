@@ -1,5 +1,5 @@
 INTROS
-01 - need edit
+01 - pretty good? record
 02 - pretty good? record
 
 FUNCTIONAL JAVASCRIPT
@@ -14,7 +14,7 @@ FUNCTIONAL JAVASCRIPT
 I HEART REACT
 10 - good record
 11 - no video?
-12 - NEED EDIT
+12 - NEED EDIT SKIP FOR NOW
 13 - SMALL TWEAKS
 14 - SMALL TWEAKS
 15 - SMALL TWEAKS

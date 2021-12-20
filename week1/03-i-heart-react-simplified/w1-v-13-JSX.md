@@ -5,7 +5,7 @@ https://reacttraining.com/blog/jsx-the-confusing-parts/
 [SC]
 JSX
 [VO]
-In this video, I want to take a deeper dive into JSX, go over it's syntax, and give you some examples of JSX in action. JSX is one of the most powerful and unique aspects of writing React code, so mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. Let's get started.
+In this video, I want to take a deeper dive into JSX, go over it's syntax, and show you some examples of JSX in action. JSX is one of the most powerful and unique aspects of writing React code, so mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. Let's get started.
 
 [SC]
 <App />
@@ -53,20 +53,6 @@ But thanks to JSX, rather needing to say something like this
 We can write something that looks almost identical to HTML and let React take care of the rest.
 
 [SC]
-
-    <div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <a className="some-link" href="https://thing.org">click me</a>
-        <p>this is some text</p>
-    </div>
-
-[VO]
-
-# rewrite this
-
-IN this video, we'll see that we can use JSX to create React elements that mirror all of the usual HTML elements, like for instance a div, or an img tag or an anchor tag, and we can also use JSX
-
-[SC]
 show app component in file browser
 [VO]
 To see JSX in action, let's go to the App component, which is in the App.js file. Open it up in vs code now. You'll find it just above the index.js file that we've been looking at, in the file browser.
@@ -77,7 +63,7 @@ To see JSX in action, let's go to the App component, which is in the App.js file
     import './App.css';
 
 [VO]
-At the top are our imports. Remember how I said, a few videos ago, that you can import images in a javascript app? Here, we're importing an svg file, which we then display on our page, and we're also importing some css.
+At the top are our imports. First, we're importing an svg file, which we then display on our page, and we're also importing some css classes from App.css.
 
 [SC]
 app function
@@ -117,7 +103,7 @@ If you look carefully, you'll see that this function returns a single react elem
 [VO]
 As we've already learned, each of these html looking things are actually React elements, nodes on our virtual dom tree. These nodes get bundled together in our App, and then we pass them into the ReactDOM.render function and that render function decides how to update and build our web page as efficiently as possible.
 
-And do you notice -- we're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let take care of the details.
+We're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let React take care of the details.
 
 [SC]
 
@@ -146,7 +132,7 @@ similarly, img and anchor tags have all of the properties that we'd expect from 
     <img src={logo} className="App-logo" alt="logo" />
 
 [VO]
-We can use javascript expressions directly in our JSX if we wrap them inside curly braces. On this page, we're setting the src of the image tag to the image that was imported up above and stored in the variable 'logo'.
+Also notice that we can use javascript expressions directly in our JSX if we wrap them inside curly braces. On this page, we're setting the src of the image tag to be the logo variable that holds the svg image that we imported up above.
 
 [SC]
 
@@ -178,12 +164,35 @@ And I want to remind you, this whole return expression returns that single Div w
 which in turn gets invoked in the index.js file, remember?
 
 [SC]
-
+<>
+<MyHeader>
+<AComponent>
+<AnotherComponent>
+</>
 [VO]
-At their most basic level, React components are ways of bundling together React elements, in this way. We use them to declaratively compose user interfaces, and organize chunks of our user interface..
+At their most basic level, React components are ways of bundling together React elements. We use them to declaratively compose user interfaces, and organize chunks of our user interface.
 
 [SC]
+const Header = () => {
 
+return (
+
+<header className="App-header">
+<img src={logo} className="App-logo" alt="logo" />
+<p>
+Edit <code>src/App.js</code> and save to reload.
+</p>
+<a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+Learn React
+</a>
+</header>
+)
+}
 [VO]
 If I want to, I can take all of the lines that make up the header and put them in their own component. I can put this new function in its own file and import it, but for now I'm just going to write it up above, like this. It's just another arrow function, like the App component and like the App component it also has a name that begins with a capital letter. It's a pretty important style guideline to follow -- always start your React components with capital letters.
 
@@ -208,7 +217,7 @@ We're going to get some practice doing this in the next video, but before we go,
 
 [VO]
 
-We can also set properties on elements that are generated by our custom components. They're not handled in quite the same way as with DOM elements, so, for instance, we can't set css classnames or other properties and attributes that are specific to the DOM API.
+We can also set properties on elements that are generated by our custom components. They're not handled in quite the same way as with DOM elements, so, for instance, though we can use the key 'classname' on our own components, it won't actually set the css classname, and in general it's a good idea to avoid using properties that collide with the DOM API.
 
 [SC]
 
@@ -247,12 +256,52 @@ I can use that value, in my component, like this.
 
 [SC]
 
+    const ChildComponent = (props) => {
+        return(
+            <div>{props.text}</div>
+        )
+    }
+
+
+    const ParentComponent = () => {
+        return (
+            <ChildComponent text='hi there!'>
+        )
+    }
+
 [VO]
-Handling props
+Props are the key to understanding the flow of data in a React app.
 
-define our own properties, like I'm doing here. We can use the properties to send data from a parent component to a child component.
+They're a lot like arguments, except that we name the argument when we invoke the component in our JSX.
 
-In the next video, we'll practice writing components using JSX. See you there.
+We can call the prop anything we want, we just have to be sure to remember that whatever we call it when we pass the data in is the key we will use to access that data in the child component.
+
+[SC]
+PROPS ARE READ-ONLY
+[VO]
+Now, there is one very important thing to remember. Props are read only. What does this mean? And why is that a good thing?
+
+[SC]
+const sum = (a, b) => a + b
+[VO]
+Remember pure functions? Functions that will always return the same result for a given input?
+
+[SC]
+const impureSum = (a, b) => {
+const impureA = Math.random() \* a
+return impureA + b
+}
+[VO]
+Contrast that function with this version, which is obviously not as predictable and certainly not pure. Here, we have some process inside the function that modifies an input in an unpredictable way, and it makes this function a lot less predictable.
+
+[SC]
+
+[VO]
+If you try to modify a prop directly, you'll see that it's not possible. And....I hope you can see now why that's a really good thing!
+
+And that's most of what you need to know about JSX!
+
+In the next video, we'll get some practice writing components with it. I'll see you there.
 
 # end
 

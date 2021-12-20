@@ -1,4 +1,8 @@
 https://css-tricks.com/an-illustrated-and-musical-guide-to-map-reduce-and-filter-array-methods/
+https://dmitripavlutin.com/javascript-array-from-applications/
+https://www.freecodecamp.org/news/array-map-explained-in-4-levels-of-difficulty/
+https://dev.to/adnanbabakan/declarative-programming-with-javascript-2h97
+react = mapping data into react elements
 
 [SC]
 
