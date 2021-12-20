@@ -1,1 +1,1 @@
-# need to rewrite this with the index.js in it
+# need to rewrite this, shorten it, include the index.js in it

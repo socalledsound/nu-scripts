@@ -55,49 +55,23 @@ So when we talk about React being a 'declarative' approach to building user inte
 
 [SC]
 
-    <p>what?!</p>
+    <p>how?!</p>
 
 [VO]
-React borrows a lot from HTML to do this, in fact, the syntax that React supplies us with for building our interfaces -- JSX -- looks a lot like HTML. Think about it -- do you actually have any idea how <p>what?!</p> is converted into text in your browser? HTML simply tells the browser what you want done, and leaves the 'how' of it to the web browser.
+React borrows a lot from HTML to do this, in fact, the syntax that React supplies us with for building our interfaces -- JSX -- looks a lot like HTML. Think about it -- do you actually have any idea how <p>how?!</p> is converted into text in your browser? HTML simply tells the browser what you want done, and leaves the 'how' of it to the web browser.
+
+[SC]
+
+[VO]
+
+[SC]
+
+[VO]
+Say we have a list of posts that we just retrieved from a news feed of some sort
+
+# end
 
 # should this video end here?
-
-[SC]
-
-const addOne = (num) => num + 1
-
-const myNumber = 10
-const newNumber = addOne(myNumber) // 11
-
-[VO]
-At the other extreme, look at this javascript code. We have, first of all a function. It's a pure function and it's a pretty simple function: addOne. It takes in a number and adds one to it.
-Now, I should say -- a benefit of imperative code is, it's very easy to see what's going on here, right?
-
-[SC]
-
-const addOne = (num) => num + 1
-
-const numbers = [1,6,3,7]
-const newNumbers = []
-
-for(let i = 0; i < numbers.length; i++){
-newNumbers[i] = addOne(numbers[i])
-}
-
-console.log(numbers)
-console.log(newNumbers)
-
-[VO]
-And if I want to add one to every item in an array of numbers, and make a new array with the new numbers? I can use a for loop.
-
-This is an imperative approach. It's very explicit and easy to read. But...for loops are also the biggest single source of errors in all of computer programming!
-
-[SC]
-
-const numbers = [1,6,3,7]
-const newNumbers = numbers.map((num) => num + 1)
-[VO]
-And, at least in javascript -- thanks to it's support for higher order functions -- there's a better way.
 
 # end
 

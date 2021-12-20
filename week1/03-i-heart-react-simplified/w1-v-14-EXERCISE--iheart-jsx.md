@@ -18,7 +18,52 @@ import './App.css'
 [VO]
 So, we've got a blank page.
 
-Let's start by importing the associated css file. Remember? We might want to write some css rules.
+[SC]
+.App-header {
+background-color: #744b78;
+min-height: 20vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: 3rem;
+color: white;
+}
+
+.hearts-container {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+}
+
+.heart {
+width: 10rem;
+height: 10rem;
+margin: 2rem;
+}
+
+.heart-img {
+width: 150%;
+}
+
+.heart-message {
+position: relative;
+width: 8rem;
+top: -9rem;
+left: 1.5rem;
+color: white;
+color: red;
+font-size: 1.5rem;
+text-align: center;
+}
+
+[VO]
+Let's start by importing the associated css file. And actually, while we're at it, go ahead and replace the css in App.css with the css for this project, which I wrote for you. You can find it on the page for this exercise, if you scroll down a bit. I'm not going to talk about it much, because we want to focus on React, it's just some basic flexbox layout, similar to what we did in the first section of this course, without react.
+
+[SC]
+
+[VO]
+Next, let's import a logo image
 
 Next, we'll write a stateless functional component.
 
@@ -137,7 +182,7 @@ Remember, if we want the compiler to know that we're using javascript and not ju
 Still with me? With those baby steps out of the way, let's refactor this a little bit.
 
 [SC]
-const HeartMessage = () => {
+const Heart = () => {
 
     }
 
@@ -147,7 +192,7 @@ Up above the App component, let's make another component, called Heart.
 You can see that those squiggles are back, because I've defined a function but I'm not using it anywhere. We'll use it very soon.
 
 [SC]
-const HeartMessage = (props) => {
+const Heart = (props) => {
 return (
 
 <div>
@@ -156,7 +201,7 @@ return (
 )
 }
 [VO]
-But first, let's define a return expression. It's going to also just be a div that encloses a javascript expression, but this time, let's give that a value of props.msg. And let's be sure to bring props in as an argument.
+But first, let's define a return expression. It's going to have a div with a classname of heart that will have a few children.  First, an img tag with a  that has a p tagencloses a javascript expression, but this time, let's give that a value of props.msg. And let's be sure to bring props in as an argument.
 
 So it should look something like this. And, still, squiggly. Let's fix that now.
 
