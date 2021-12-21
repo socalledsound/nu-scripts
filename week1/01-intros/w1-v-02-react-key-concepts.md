@@ -34,13 +34,13 @@ And it's particularly fun if you embrace the challenge and remember that as you 
 Why React?
 React === jobs
 [VO]
-So I guess I'll start with a very practical reason to learn React. It's where the jobs are.
+And that's one of the reasons that you see React listed as a prerequisite skill for so many jobs postings. I mean, there are a lot of React developer jobs because there's a lot of React code out there, but even for jobs that don't necessarily require React, you'll see React knowledge as a requirement.
 
 [SC]
 Why React?
 knowledge of React === knowledge of javascript
 [VO]
-And a lot of times, even for a job that isn't focused on React development, knowing React is a huge benefit if not an outright requirement. That's because knowledge of React is a great way to demonstrate a high level of proficiency with javascript. If you can build a React site and understand how it works, you'll probably be able to quickly pick up other libraries, advance your career, and be a benefit to your co-workers.
+That's because knowledge of React is a great way to demonstrate a high level of proficiency with javascript. If you can build a React site and understand how it works, you'll probably be able to quickly pick up other libraries, advance your career, and be a benefit to your co-workers.
 
 [SC]
 Why React?
@@ -56,7 +56,7 @@ Why React?
 So why did React become so popular?
 
 [VO]
-So, if two of the great reasons to use React are that everybody uses react, and lots of people want to hire people who know it to use it to -- then the next obvious question is, WHY does everybody use React? How and why did React become the standard for front end javascript libraries? Obviously, being born at facebook helped. But why, after it's introduction in 2013, did React so quickly take over the web?
+So, one great reason to use React is that there's a lot of demand for React developers and another is, it's a little bit easier to learn, because there are so many React developers. But then, the next obvious question is....WHY are there so many React developers and jobs? Obviously, being born at facebook helped. But why, after it's introduction in 2013, did React so quickly take over the web?
 
 <!-- [SC]
 (relatively) easy to learn
@@ -66,7 +66,7 @@ First of all, it's relatively easy to learn, if you know javascript, html and cs
 [SC]
 GREAT DEVELOPER TOOLS
 [VO]
-To start with, React comes with great developer tools. As we'll soon see, React ships with a great set of developer tools, that make it easy to get up and running and stay up and running, and let you focus more on your development and less on troubleshooting your build tools.
+To start with, React comes with great developer tools. While the installation process is a bit of a bear the first few times you do it, the React team has done a lot to streamline that process so you can get up and running relatively quickly. And they've also built a great set of tools for debugging. All this means that you can spend more time building and less time configuring your project.
 
 [SC]
 DECLARATIVE USER INTERFACE (JSX)
@@ -91,6 +91,12 @@ And, though you may not immediately see how this would be a good thing....think 
 THE VIRTUAL DOM
 [VO]
 And finally, React uses a virtual DOM, which manages updates to our user interface so that it updates only the parts of our interface that have changed since the last render. This can make the rendering of our app much more performant. And for the most part, it does this declaratively, which means that we don't have to directly manage the DOM.
+
+[SC]
+
+[VO]
+another line here about other libraries.
+
 [SC]
 FUNCTIONAL JAVASCRIPT
 [VO]

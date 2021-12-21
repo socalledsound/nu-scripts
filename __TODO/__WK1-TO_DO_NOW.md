@@ -4,6 +4,7 @@ INTROS
 
 FUNCTIONAL JAVASCRIPT
 03 - need rewrite - focus more on functions/components
+CODE CHALLENGE - higher order functions
 04 - FINISH THIS - explain declarative javascript
 05 - NEED FINISH
 06 - good record

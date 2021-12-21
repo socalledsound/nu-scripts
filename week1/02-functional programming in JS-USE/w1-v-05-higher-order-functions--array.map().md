@@ -6,6 +6,47 @@ react = mapping data into react elements
 
 [SC]
 
+    const doSomethingXTimes = (x, func) => {
+        for(let i = 0; i < x; i++){
+            func()
+        }
+    }
+
+    const sayHi = () => {
+        console.log('hi')
+    }
+
+    const beAmazed = () => {
+        console.log('😲')
+    }
+
+    doSomethingXTimes(3, sayHi) // logs hi to the console three times
+    doSomethingXTimes(3, beAmazed) // logs hi to the console three times
+
+[VO]
+And, functions can be the input parameters of another function! In other words, functions can be used inside other functions -- and we can pass them in just as we would a variable. So, here, we can write a function that executes any function that we pass in to it, three times.
+
+The function that we pass in here is called a callback function, you have probably already seen them?
+
+[SC]
+element.addEventListener("click", () => { console.log("Hello World!")});
+[VO]
+For instance, when we create an eventListener in javascript, we pass in a callback function, which is used in the function that we pass it in to, when the specified event is triggered.
+
+[SC]
+
+[SC]
+
+[VO]
+
+And, remember how functions can be passed in as parameters? Well guess what? They can also be returned from other functions!
+
+A function which either has a function as one of its arguments or returns a function is called a higher order function. They
+
+This capability of functions allows us to use them in lots of interesting ways.
+
+Again, notice how I can compose with functions, making
+
 const addOne = (num) => num + 1
 
 const myNumber = 10

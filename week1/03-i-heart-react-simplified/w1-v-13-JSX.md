@@ -8,49 +8,11 @@ JSX
 In this video, I want to take a deeper dive into JSX, go over it's syntax, and show you some examples of JSX in action. JSX is one of the most powerful and unique aspects of writing React code, so mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. Let's get started.
 
 [SC]
-<App />
-[VO]
-In the last video, you saw that our in our index.js file. our App component was wrapped in JSX, and I mentioned that it's a 'syntax extension for javascript'.
 
-[SC]
-JSX => babel compiler
+    But what is JSX
 
 [VO]
-And I mentioned that the Babel compiler interrprets that JSX syntax and turns it into valid javscript so that the browser can read it.
-
-[SC]
-<App />
-[VO]
-So that, while our page just says <App />,
-
-[SC]
-React.createElement(App, null, null)
-[VO]
-the babel compiler will output some javascript that looks like this, and will return a React element, one of the nodes that make up the virtual DOM node tree.
-
-[SC]
-createElement('div',{className: 'circle'}, [])
-[VO]
-Remember the 'props' object we had in our own createElement function in 'react without react'?
-
-[SC]
-React.createElement(type, props, children)
-[VO]
-That function was modeled on React.createElement.
-
-[SC]
-
-return createElement('div', { className: 'greeting'}, 'hi there')
-
-[VO]
-But thanks to JSX, rather needing to say something like this
-
-[SC]
-
-    <div classname='greeting'>hi there!</div>
-
-[VO]
-We can write something that looks almost identical to HTML and let React take care of the rest.
+Now, first of all, what the heck is JSX? JSX is a syntax extension for javascript, which means that it's We saw that in our index.js file, we invoke our App component, and
 
 [SC]
 show app component in file browser
@@ -304,6 +266,55 @@ And that's most of what you need to know about JSX!
 In the next video, we'll get some practice writing components with it. I'll see you there.
 
 # end
+
+## most recent edit out:
+
+[SC]
+<App />
+[VO]
+In the last video, you saw that our in our index.js file. our App component was wrapped in JSX, and I mentioned that it's a 'syntax extension for javascript'.
+
+[SC]
+JSX => babel compiler
+
+[VO]
+And I mentioned that the Babel compiler interrprets that JSX syntax and turns it into valid javscript so that the browser can read it.
+
+[SC]
+<App />
+[VO]
+So that, while our page just says <App />,
+
+[SC]
+React.createElement(App, null, null)
+[VO]
+the babel compiler will output some javascript that looks like this, and will return a React element, one of the nodes that make up the virtual DOM node tree.
+
+[SC]
+createElement('div',{className: 'circle'}, [])
+[VO]
+Remember the 'props' object we had in our own createElement function in 'react without react'?
+
+[SC]
+React.createElement(type, props, children)
+[VO]
+That function was modeled on React.createElement.
+
+[SC]
+
+return createElement('div', { className: 'greeting'}, 'hi there')
+
+[VO]
+But thanks to JSX, rather needing to say something like this
+
+[SC]
+
+    <div classname='greeting'>hi there!</div>
+
+[VO]
+We can write something that looks almost identical to HTML and let React take care of the rest.
+
+###
 
 Take a quick glance at the classNames you see specified on this page, then click on that App.css file in the file browser.
 

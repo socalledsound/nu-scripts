@@ -13,24 +13,23 @@ In the last video, I talked about some of the big ideas of React, and made a big
 In fact, I think you could safely say that the wild growth of functional and declarative javascript over the last decade goes hand in hand with the wild and explosive growth of React -- the two are inextricably linked.
 
 [SC]
-IN FUNCTIONAL JAVASCRIPT:
 
-functions should do one thing
-functions should be predictable
-functions should be self contained
-functions should have a return value
-functions should avoid side effects
+(data, someFunction) => someFunction(newData)
 
 [VO]
-need more text here
+At it's core, functional programming is actually a pretty simple idea: the goal is to write small and specific functions that process some data and can be combined and organized to create larger functions.
 
-If you're new to functional javascript, you're in for a treat! It's a powerful and elegant way to write javascript code and it also can be pretty challenging. There will most likely be some brain benders coming your way over the next few weeks.
+[SC]
+(data) => InterfaceElement(data)
+[VO]
+In React, we use functions to create and update user interface elements.
 
-, and most of them will have to do with higher order functions of one kind or another.
+[SC]
 
-But at it's core, functional programming actually a pretty simple idea: the goal is to write small and specific functions that can be combined and organized to create larger functions.
+    (a, b) => a + b
 
-So, maybe the first thing we should do is to review the humble and oh so powerful function.
+[VO]
+So, let's get started by reviewing the humble, flexible and oh so powerful function.
 
 [SC]
 
@@ -51,29 +50,18 @@ Functions help us structure programs, reduce repetition and give us a way to use
 
 [SC]
 
-[VO]
+    function logMessage(){
+        const message = 'hi'
+        console.log(message)
+    }
 
-Functions in javascript are immensely powerful and flexible, and they can also be super fun!
-
-Here's a kind of nonsense function that I think demonstrates how weird functions can get in javascript.
-
-Do you know what the value of this function expression is?
-
-If so, you're well on your way. If not, don't worry, it should make perfect sense by the end of this video.
-
-[SC]
-function logMessage(){
-const message = 'hi'
-console.log(message)
-}
-
-const logMessage = () => {
-const message = 'hi'
-console.log(message)
-}
+    const logMessage = () => {
+        const message = 'hi'
+        console.log(message)
+    }
 
 [VO]
-So, for starters, as you probably know, we can declare a function with the function keyword, or with the arrow syntax. The curly braces denote the scope of the function. Variables declared inside that function are not available elsewhere in the program.
+So, for starters, as you probably remember, we can declare a function with the function keyword, or with the arrow syntax. The curly braces denote the scope of the function. Variables declared inside that function are not available elsewhere in the program.
 
 [SC]
 
@@ -92,42 +80,25 @@ Function scope is tremendously useful for keeping your data pure. This is called
 Here the variable named secret can't be accessed from outside of the scope of the function in which it is defined.
 
 [SC]
-const logMessage = (msg) => {
-console.log(msg)
-}
-logMessage('hi')
+
+    const logMessage = (msg) => {
+        console.log(msg)
+    }
+    logMessage('hi')
 
 [VO]
 Functions can accept one or more parameters.
 
 [SC]
-
-const doSomethingXTimes = (x, func) => {
-for(let i = 0; i < x; i++){
-func()
+const logMessage = (msg = 'hi') => {
+console.log(msg)
 }
-}
-
-const sayHi = () => {
-console.log('hi')
-}
-
-const beAmazed = () => {
-console.log('😲')
-}
-
-doSomethingXTimes(3, sayHi) // logs hi to the console three times
-doSomethingXTimes(3, beAmazed) // logs hi to the console three times
-
+logMessage() // hi
+logMessage('we will be using this soon') // we will be using this soon
 [VO]
-And, functions can be the input parameters of another function! In other words, functions can be used inside other functions -- and we can pass them in just as we would a variable. So, here, we can write a function that executes any function that we pass in to it, three times.
+And those input parameters can have default values!
 
 [SC]
-shocked face EMOJI x 3
-[VO]
-Not terribly useful, I'll admit, but I hope it gives you a hint of the possibilities inherent in this idea of composing software using functions.
-[SC]
-
 function sum(a,b){
 return a + b
 }
@@ -144,25 +115,6 @@ const sum = (a,b) => a + b
 
 [VO]
 And if we want to return a value from a single line arrow function we can get rid of the curly braces and return a value like this.
-
-[SC]
-
-const saySomething = (msg) => console.log(msg)
-const logSurprisedFace = () => console.log('😲')
-const logSunglassesFace = () => console.log('😎')
-const saySomethingThenReact = (saySomething, reaction) => {
-return (msg) => {
-saySomething(msg)
-reaction()
-}
-}
-
-const saySomethingThenReactSurprised = saySomethingThenReact(saySomething, logSurprisedFace)
-const saySomethingThenReactPleased = saySomethingThenReact(saySomething, logSunglassesFace)
-saySomethingThenReact(saySomething, logSurprisedFace)('wait, what?')
-[VO]
-Remember how functions can be passed in as parameters? Well guess what? They can also be returned from other functions!
-Again, notice how I can compose with functions, making
 
 [SC]
 const sum = (a,b) => a + b
@@ -191,11 +143,72 @@ So, for instance, logging to the console, or taking in user input, or even using
 Now....it's probably immediately obvious that just about everything neat or useful about a web site is, therefore a side effect. They are unavoidable and, we wouldn't want to avoid them. But what we can do is, be careful with them.
 
 [SC]
+ReactDOM.render()
 
 [VO]
-As you'll see in this course, React leans on functional programming to help us keep our programs predictable by, first of all asking us to make sure that all side effects are carefully controlled; second, second, encouraging us to always avoid mutating our app's data; and third, encouraging us to make sure that the functions that make up our app are as pure as they possibly can be. And one of the key ways that React does this is by taking a declarative approach to building user interfaces.
+Generally, this means, setting them off into their own isolated functions as much as possible, and naming them with a name that indicates that they are side effect generating.
 
-But what does this mean?
+In React, for instance DOM manipulation -- the classic side effect! -- is handled by an entirely seperate library, ReactDOM. We'll talk more about this soon, but this is a really good example of designing a codebase that respects side effects and the damage they can do!
+
+As we'll learn in the coming videos, the ReactDOM library is also a good example of the declarative style of programming that I've been talking so much about. In the next video I want to talk a little bit more about what this means, but before we continue, let's quickly review the role of functions in functional programming.
+
+[SC]
+IN FUNCTIONAL JAVASCRIPT:
+functions should do one thing
+[VO]
+So, First of all, functions should generally try to do one thing. If you have a function that's doing one thing and need to do more things, it's probably time to think about writing another function!
+
+[SC]
+
+    IN FUNCTIONAL JAVASCRIPT:
+        functions should do one thing
+        functions should be predictable
+
+[VO]
+Secondly, functions should do the same thing with the same inputs, every time.
+
+[SC]
+IN FUNCTIONAL JAVASCRIPT:
+functions should do one thing
+functions should be predictable
+functions should be self contained
+[VO]
+Third, functions should be self-contained. They shouldn't use or modify data that isn't either passed in as an argument or declared within the scope of that function
+[SC]
+IN FUNCTIONAL JAVASCRIPT:
+functions should do one thing
+functions should be predictable
+functions should be self contained
+functions should have a return value
+[VO]
+Functions should return a value. Why? Functions that don't return values usually exist to generate side efects.
+
+[SC]
+IN FUNCTIONAL JAVASCRIPT:
+functions should do one thing
+functions should be predictable
+functions should be self contained
+functions should have a return value
+functions should avoid side effects
+[VO]
+And, as we know, side effects -- though important and fun -- should be avoided when possible, or at least contained.
+[SC]
+
+    IN FUNCTIONAL JAVASCRIPT:
+        functions should do one thing
+        functions should be predictable
+        functions should be self contained
+        functions should have a return value
+        functions should avoid side effects
+
+[VO]
+
+Now, it's important to remember that these guidelines aren't set in stone, and sometimes you'll need or want to violate them. But they're good things to keep in mind, and if you can follow them, your code will generally function more like you want it to and be easier to test.
+
+[SC]
+DECLARATIVE vs. IMPERATIVE
+[VO]
+And now that we've gotten down and inspected the foundations of functional programming -- pure functions -- let's switch our focus and look at the big picture. These guidelines about writing functions are helpful, for sure, but they don't really speak about WHY we want to use functions as building blocks in the first place. In the next video, I'll talk a bit about that and outline some of the differences between declarative and imperative programming. I'll see you there.
 
 # end
 
