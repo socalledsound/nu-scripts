@@ -18,6 +18,8 @@ import './App.css'
 [VO]
 So, we've got a blank page.
 
+Let's start by importing the associated css file.
+
 [SC]
 .App-header {
 background-color: #744b78;
@@ -51,19 +53,17 @@ position: relative;
 width: 8rem;
 top: -9rem;
 left: 1.5rem;
-color: white;
-color: red;
+color: black;
 font-size: 1.5rem;
 text-align: center;
 }
 
 [VO]
-Let's start by importing the associated css file. And actually, while we're at it, go ahead and replace the css in App.css with the css for this project, which I wrote for you. You can find it on the page for this exercise, if you scroll down a bit. I'm not going to talk about it much, because we want to focus on React, it's just some basic flexbox layout, similar to what we did in the first section of this course, without react.
+And, while we're at it, go ahead and replace the css in App.css with the css for this project, which I've already written for you. You can find it on the page for this exercise, if you scroll down a bit. I'm not going to talk about it much, because we want to focus on React, it's just some basic flexbox layout, similar to what we did in the first section of this course, when we were working without react.
 
-[SC]
+It'll be a nice easy way to display as many messages as we like.
 
 [VO]
-Next, let's import a logo image
 
 Next, we'll write a stateless functional component.
 
@@ -192,16 +192,18 @@ Up above the App component, let's make another component, called Heart.
 You can see that those squiggles are back, because I've defined a function but I'm not using it anywhere. We'll use it very soon.
 
 [SC]
-const Heart = (props) => {
-return (
 
-<div>
-{props.msg}
-</div>
-)
-}
+    const Heart = (props) => {
+        return (
+            <div 'heart'>
+
+                <p>{props.msg}</p>
+            </div>
+        )
+    }
+
 [VO]
-But first, let's define a return expression. It's going to have a div with a classname of heart that will have a few children.  First, an img tag with a  that has a p tagencloses a javascript expression, but this time, let's give that a value of props.msg. And let's be sure to bring props in as an argument.
+But first, let's define a return expression. It's going to have a div with a classname of heart that will have a few children. First, an img tag with a that has a p tagencloses a javascript expression, but this time, let's give that a value of props.msg. And let's be sure to bring props in as an argument.
 
 So it should look something like this. And, still, squiggly. Let's fix that now.
 
@@ -209,7 +211,7 @@ So it should look something like this. And, still, squiggly. Let's fix that now.
 
     const App = () => {
     return (
-        <HeartMessage msg={message}/>
+        <Heart msg={message}/>
     )
     }
 
@@ -254,7 +256,7 @@ But, remember, components have to return just one element. So we can indent thes
 I ❤️ React
 [VO]
 
-In your component I want you to return a single div with the text 'I ❤️ React'. You can get the emoji from this page, or if you do an internet search for heart emoji, you can find it quite easily.
+In your Header component I want you to return a single div with the text 'I ❤️ React'. You can get the emoji from this page, or if you do an internet search for heart emoji, you can find it quite easily.
 
 [SC]
 

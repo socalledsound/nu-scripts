@@ -1,5 +1,5 @@
 INTROS
-01 - pretty good? record
+01 - need better flow between parts
 02 - pretty good? record
 
 FUNCTIONAL JAVASCRIPT

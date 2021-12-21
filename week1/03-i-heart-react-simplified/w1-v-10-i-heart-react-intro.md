@@ -12,7 +12,7 @@ I HEART REACT
 [VO]
 Hello and welcome back!
 
-And guess what? Reactors, it's time to start Reacting.
+And guess what? Reactors -- it's time to start Reacting.
 
 In this section of the course, you're going to build your first React App.
 
@@ -49,7 +49,7 @@ and use Array.map() to generate a collection of hearts, each one containing a me
 [SC]
 circled heart shape
 [VO]
-To do that, we'll create a function -- a React Component -- which will take in a message and generate one of these interface elements that you can see circled here.
+To do that, we'll create a function -- a React Component -- which will take in a message and an image of a heart and generate one of these interface elements that you can see circled here.
 
 [SC]
 I Heart React

@@ -10,7 +10,7 @@ Hello and welcome to React!
 [SC]
 
 [VO]
-In this course, we'll build a large, professional application that will challenge your skills and introduce you to many of the most useful tools and techniques in the React ecosystem.
+In this course, we'll build a large, professional web app that will challenge your skills and introduce you to many of the most useful tools and techniques in the React ecosystem.
 
 [SC]
 REACTSTRAP
@@ -49,14 +49,21 @@ And Redux and redux toolkit for global state management.
 This big project will challenge you in all kinds of ways and will provide you with the knowledge and, hopefully, the confidence, to tackle React projects of any scale and scope.
 
 [SC]
+JS logo
 
 [VO]
-We'll also build a few smaller projects along the way. React is great, not just for big projects, but for prototyping, and these smaller projects will give you a chance to practice your skills, and hopefully also give you the confidence to make your own projects.
+But the main thing you'll learn isn't any of these specific technologies and in a sense, it isn't even React. The main thing you'll learn is advanced level javascript, because good React code is good functional javascript.
 
 [SC]
 
 [VO]
-You're going to learn a lot in this course and it's going to be challenging but the biggest challenge of all is the challenge you need to present to yourself, to take the skills you learn here and build stuff!
+If you're new to the functional style of javascript, you're in for a treat!
+
+[SC]
+
+[VO]
+We'll also build a few smaller projects along the way, so that you have a chance to practice your skills. Our hope is that these smaller projects will help give you the confidence you need to get started building your own projects, because while React is challenging, the biggest challenge of all
+is the challenge you need to present to yourself, to take the skills you learn here and build stuff!
 
 So remember: always be working on your portfolio project or some small side project, even if you don't feel that you have the skills to do it -- you'll GET the skills by doing the work.
 
