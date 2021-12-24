@@ -1,12 +1,15 @@
 [SC]
 https://developer.mozilla.org/en-US/docs/Web/API/Element
 [VO]
-But we can -- and probably should do just a little bit better. If we look at the API for a DOM element, we can see there are a lot of possible values that we might want to assign to one of these elements. Shouldn't we build that functionality in here? But how can we? Do we take in an input parameter for each of these attributes? Or is there a better way?
 
 [SC]
 
-const createElement = (type, props) => {
-
+const createElement = (type, text, className, children = []) => {
+const el = document.createElement(type)
+if(children.length > 0){
+children.forEach(child => el.appendChild(child))
+}
+return el
 }
 
 [VO]

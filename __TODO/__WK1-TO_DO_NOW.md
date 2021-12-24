@@ -1,16 +1,17 @@
 INTROS
-01 - need better flow between parts
-02 - pretty good? record
+01 - recorded ?
+02 - recorded ?
 
 FUNCTIONAL JAVASCRIPT
-03 - need rewrite - focus more on functions/components
+03 - recorded maybe ok
 CODE CHALLENGE - higher order functions
 04 - FINISH THIS - explain declarative javascript
 05 - NEED FINISH
-06 - good record
-07 - WRITE THIS
-08 - WRITE THIS
+06 - recorded needs edits
+07 - recorded maybe needs re-edits
+08 - WRITE THIS (react without react)
 09 - WRITE THIS (import export)
+10 - WRITE THIS (virtual dom)
 
 I HEART REACT
 10 - good record

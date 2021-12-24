@@ -22,7 +22,7 @@ At it's core, functional programming is actually a pretty simple idea: the goal 
 [SC]
 (data) => InterfaceElement(data)
 [VO]
-In React, we use functions to create and update user interface elements.
+In React, for example, we use functions to create and update small and specific user interface elements, like a button or a list item, and then we combine those together to build a web page or an app.
 
 [SC]
 
@@ -96,7 +96,7 @@ console.log(msg)
 logMessage() // hi
 logMessage('we will be using this soon') // we will be using this soon
 [VO]
-And those input parameters can have default values!
+And those input parameters can have default values! So here, you see, we've got a parameter named msg and it has a default value of hi. So if I don't pass in any value, then that default value will be the value of the parameter, but if I do pass in a value, the value that I pass in will be the value of the parameter.
 
 [SC]
 function sum(a,b){

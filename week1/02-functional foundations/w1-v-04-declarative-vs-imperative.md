@@ -3,9 +3,10 @@
 DECLARATIVE VS IMPERATIVE
 
 [VO]
-One big word that I've been using a lot -- and you constantly hear this word kicked around when people are talking about React -- is 'declarative'. And alongside it, you often hear it's archrival, 'imperative'.
 
-As you've probably gathered by now, functional programming is declarative in nature. By bundling functionality into these things called functions, we abstract away the imperative aspects of code.
+<!-- One big word that I've been using a lot -- and you constantly hear this word kicked around when people are talking about React -- is 'declarative'. And alongside it, you often hear it's archrival, 'imperative'. -->
+
+<!-- As you've probably gathered by now, functional programming is declarative in nature. By bundling functionality into these things called functions, we abstract away the imperative aspects of code. -->
 
 In this video I want to talk a bit about what these declarative and imperative approaches to programming are, so that the notion of the 'declarative approach to building user interfaces' which React is so famous for offering actually starts to make a little sense.
 

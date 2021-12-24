@@ -3,11 +3,45 @@
 https://developer.mozilla.org/en-US/docs/Web/API/Element
 
 [SC]
-SC downloading
-[VO]
-In the last video, I went over some basic DOM manipulation. I want you to download the code that I wrote in that video now. It's at a link like the one that I'm showing here on the screen. You should be able to see on this page below the video. After you download the folder from that link, go ahead and open it up in your vs code editor, like I'm doing here.
+code from last time
 
-You should be able to see that on the index.html file there's a root div, and a few css classnames, and a script tag that points to an index.js file.
+[VO]
+Welcome back. In the last video, I went over some basic DOM manipulation. Nothing too fancy, I just created a div with an emoji in it and appended that div to a div that was already there in the DOM.
+
+[SC]
+
+[VO]
+In this video, I'm going to ask you to code along with me as I refactor that code a bit to be more declarative. We're going to write a function that creates DOM elements and use it to create a string of emojis.
+
+[SC]
+emoji string here
+[VO]
+Someone shared it with me and I thought it was a little bit funny and a little bit appropriate.
+It's supposed to mean
+[SC]
+[VO]
+pull
+
+[SC]
+[VO]
+a rabbit
+
+[SC]
+[VO]
+out of a hat.
+
+[SC]
+SC downloading
+
+[VO]
+I want you to start by downloading a folder that has some code in it.
+
+It's at a link like the one that I'm showing here on the screen, which you should be able to see on the page down below the video. After you download the folder from that link, go ahead and open it up in your vs code editor. GO ahead and pause the video if you need some time to download that folder now.
+
+[SC]
+
+[VO]
+Ok, so if I open this folder up in vs code, I can see that there's an index.html file, and in that code, there's a root div, and a few css classnames, and a script tag that points to an index.js file.
 
 You should also see three javascript files in this folder. One called index.js that just has the code I wrote last time, and then two others that have the code as it will be at the end of this video, and another that will have the code at the end of the next video. But try not to peek at this! It will be good practice for you and hoepfully even kind of interesting for you if you can do the work yourself as we go along.
 
@@ -78,17 +112,93 @@ We want to make something like this.
 
 [SC]
 
-<div id="root">
-<div class="app-container">
-<div class="emoji-sm">'👊'</div>
-<div class="emoji-sm">'⬆️'</div>
-<div class="emoji-sm">'🐰</div>
-<div class="emoji-sm">'📤'</div>
-<div class="emoji-sm">'🎩'</div>
-</div>
-</div>
+    <div id="root">
+        <div class="app-container">
+            <div class="emoji-sm">'👊'</div>
+            <div class="emoji-sm">'⬆️'</div>
+            <div class="emoji-sm">'🐰</div>
+            <div class="emoji-sm">'📤'</div>
+            <div class="emoji-sm">'🎩'</div>
+        </div>
+    </div>
+
 [VO]
 The structure of the page that we want to generate is going to be a little more complicated, because we're going to have a flex-container that has five children, so, rather than appending each element to the root, we're going to first append the children to the container and then we're going to append that flex container to the root div.
+
+[SC]
+const emojis = ['👊','⬆️','🐰','📤','🎩']
+[VO]
+
+Now, maybe you noticed that I gave you an array of emojis at the top of the page? And if you did, I bet you can guess that we're going to use Array.map() to add these to the DOM.
+
+[SC]
+
+const emojiElements = emojis.map(emoji => createElement('div', 'emoji-sm'))
+
+[VO]
+We'll start by passing our createElement functon into array.map to generate an array of HTML elements.
+
+[SC]
+const app = createElement('div', null,'app-container')
+emojiElements.forEach(el => {
+app.appendChild(el)
+})
+root.appendChild(app)
+
+[VO]
+Now, we need to append
+
+We can first create a div with a class name of app-container, and then use map's somewhat shady cousin array.forEach(), to append each child to the app, and finally, append the app to the root div, and you should see the page that we wanted to make.
+
+[SC]
+REACT WITHOUT REACT
+[VO]
+But there's a better way.
+
+And, brothers and sisters, I want to tell you, that way is 'React Without React'.
+
+Don't they say
+
+In the next video, we're going to take this code and move it a little closer to being React-like.
+
+We can get just a little bit declarative, and smart, and think about how to refactor our createElement function so that it can encompass this idea of children, and move that forEach into our createElement function.
+
+We'll give children a default value of an empty array and then check to see if the children array has anything in it, and if it does, we'll loop over each item in the array and add it as a child.
+
+Nice, right?
+
+[SC]
+
+[VO]
+
+Now, if we don't want an element to have a child, we can ignore that
+
+[SC]
+
+[VO]
+Now, If you noticed that I gave you an array of emojis on this page, I bet you can guess that we're going to use Array.map() to iterate over these emojis, right?
+
+[SC]
+
+const app
+
+[VO]
+One way to do this would be to take a step in the imperative direction, by first creating the app-container node and then appending the children to it. But....there's a better way.
+
+[SC]
+const createElement = (type, text, className, children = []) => {
+const el = document.createElement(type)
+el.innerText = text
+el.className = className
+return el
+}
+
+[VO]
+But this notion of an element than can have children is something that's missing from our createElement, isn't it?
+
+And it seems rather important!
+
+So let's add that.
 
 And, I'm going to show you two ways to do it. The first will be a little bit basic and a little bit awkward, and then we're going to go back and do it better, by borrowing some ideas from React. But in each each case, we're going to use Array.map().
 
@@ -142,3 +252,32 @@ And if you have pretty sharp eyes, you can probably also see that I could rewrit
 I mean, it works, but it's also missing the mark in a pretty major way. We've got side effects in the global scope, and frankly, this will quickly turn in to spaghetti code if we try to add more children.
 
 That is to say, I think we can do better, by borrowing a page from React. This might
+
+# too complicated!
+
+[SC]
+
+    const createElement = (type, text, className) => {
+        const el = document.createElement(type)
+        el.innerText = text
+        el.className = className
+        return el
+    }
+
+[VO]
+Now, the elements that we've been creating so far don't really have this capability to have children.
+
+[SC]
+const createElement = (type, text, className, children = []) => {
+const el = document.createElement(type)
+el.innerText = text
+el.className = className
+return el
+}
+[VO]
+But we can add it! This children argument is different than the other properties of our element. It needs to be flexible. It could be zero or it could be a hundred, and number of children might even change over time. So I'm going to think of it as being an array, and -- remember default values? -- I'm actually going to make sure that it always exists and is always an array, even if there are no children passed in, by setting it's default value to be an empty array.
+
+[SC]
+
+[VO]
+Now, we can append those children

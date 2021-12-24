@@ -2,10 +2,13 @@ https://reactjs.org/docs/jsx-in-depth.html
 https://reactjs.org/docs/react-without-jsx.html
 https://reacttraining.com/blog/jsx-the-confusing-parts/
 
+# move this to section 1 and tweak?
+
 [SC]
 JSX
 [VO]
-In this video, I want to take a deeper dive into JSX, go over it's syntax, and show you some examples of JSX in action. JSX is one of the most powerful and unique aspects of writing React code, so mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. Let's get started.
+
+In this video, I want to take a deeper dive into JSX, go over it's syntax, and show you some examples of JSX in action. JSX is one of the most powerful and unique aspects of writing React code, so mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. So Let's get started.
 
 [SC]
 

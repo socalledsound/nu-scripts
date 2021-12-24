@@ -1,7 +1,7 @@
 ## need edit
 
 [SC]
-UNDERSTANDING COMPONENTS
+COMPOSING WITH COMPONENTS
 [VO]
 Welcome back.
 
