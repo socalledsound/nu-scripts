@@ -1,22 +1,40 @@
-# NEED THE INTRO TEXT, WILL DEPEND ON WHERE THIS IS
+# NEED THE INTRO TEXT, WILL DEPEND ON WHERE THIS IS, OR WHETHER JSX IS INTRODUCED EARLIER
 
 [SC]
-show this process.
+
 [VO]
-Let's start by modifying the css file for our App, which is in App.css.
 
-I want you to delete everything in it and replace it with these css classes:
+Welcome Back. In the last exercise, we took a tour of the stub App that create react app installs for us.
 
-    .App-header {
-    background-color: #744b78;
-    min-height: 20vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: white;
-    }
+[SC]
+
+[VO]
+In this exercise, we're going to use JSX to create something like what you see on the page now. It's going to be a your first component,
+
+[SC]
+animating many hearts being generated
+[VO]
+And, as I said in the intro to this section, we're ultimately going to use that component to render a bunch of hearts to the page, one for each message of artificially intelligent love.
+
+[SC]
+show deleting the code in the App.css file
+[VO]
+So, before we write our new Heart component, let's start by modifying the css file for our App, which is in App.css.
+
+I want you to delete everything in it and replace it with some css classes that you can find on the page below, which we'll use to style our app.
+
+[SC]
+show this code in vs code:
+.App-header {
+background-color: #744b78;
+min-height: 20vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: 3rem;
+color: white;
+}
 
     .hearts-container {
     display: flex;
@@ -43,15 +61,29 @@ I want you to delete everything in it and replace it with these css classes:
     text-align: center;
     }
 
-You can also download that css code as a file, at the bottom of this page, if you prefer.
+[VO]
 
-I'm not going to talk about it much, because we want to focus on React, it's just some basic flexbox layout, similar to what we did in the first section of this course, when we were working without react.
+Looking at them, you can see that we'll have a number of class names that we can use in our JSX.
 
-It'll be a nice easy way to display as many messages as we like.
+I'm not going to talk about them too much, so we can get to work on the React side of things.
 
-So what I want you to do is, copy that code from here.......
+But you can see that there's a class name for a header, and another for a flex box container for all of the hearts, and then individual classes to style a heart image, heart message and then a container for the heart message and heart image which will simply be called a heart.
 
-and then paste it in to replace what's currently in your App.css file.
+[SC]
+show the place on the page where the css code is
+[VO]
+
+So what I want you to do is, copy that code from down here.......and then paste it in to replace what's currently in your App.css file.
+
+[SC]
+show the download link
+[VO]
+Or, you can simply download the file from down here
+
+[SC]
+downloading and replacing the file
+[VO]
+and replace the file that's in the src folder with the file that you just downloaded.
 
 You might need to pause the video while you do that.
 
