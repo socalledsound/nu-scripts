@@ -5,6 +5,52 @@ COMPOSING WITH COMPONENTS
 [VO]
 Welcome back.
 
+[SC]
+heart with text
+[VO]
+In the last video, we made this heart, and I left you with a challenge....
+
+[SC]
+show heart with header
+[VO]
+To add this Header.
+
+I hope you were able to do it on your own. It's these baby steps that add up and in the end get you walking on your own.
+
+[SC]
+
+code along header component
+
+[VO]
+I'm going to do it my way now. And it's pretty straightforward. I just want to declare an arrow function named Header up here near the top of the page, or anywhere before I use it down here in the App component. And then I'm going to return a div wioth a class name of App-header and the text, as I gave you in the last video, I heart React. And that's pretty much it.
+
+[SC]
+not sure what to show here, maybe just the app component?
+[VO]
+Now you could very easily make the point right now that that's a lot of extra code to add a single div, which I could have just as easily added just as a one line div in my App component.
+
+And, we're not going to do much with our Header in this little starter App, so you'd be pretty reasonable to say that.
+
+[SC]
+
+[VO]
+But what we're trying to do here is to get into good habits, and often times, like in the nucamp App, a Header will have a lot more going on, with some kind of site navigation and maybe even a link to a user profile or a shopping cart or who knows what else... so generally a Header is going to want to be a seperate component.
+
+[SC]
+
+[VO]
+And it's a great place for us to talk about the most fundamental conceptual skill that you must master to be a good React developer, which is this idea of breaking up the thing that you want to build into smaller chunks, which we call components.
+
+[SC]
+
+[VO]
+As we've seen, we generally write components as functions, and the decisions that we make while writing them are in many cases judgement calls but an important thing to remember about functions and about components is that if we name them well and limit their scope, we will generally be a lot happier, and other people who read our code will have an easier time understanding what we're trying to do.
+
+[SC]
+
+[VO]
+And I think it's really good practice to start looking at web pages that you like
+
 So now that we've written a few components, I want to take a few minutes to get conceptual on you and talk about components as a means of organizing user interfaces, because I think it's one thing that sometimes trips people up a little bit.
 
 -more here-
