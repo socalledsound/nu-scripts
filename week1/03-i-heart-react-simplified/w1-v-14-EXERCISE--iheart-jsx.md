@@ -4,7 +4,7 @@
 
 [VO]
 
-Welcome Back. In the last exercise, we took a tour of the stub App that create react app installs for us.
+Welcome Back. In the last video, we took a tour of the placeholder App that create react app installs for us.
 
 [SC]
 
@@ -19,7 +19,7 @@ And, as I said in the intro to this section, we're ultimately going to use that 
 [SC]
 show deleting the code in the App.css file
 [VO]
-So, before we write our new Heart component, let's start by modifying the css file for our App, which is in App.css.
+But before we write our new Heart component, let's start by first modifying the css file for our App, which is in App.css.
 
 I want you to delete everything in it and replace it with some css classes that you can find on the page below, which we'll use to style our app.
 
@@ -294,7 +294,7 @@ copying into src folder
 Then, copy it in to the src folder.
 
 [SC]
-import HeartLogo from 'heart.svg'
+import HeartLogo from './ heart.svg'
 [VO]
 Next, replace the import statement at the top of the page so that you import the heart svg
 
