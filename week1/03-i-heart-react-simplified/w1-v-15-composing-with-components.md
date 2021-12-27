@@ -1,5 +1,3 @@
-## need edit
-
 [SC]
 COMPOSING WITH COMPONENTS
 [VO]
@@ -34,76 +32,121 @@ And, we're not going to do much with our Header in this little starter App, so y
 [SC]
 
 [VO]
-But what we're trying to do here is to get into good habits, and often times, like in the nucamp App, a Header will have a lot more going on, with some kind of site navigation and maybe even a link to a user profile or a shopping cart or who knows what else... so generally a Header is going to want to be a seperate component.
+But what we're trying to do here is to get into good habits, and often times, like in the nucamp App that we're going to be building, a Header will have a lot more going on, with some kind of site navigation and maybe even a link to a user profile or a shopping cart or who knows what else.
 
 [SC]
 
 [VO]
-And it's a great place for us to talk about the most fundamental conceptual skill that you must master to be a good React developer, which is this idea of breaking up the thing that you want to build into smaller chunks, which we call components.
+And, you're almost definitely going to want to reuse the header on a bunch of different pages, so generally a Header is going to want to be a seperate component.
 
 [SC]
+show page broken up into sections
+[VO]
+And this is a great place for us to talk about the most fundamental conceptual skill that you must master to be a good React developer, which is this idea of breaking up the thing that you want to build into smaller chunks, which we call components.
 
+[SC]
+show page broken up into functions
 [VO]
 As we've seen, we generally write components as functions, and the decisions that we make while writing them are in many cases judgement calls but an important thing to remember about functions and about components is that if we name them well and limit their scope, we will generally be a lot happier, and other people who read our code will have an easier time understanding what we're trying to do.
 
 [SC]
 
 [VO]
-And I think it's really good practice to start looking at web pages that you like
-
-So now that we've written a few components, I want to take a few minutes to get conceptual on you and talk about components as a means of organizing user interfaces, because I think it's one thing that sometimes trips people up a little bit.
-
--more here-
-
-In React, these functions are a bit more sophisticated, and we call them components.
-
-We'll use these functions, or components, to compose web pages.
-
-To do this well, we have to learn how to look at web content, and also coding, just a little bit differently -- we need to try to break down bigger tasks into smaller ones.
-
-[SC]
-
-heart image
-
-[VO]
-
-Rather than try to explain this in an abstract way, I want to give you a very concrete and visual example: this heart that we're trying to build.
-
-It's a shape that has a lot of meaning, for a lot of people.
-
-[SC]
-
-svg points
-
-[VO]
-
-And it's a shape that can get a little bit complicated to make. If we wanted to code it by hand using, say, SVG, we'd need a long list of points to make these arc shapes.
-
-[SC]
-two circles and a square heart
-[VO]
-
-Or, we can approach it from another perspective, breaking the shape down into it's constituent parts. As you can see here, a heart is, basically, a square and two circles combined.
-
-[SC]
-
-[VO]
 And, you can break down just about any web page you want to build in just this way.
 Soon, you'll be doing it without even thinking about it.
-a login page?
-Two text input fields and a submit form.
+The key -- and I can't stress this enough! -- to this is to start thinking in terms of components: concise, reusable blocks of javascript -- otherwise known as functions -- which describe a small and focused aspect of the interface that you want to build.
+
+[SC]
+
+PAGE
+HEADER
+PAGE CONTENT
+
+[VO]
+First, we'll often have large components whose primary job is to sever as a container for other components.
+
+[SC]
+
+    LoginPage
+        Header
+        Login
+
+[VO]
+So a login page would be a component composed of smaller components.
+
+We might break it up so it has a Header, and another component called Login.
+
+[SC]
+
+    Login
+        TextField
+        TextField
+        Submit
+
+[VO]
+
+Which in turn is composed of smaller components, maybe two text input fields and a submit form button.
+
+[SC]
+
+    Register
+        TextField
+        TextField
+        TextField
+        TextField
+        TextField
+        TextField
+        Submit
+
+[VO]
+We might also have a Register component, which would
+Take those same components from the login page, and add a few more text fields.
+
+[SC]
+LoginPage
+Header
+if(true) { return Login} else {return Register}
+[VO]
+And then, we can use javascript to conditionally render different parts of our interface.
+
+[SC]
+
+    HeartList
+    [message1, message2].map(message => HeartWithMessage)
+
+[VO]
+Or, as we're going to do in the next video, we can use Array.map() to loop over a data set, which might even be changing dynamically, and create our web page's content, that way.
 
 [SC]
 
 [VO]
-A registration page?
-Take those same parts from the login page, and add a few more text fields.
+In the next video, we're going to do just that, map over an array of messages to fill the screen with love.
+
+# end
 
 [SC]
 a few pages with highlighted sections that show components.
-can we use things like netflix or shoudl these be pages that I built?
+should we use things like netflix or should these be pages that I built?
+
 [VO]
 If you look around the internet with this perspective, it all starts to make new sense, you'll see repeated parts everywhere. Not all of these pages are using React, but they're all using this very fundamental principle of composing web pages by using re-usable parts.
+
+[SC]
+[VO]
+
+[SC]
+[VO]
+
+[SC]
+[VO]
+
+[SC]
+[VO]
+
+[SC]
+[VO]
+
+# end
 
 [SC]
 
@@ -201,3 +244,37 @@ So, our entire Heart component has an x and y position, but you can see that eac
 Inside the child components, we simply utilize the data that has been passed in, without any further changes.
 
 Sometimes these are called 'dumb' components, because they just faithfully
+
+So now that we've written a few components, I want to take a few minutes to get conceptual on you and talk about components as a means of organizing user interfaces, because I think it's one thing that sometimes trips people up a little bit.
+
+-more here-
+
+In React, these functions are a bit more sophisticated, and we call them components.
+
+We'll use these functions, or components, to compose web pages.
+
+To do this well, we have to learn how to look at web content, and also coding, just a little bit differently -- we need to try to break down bigger tasks into smaller ones.
+
+[SC]
+
+heart image
+
+[VO]
+
+Rather than try to explain this in an abstract way, I want to give you a very concrete and visual example: this heart that we're trying to build.
+
+It's a shape that has a lot of meaning, for a lot of people.
+
+[SC]
+
+svg points
+
+[VO]
+
+And it's a shape that can get a little bit complicated to make. If we wanted to code it by hand using, say, SVG, we'd need a long list of points to make these arc shapes.
+
+[SC]
+two circles and a square heart
+[VO]
+
+Or, we can approach it from another perspective, breaking the shape down into it's constituent parts. As you can see here, a heart is, basically, a square and two circles combined.

@@ -1,15 +1,13 @@
-# NEED THE INTRO TEXT, WILL DEPEND ON WHERE THIS IS, OR WHETHER JSX IS INTRODUCED EARLIER
-
 [SC]
 
 [VO]
 
-Welcome Back. In the last video, we took a tour of the placeholder App that create react app installs for us.
+Welcome Back. In the last video, we took a tour of the placeholder App that create react app installs for us and we talked a bit about the JSX in that file.
 
 [SC]
 
 [VO]
-In this exercise, we're going to use JSX to create something like what you see on the page now. It's going to be a your first component,
+But I always feel like the best way to learn something is by doing, so in this exercise, we're going to roll our sleeves up and actually use some JSX to create something like what you see on the page now.
 
 [SC]
 animating many hearts being generated

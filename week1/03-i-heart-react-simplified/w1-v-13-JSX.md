@@ -2,8 +2,6 @@ https://reactjs.org/docs/jsx-in-depth.html
 https://reactjs.org/docs/react-without-jsx.html
 https://reacttraining.com/blog/jsx-the-confusing-parts/
 
-# move this to section 1 and tweak?
-
 [SC]
 JSX
 [VO]
@@ -15,7 +13,32 @@ In this video, I want to take a deeper dive into JSX, go over it's syntax, and s
     But what is JSX
 
 [VO]
-Now, first of all, what the heck is JSX? JSX is a syntax extension for javascript, which means that it's We saw that in our index.js file, we invoke our App component, and
+Now, first of all, what the heck is JSX? And how does it work?
+
+[SC]
+
+    <div >
+        <SomeElement prop={javascriptVariable}/>
+    </div>
+
+[VO]
+JSX is a markup language, and it looks kind of like HTML, but really it's a way of writing DOM manipulating javascript in a concise and declarative manner.
+
+[SC]
+
+document.createElement('div')
+
+<div></div>
+
+[VO]
+So instead of writing document.createElement('div'), we just write <div></div>.
+
+Nice, right?
+
+[SC]
+(jsx) => BABEL(jsx) => javascript
+[VO]
+As I've already mentioned, under the hood, it relies on the babel library, which takes in the jsx and spits out some regular old javascript for our web browser.
 
 [SC]
 show app component in file browser
