@@ -9,7 +9,7 @@ red hearts
 In the last video, we used Array.map to make a page full of heart messages, and that means that we're almost done here. But there's one more thing that I want to do before we move on...
 
 [SC]
-colorfil hearts
+colorful hearts
 [VO]
 ....which is to add some color to this page. It's a small thing and to make it happen we need to dive into the SVG of this SVG file, so honestly, if you'd rather not, I totally understand, you can skip this video and move on to the nucampsite.
 
