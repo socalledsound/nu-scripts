@@ -1,5 +1,5 @@
 [SC]
-
+making a change on laptop
 [VO]
 
 Welcome Back. In the last few videos, we learned the basic syntax for creating React components using JSX.
