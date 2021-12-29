@@ -1,3 +1,5 @@
+# be sure to add this idea of a web page as an interface
+
 v2 REACT CORE PRINCIPLES, briefly
 https://www.statista.com/statistics/1124699/worldwide-developer-survey-most-used-frameworks-web/
 [SC]

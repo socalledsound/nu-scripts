@@ -13,7 +13,7 @@ show heart with header
 [VO]
 To add this Header.
 
-I hope you were able to do it on your own. It's these baby steps that add up and in the end get you walking on your own.
+And I hope you tried it on your own. And were able to do it! I know it can be pretty daunting to write your own code, but remember, it's these tiny tiny baby steps that add up and in the end will get you walking on your own.
 
 [SC]
 
@@ -118,9 +118,31 @@ And then, we can use javascript to conditionally render different parts of our i
 Or, as we're going to do in the next video, we can use Array.map() to loop over a data set, which might even be changing dynamically, and create our web page's content, that way.
 
 [SC]
+not sure what graphic here
+[VO]
+Starting to think in terms of small, re-usable components is absolutely crucial to becoming a great React developer. And, I want to say that it really helps! For one thing, if you can start writing small and re-usable components, you'll start building up a library of components that you can re-use in projects.
+
+[SC]
 
 [VO]
-In the next video, we're going to do just that, map over an array of messages to fill the screen with love.
+But, for a beginner, I think it's even more crucial to remember -- you can break a page or an idea up into smaller chunks. For instance, if you want to build an ecommerce site but it feels a little overwhelming...then just try to find the simplest part of the that site, and start there.
+
+[SC]
+
+[VO]
+Set all of the complicated layers and just start with a single catalog item. An image, and some text. And build from there!
+
+[SC]
+
+[VO]
+So, the component system is your friend. Love it and it will love you right back.
+
+[SC]
+
+[VO]
+All right. In the next video, we're going to use Array.map to transform an array of messages into an array of hearts with messages.
+
+I'll see ya there.
 
 # end
 

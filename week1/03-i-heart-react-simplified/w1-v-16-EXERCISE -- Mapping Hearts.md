@@ -24,12 +24,12 @@ One way to do this
 [SC]
 
 [VO]
-WE're going to take that simple Heart Component that we previously wrote, and use it to build a whole page full of hearts. If you've been paying attention, it shouldn't be too hard.
+Now we're going to take that simple Heart Component that we previously wrote, and use it to build a whole page full of hearts.
 
 [SC]
 
 [VO]
-But let's start by refactoring this site a little bit. Right now we've got a bunch of stuff on this App.js file, and it's starting to feel a little cramped and disorganized, so let's start by cleaning this up.
+But first, I want to start by refactoring this site a little bit. Right now we've got a bunch of stuff on this App.js file, and it's starting to feel a little cramped and disorganized, so let's start by cleaning this up.
 
 [SC]
 highlight source folder selection
@@ -143,6 +143,8 @@ Inside that return statement, we'll first have a div with a className of hearts-
 
 [VO]
 So we'll write some curlybraces, and then inside there, we'll map over our array of messages. So messages.map(), and then the call back function that we pass in to the map method. For each item in the array, we will use the item, which we'll give the name of msg.
+
+# recording stopped here
 
 [SC]
 
