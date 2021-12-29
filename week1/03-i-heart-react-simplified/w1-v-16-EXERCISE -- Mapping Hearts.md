@@ -1,4 +1,6 @@
+https://robinpokorny.medium.com/index-as-a-key-is-an-anti-pattern-e0349aece318
 https://reactjs.org/docs/lists-and-keys.html
+https://reactjs.org/docs/reconciliation.html#recursing-on-children
 
 #
 

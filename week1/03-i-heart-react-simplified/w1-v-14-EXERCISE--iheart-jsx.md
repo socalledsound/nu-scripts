@@ -2,12 +2,17 @@
 
 [VO]
 
-Welcome Back. In the last video, we took a tour of the placeholder App that create react app installs for us and we talked a bit about the JSX in that file.
+Welcome Back. In the last few videos, we learned the basic syntax for creating React components using JSX.
 
 [SC]
 
 [VO]
-But I always feel like the best way to learn something is by doing, so in this exercise, we're going to roll our sleeves up and actually use some JSX to create something like what you see on the page now.
+But I always feel like the best way to actually learn something is by building something, so let's roll up our sleeves now and get started on our I heart React page.
+
+[SC]
+
+[VO]
+We'll start by making a Heart Component.
 
 [SC]
 animating many hearts being generated

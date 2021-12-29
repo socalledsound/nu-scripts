@@ -1,6 +1,9 @@
 https://reactjs.org/docs/jsx-in-depth.html
 https://reactjs.org/docs/react-without-jsx.html
 https://reacttraining.com/blog/jsx-the-confusing-parts/
+https://medium.com/@dan_abramov/react-components-elements-and-instances-90800811f8ca
+
+https://reacttraining.com/blog/jsx-the-confusing-parts/
 
 [SC]
 JSX
@@ -22,7 +25,7 @@ Now, first of all, what the heck is JSX? And how does it work?
     </div>
 
 [VO]
-JSX is a markup language, and it looks kind of like HTML, but really it's a way of writing DOM manipulating javascript in a concise and declarative manner.
+JSX is a markup language, and it looks kind of like HTML, but really it's a way of writing DOM-manipulating javascript in a concise and declarative manner.
 
 [SC]
 
@@ -38,7 +41,7 @@ Nice, right?
 [SC]
 (jsx) => BABEL(jsx) => javascript
 [VO]
-As I've already mentioned, under the hood, it relies on the babel library, which takes in the jsx and spits out some regular old javascript for our web browser.
+Under the hood, JSX relies on the babel library, which takes in the jsx and spits out some regular old javascript for our web browser.
 
 [SC]
 show app component in file browser
@@ -59,39 +62,80 @@ app function
 
 Below this is our App function. And you can see that it's basically just one big return statement, which returns a fairly large block of JSX.
 
-This is called a 'stateless functional React component' and it's a great way to write React components. We can write these functions using the function keyword, or as arrow functions. We'll mostly write them as arrow functions in this course, but either way works.
-
-Perhaps the most import thing to remember about these functions is that, in order to be valid React components, they must return one and only one React element. That react element can have many children, but at the top level of the return statement there needs to be just ONE element.
+This function is called a 'stateless functional React component' and it's a great way to write React components. We can write these functions using the function keyword, or as arrow functions. We'll mostly write them as arrow functions in this course, but either way works.
 
 [SC]
 
-<div className="App">
-<header className="App-header">
-<img src={logo} className="App-logo" alt="logo" />
-<p>
-Edit <code>src/App.js</code> and save to reload.
-</p>
-<a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-Learn React
-</a>
-</header>
-</div>
+    const Component = () => {
+        return (
+            <div></div>
+            <div></div>
+        )
+    }
+
 [VO]
-If you look carefully, you'll see that this function returns a single react element, a div, which has a child -- a header -- which in turn has several children -- an image, some text, and a link.
+
+Perhaps the most import thing to remember about these functions is that, in order to be valid React components, they must return one and only one React element. That react element can have many children, but at the top level of the return statement there needs to be just ONE element. So, if for instance, we want to return two divs....
 
 [SC]
 
-<div className='greeting'>hi there!</div>
+            const Component = () => {
+                return (
+                    <div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                )
+            }
 
 [VO]
-As we've already learned, each of these html looking things are actually React elements, nodes on our virtual dom tree. These nodes get bundled together in our App, and then we pass them into the ReactDOM.render function and that render function decides how to update and build our web page as efficiently as possible.
+......we need to wrap them in a parent div.
 
-We're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let React take care of the details.
+[SC]
+
+        <div className="App">
+            <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                Edit <code>src/App.js</code> and save to reload.
+                </p>
+                <a
+                        className="App-link"
+                        href="https://reactjs.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >
+                Learn React
+                </a>
+            </header>
+        </div>
+
+[VO]
+If you look carefully, you'll see that the App function returns a single react element, a div, which has a child -- a header -- which in turn has several children -- an image, some text, and a link.
+
+[SC]
+
+<div >hi there!</div>
+
+[VO]
+
+Each of these html looking things are actually React elements, nodes on our virtual dom tree.
+That Babel compiler that I was mentioning before -- it interprets this markup....
+
+[SC]
+
+    React.createElement('div', null, 'hi there')
+
+[VO]
+and convert it into javascript that looks like this!
+
+[SC]
+ReactDOM diffing engine graphic
+[VO]
+
+As we talked about in our ReactDOM video, these React elements, get passed into the ReactDOM.render function and that render function decides how to update and build our web page as efficiently as possible.
+
+So, in the big picture, I want you to notice that we're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let React take care of the details.
 
 [SC]
 
@@ -122,6 +166,10 @@ similarly, img and anchor tags have all of the properties that we'd expect from 
 [VO]
 Also notice that we can use javascript expressions directly in our JSX if we wrap them inside curly braces. On this page, we're setting the src of the image tag to be the logo variable that holds the svg image that we imported up above.
 
+# end
+
+# i cut this out
+
 [SC]
 
     <div className="App">
@@ -145,153 +193,10 @@ Also notice that we can use javascript expressions directly in our JSX if we wra
 And I want to remind you, this whole return expression returns that single Div with a classname of App. And, that div -- which is everything in this app, right now, is exported from this file as the component named App.....
 
 [SC]
-
-   <App />
-
-[VO]
-which in turn gets invoked in the index.js file, remember?
-
-[SC]
-<>
-<MyHeader>
-<AComponent>
-<AnotherComponent>
-</>
-[VO]
-At their most basic level, React components are ways of bundling together React elements. We use them to declaratively compose user interfaces, and organize chunks of our user interface.
-
-[SC]
-const Header = () => {
-
-return (
-
-<header className="App-header">
-<img src={logo} className="App-logo" alt="logo" />
-<p>
-Edit <code>src/App.js</code> and save to reload.
-</p>
-<a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-Learn React
-</a>
-</header>
-)
-}
-[VO]
-If I want to, I can take all of the lines that make up the header and put them in their own component. I can put this new function in its own file and import it, but for now I'm just going to write it up above, like this. It's just another arrow function, like the App component and like the App component it also has a name that begins with a capital letter. It's a pretty important style guideline to follow -- always start your React components with capital letters.
-
-I'm calling it Header, and it's going to have a return expression, and in there I'll just paste everything the header element and everything inside of it.
-
-[SC]
-
-<Header />
-[VO]
-
-Then, I can invoke that function as a React Element, like this. And you can see, no change, I've simply reorganized a little of my code.
-
-[SC]
-
-<div className=''>
-[VO]
-We're going to get some practice doing this in the next video, but before we go, I want to show you one more thing we can do with JSX. Remember how I was saying that, on a react element, we can set properties like a className or id, or a source for an img tag?
-
-[SC]
-
-    <Component propName={propValue} anotherProp='hi there' className={// DON'T DO THIS ON YOUR COMPONENT PROPS!} />
+ReactDOM.render(<App />, document.getElementById('root'))
 
 [VO]
-
-We can also set properties on elements that are generated by our custom components. They're not handled in quite the same way as with DOM elements, so, for instance, though we can use the key 'classname' on our own components, it won't actually set the css classname, and in general it's a good idea to avoid using properties that collide with the DOM API.
-
-[SC]
-
-    <Header text='I ❤️ React'/>
-
-[VO]
-
-But we can set custom properties, and they behave much like function arguments. Here, I'm passing in a prop of text, and setting it to a string.
-
-[SC]
-
-    const Header = (props) => {
-    console.log(props)
-    return (
-        <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        {props.text}
-        </p>
-        <p id='hi'></p>
-
-    </header>
-    )
-    }
-
-[VO]
-And now if I add the keyword 'props' to the list of arguments in my Header function, I can
-console.log() my props and see that my props are an object that contains a key/value pair equivalent to the prop that I passed in.
-
-[SC]
-
-    <p>{props.text}</p>
-
-[VO]
-I can use that value, in my component, like this.
-
-[SC]
-
-    const ChildComponent = (props) => {
-        return(
-            <div>{props.text}</div>
-        )
-    }
-
-
-    const ParentComponent = () => {
-        return (
-            <ChildComponent text='hi there!'>
-        )
-    }
-
-[VO]
-Props are the key to understanding the flow of data in a React app.
-
-They're a lot like arguments, except that we name the argument when we invoke the component in our JSX.
-
-We can call the prop anything we want, we just have to be sure to remember that whatever we call it when we pass the data in is the key we will use to access that data in the child component.
-
-[SC]
-PROPS ARE READ-ONLY
-[VO]
-Now, there is one very important thing to remember. Props are read only. What does this mean? And why is that a good thing?
-
-[SC]
-const sum = (a, b) => a + b
-[VO]
-Remember pure functions? Functions that will always return the same result for a given input?
-
-[SC]
-const impureSum = (a, b) => {
-const impureA = Math.random() \* a
-return impureA + b
-}
-[VO]
-Contrast that function with this version, which is obviously not as predictable and certainly not pure. Here, we have some process inside the function that modifies an input in an unpredictable way, and it makes this function a lot less predictable.
-
-[SC]
-
-[VO]
-If you try to modify a prop directly, you'll see that it's not possible. And....I hope you can see now why that's a really good thing!
-
-And that's most of what you need to know about JSX!
-
-In the next video, we'll get some practice writing components with it. I'll see you there.
-
-# end
+which in turn gets invoked, using the JSX syntax in the index.js file.
 
 ## most recent edit out:
 

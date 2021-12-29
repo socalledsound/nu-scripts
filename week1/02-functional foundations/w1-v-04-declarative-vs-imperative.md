@@ -1,3 +1,8 @@
+https://ui.dev/imperative-vs-declarative-programming/
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0\
+https://blog.bitsrc.io/functional-programming-in-javascript-how-and-why-94e7a97343b
+https://medium.com/trabe/why-is-react-declarative-a-story-about-function-components-aaae83198f79
+
 [SC]
 
 DECLARATIVE VS IMPERATIVE
