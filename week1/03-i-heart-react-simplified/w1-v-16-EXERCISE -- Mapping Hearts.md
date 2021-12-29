@@ -1,3 +1,5 @@
+https://reactjs.org/docs/lists-and-keys.html
+
 #
 
 [SC]
@@ -138,16 +140,151 @@ Inside that return statement, we'll first have a div with a className of hearts-
     {messages.map((msg, idx) =>  )}
 
 [VO]
-So we'll write some curlybraces, and then inside there, we'll map over our array of messages. So messages.map(), and then the call back function that we pass in to the map method. For each item in the array, we will use both the item, which we'll give the name of msg and also the index number, which we'll give the name idx.
+So we'll write some curlybraces, and then inside there, we'll map over our array of messages. So messages.map(), and then the call back function that we pass in to the map method. For each item in the array, we will use the item, which we'll give the name of msg.
 
 [SC]
 
-        {messages.map((msg, idx) =>  <Heart key={idx} text={msg} idx={idx} />)}
+        {messages.map((msg) =>  <Heart text={msg}/>)}
 
 [VO]
 And then that function will return -- for each message -- a Heart element. And we'll pass in the message, as a prop that we'll call text...
 
 [SC]
 
+        const Heart = (props) => {
+
+            return (
+            <div className='heart'>
+                <img src={HeartLogo} alt='heart' className='heart-img'/>
+                <p className='heart-message'>{props.text}</p>
+            </div>
+            )
+        }
+        export default Heart
+
 [VO]
--- remember, we use a prop called text in our
+-- remember, we use a prop called text in our Heart component. So, each message will -- in theory, at least, come in and be displayed inside each heart.
+
+[SC]
+
+Show the hearts screen
+
+[VO]
+Let's check it out now. If we npm start this bad boy and head over to our browser....I see hearts! And I hope you do, too.
+
+But...there's one little thing wrong with this.
+
+[SC]
+show warning in the console.
+
+[VO]
+If we check the console, we can see that there's a warning from our dev tools in there for us. Now, it's obviously not a breaking issue, our page is displaying properly. But even so, it's a warning that we should take care of, but before we do, I'd like to explain what it is and why we're getting it.
+
+[SC]
+react-jsx-dev-runtime.development.js:117 Warning: Each child in a list should have a unique "key" prop.
+
+Check the render method of `HeartsList`.
+[VO]
+It says, 'Each child in a list should have a unique key prop' and it points us to the HeartsList.
+
+[SC]
+
+    const HeartsList = () => {
+        return (
+        <div className='hearts-container'>
+            {messages.map((msg, idx) =>  <Heart text={msg} />)}
+        </div>
+
+        )
+    }
+
+    export default HeartsList
+
+[VO]
+Inside that hearts list, we have our map method that programatically generates Hearts for us, which React is all too happy to do for us.
+
+[SC]
+
+        const messages = [
+        'cool cud', 'me my <3', 'you are bear',
+        'team bear', 'time hug', 'fang', 'bog love', 'me have love',
+        'all hover', 'sweat poo', 'u hack', 'stank love', 'heart me',
+        'wink bear', 'bear bear', 'be my bear', 'yank o way', 'mage love',
+        'oy', 'in a fan'
+        ]
+
+[VO]
+And in our example, our list, which is an array of messages, is stable; it isn't going to change as a result of user input, or, as might be the case, because of an asynchronous data request. It's just a hard coded array.
+
+[SC]
+
+[VO]
+But what if our list was longer, say a hundred or even a thousand entries....and, perhaps more importantly, what if it was changing over time, like a to do list, where certain items would be removed? This sort of behavior is very common in an app, and it is where ReactDOM really shines. Remember, ReactDOM supplies the diffing engine which will update the view layer -- what the user sees -- of our app as it changes.
+
+[SC]
+
+        Add IDs.
+
+[VO]
+But to do this work efficiently in a list like this, we need to give each element a key, an identity that ReactDOM can recognize as it compares the siblings in a list.
+
+[SC]
+
+    <Heart key={uniqueId} text={msg}/>
+
+[VO]
+We pass that key in as a special prop, that ReactDOM can use to identify each component.
+
+[SC]
+
+        const users = [
+            {
+            id: 109238,
+            username: 'timmy',
+            },
+            {
+            id: 110923,
+            username: 'ralph'
+            }
+        ]
+
+[VO]
+Most often, you'll want to actually give each item in the array a fixed and stable id, which will be useful for all sorts of reasons. For instance, for a list of users, each user will have a unique id, and you can use that as the key.
+
+[SC]
+
+const HeartsList = () => {
+return (
+
+<div className='hearts-container'>
+{messages.map((msg, idx) => <Heart key={idx} text={msg} />)}
+</div>
+
+        )
+    }
+
+    export default HeartsList
+
+[VO]
+
+But if we don't have an id, and our data isn't changing much, we can just use the index from the array as that ID to get this error message to go away.
+
+[SC]
+
+[VO]
+And if we go to our browser now, you should see that the warning is gone.
+
+# end
+
+could add this randomizer down below if it doesn't feel like it's too much.
+
+[SC]
+
+const messages = [
+'cool cud', 'me my <3', 'you are bear',
+'team bear', 'time hug', 'fang', 'bog love', 'me have love',
+'all hover', 'sweat poo', 'u hack', 'stank love', 'heart me',
+'wink bear', 'bear bear', 'be my bear', 'yank o way', 'mage love',
+'oy', 'in a fan'
+].sort((a,b) => 0.5 - Math.random())
+[VO]
