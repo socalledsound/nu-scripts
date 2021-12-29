@@ -20,7 +20,14 @@ So...without further ado let's dive in there and make this happen.
 [SC]
 
 [VO]
-And the first thing I want you to do is to make a new component, in it's own file. So maybe the first first thing to do is make that file. We'll
+And the first thing I want you to do is to make a new file, in our components folder. We'll call it HeartSVG.js. And notice, that's a .js file, not an svg file. We're going to use React svg elements to display our svg code, rather than rendering the svg code as an image, as we've been doing.
+
+[SC]
+
+[VO]
+Let's get ready to bring that code over by making our HeartSVG component. So click on that file that you just made and in that file, let's make an arrow funciton named....HeartSVG.
+
+It's going to take in props. For now, let's just make an empty return statement and then remember to export the component.
 
 [SC]
 
@@ -28,7 +35,13 @@ And the first thing I want you to do is to make a new component, in it's own fil
 
 [VO]
 
-If you click on the red-heart.svg file in your file browser, you can see the code that makes up that red heart.
+Now, if you go to the assets folder and then click on the red-heart.svg file in your file browser, you can see the code that makes up the red heart that we've been displaying.
+
+[SC]
+
+[VO]
+
+I want you to copy all of this code into the return statement of the HeartSVG component. Ok? So, just like this, we'll copy....and then paste it here.
 
 [SC]
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
@@ -54,7 +67,7 @@ If you click on the red-heart.svg file in your file browser, you can see the cod
 </svg>
 
 [VO]
-If you haven't seen SVG before, it may seem a bit overwhelming but it's actually not all that mysterious, it's just a way to specify shapes using markup language,
+Now, if you haven't seen SVG before, it may seem a bit overwhelming but it's actually not all that mysterious, it's just a way to specify shapes using markup language,
 
 [SC]
 focus on path
@@ -71,26 +84,92 @@ We're going to focus in on it's parent <g> tag -- just above the path tag. G tag
 
 [SC]
 
-     <g fill={col}>
+     <g fill={props.col} stroke='#8a8791' strokeWidth='3'>
 
 [VO]
-So what we're going to do is set that fill color with javascript.
+So what we're going to do is set that fill color with javascript. We're going to supply the color using a prop, so we'll set it to props.col. And let's also add a stroke, which will be an outline around the edge of the shape. We'll hard code a color and a width for that stroke. And, we're done with that component.
+Now, let's use it.
 
 [SC]
 
 [VO]
-But we're going to need to make our own custom component that uses this svg code to do that, so our first step is going to be to create a new file.
+To keep things nice and re-usable, I'm going to suggest that we make a new component named CandyColoredHeart. So again, make a CandyColoredHeart.js file, and open that file up.
 
-And that's pretty much all we have to do.
+[SC]
+import HeartSVG from "./HeartSVG"
+[VO]
+We'll start by importing the HeartSVG component that we just made
+
+[SC]
+const colors = [
+'#b8e3f5',
+'#f5b8e4',
+'#b8f5b9',
+'#f5f3b8',
+'#e3b8f5',
+'#fffcf2',
+]
+[VO]
+And now we'll create an array of colors. These are the pastel colors that we want to use. You could of course change these colors if you want or add to them, this list is more or less the colors that I think of when I think of colored candy hearts, but YMMV. You can copy this array of colors from the screen here, or copy them from the exercise page.
+
+[SC]
+const CandyColoredHeart = (props) => {
+
+}
+export default CandyColoredHeart
+
+[VO]
+Now, we just have to create the component, and make sure that we bring in the props, and export the CandyColoredHeart.
+
+[SC]
+typing out
+const randomCol = colors[Math.floor(Math.random() * colors.length)]
+[VO]
+Then, on the second line, we'll choose one of the colors from our array of colors.
+So we'll define a variable named randomCol and then set it equal to colors[Math.floor(Math.random() * colors.length)].
+
+[SC]
+focus on specific parts
+const randomCol = colors[Math.floor(Math.random() * colors.length)]
+[VO]
+If you haven't seen that sort of thing before, we're just using the Math library which is a built in javascript library that gives us some nice functions. random generates a random float value between 0 and 1, which, when we multiply times the number of colors will generate a random float between 0 and 6, and then we just use Math.floor to lop off the fractional part of the float, so we end up with an integer value between 0 and 5.
+
+[SC]
+
+      return (
+      <div className='heart'>
+      <div className="heart-img">
+      <HeartSVG col={randomCol}/>
+      </div>
+      <p className='heart-message'>{props.text}</p>
+      </div>
+      )
+
+[VO]
+Next, let's write the return value for this function. Describe it.
+
+[SC]
+
+      // import Heart from './Heart'
+      import CandyColoredHeart from './CandyColoredHeart'
+
+[VO]
+And finally, we need to go to our HeartsList and use this new component.
+
+WE'll start by commenting out our previous Heart component, and then we'll import the CandyColoredHeart.
 
 [SC]
 
 [VO]
-But
+And then all we have to do is replace the Heart with the CandyColoredHeart in our map! And it should work just as before, but with colors.
 
 [SC]
 
-[VO]
+      messages.map((msg, idx) =>  <CandyColoredHeart key={idx} text={msg} idx={idx} />)
 
-[SC]
 [VO]
+And that pretty much wraps things up! You could obviously experiment more with the layout and design, but for now I think our work here is done. I hope that at this point you're feeling pretty comfortable and confident with the basics of functional components in React.
+
+In the next videos, we'll start building a bigger app -- our nucampsite. To begin with, we'll run create-react-app, install the libraries that we're going to need and set up the file structure.
+
+I'll see you there!
