@@ -2,12 +2,12 @@
 making a change on laptop
 [VO]
 
-Welcome Back. In the last few videos, we learned the basic syntax for creating React components using JSX.
+Welcome Back. In the last few videos, we've learned the basics of JSX, that HTML-like syntax that we can use to describe the interfaces that we want to build. 
 
 [SC]
 
 [VO]
-But I always feel like the best way to actually learn something is by building something, so let's roll up our sleeves now and get started on our I heart React page.
+In the next few videos
 
 [SC]
 

@@ -7,15 +7,19 @@ red hearts
 [VO]
 
 In the last video, we used Array.map to make a page full of heart messages, and that means that we're almost done here. But there's one more thing that I want to do before we move on...
-
+ 
 [SC]
 colorful hearts
 [VO]
-....which is to add some color to this page. It's a small thing and to make it happen we need to dive into the SVG of this SVG file, so honestly, if you'd rather not, I totally understand, you can skip this video and move on to the nucampsite.
+....which is to add some color to this page.  It's a small cosmetic thing but it will make a big difference to the look of this page.  That said, if you're running beh ind, you can skip this video and head straight to setting up the nucampsite for workshop, I won't be introducing any new React concepts here.
 
-But if you're even remotely interested in the way websites look, I think you'll agree that this page is better with color, and what's more, I think there's an interesting lesson here about the kinds we should keep in mind as we write and refactor our React components.
+[SC]
 
-So...without further ado let's dive in there and make this happen.
+            HeartsList
+                  CandyColoredHeart
+
+[VO]
+What we're going to do is, replace the Heart in our HeartsList with a new component, which we'll call CandyColoredHeart.
 
 [SC]
 

@@ -9,7 +9,7 @@ https://reacttraining.com/blog/jsx-the-confusing-parts/
 JSX
 [VO]
 
-In this video, I want to take a deeper dive into JSX, go over it's syntax, and show you some examples of JSX in action. JSX is one of the most powerful and unique aspects of writing React code, so mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. So Let's get started.
+In this video, I want to talk about JSX. JSX is one of the most powerful and unique aspects of writing React code, and mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. So Let's get started.
 
 [SC]
 
@@ -25,7 +25,30 @@ Now, first of all, what the heck is JSX? And how does it work?
     </div>
 
 [VO]
-JSX is a markup language, and it looks kind of like HTML, but really it's a way of writing DOM-manipulating javascript in a concise and declarative manner.
+JSX is a markup language, that lets us write something that looks a lot like HTML, in javascript.
+
+
+
+
+[SC]
+
+[VO]
+Now, notice, I said, kind of like HTML.
+
+Here's a little JSX.  You can see, it's not quite HTML.  First off, notice how, instead of writing class, we write className, to add a class?  Where have we seen that before?
+
+
+[SC]
+ 
+
+[VO]
+Oh, yeah.
+
+Remember how we used camel case to target specific properties of DOM nodes?
+
+This is very similar.
+
+While it looks like HTML, JSX is actually a way of writing DOM-manipulating javascript in a concise and declarative manner.
 
 [SC]
 
@@ -41,7 +64,33 @@ Nice, right?
 [SC]
 (jsx) => BABEL(jsx) => javascript
 [VO]
-Under the hood, JSX relies on the babel library, which takes in the jsx and spits out some regular old javascript for our web browser.
+Under the hood, React relies on the babel library to convert the jsx into javascript.
+
+
+[SC]
+
+<div >hi there!</div>
+
+[VO]
+The Babel compiler takes markup like this ....
+
+[SC]
+
+    React.createElement('div', null, 'hi there')
+
+[VO]
+and converts it into javascript that looks like this.  Look familiar?
+
+[SC]
+ReactDOM diffing engine graphic
+[VO]
+
+As we talked about in our ReactDOM video, the React elements that get created by this JSX code are similar to DOM nodes, but are much more concise and performant.  These React nodes then get passed into the ReactDOM.render function and that render function decides how to update and build our web page as efficiently as possible.
+<!-- 
+So, in the big picture, I want you to notice that we're doing something a lot like traditional DOM manipulation, but  we're doing it declaratively. We describe the html that we want to create and let React take care of the details. -->
+
+
+
 
 [SC]
 show app component in file browser
@@ -62,6 +111,62 @@ app function
 
 Below this is our App function. And you can see that it's basically just one big return statement, which returns a fairly large block of JSX.
 
+[SC]
+
+
+[VO]
+In the next video, we'll talk more about this function, which is called a stateless functional component in React.
+
+For now, I want you to focus on the JSX that it returns.
+
+[SC]
+
+[VO]
+Notice how we can assign all of the properties you'd expect to be able to assign to an HTML element, for instance, classNames for styling, and in the img tag you can see that we give it both an src attibute and also an alt attribute.
+
+[SC]
+
+[VO]
+But pay particular attention to the src property of that img tag.  Do you see those curly braces?
+
+We can mix javascript expressions and variables into our JSX inside curly braces.
+
+So what we're doing here, is assigning the logo that we import at the top of the page to that src property.  And that's how we display that logo on the page.
+
+
+[SC]
+
+[VO]
+
+So we've seen that JSX is a way of writing something like HTML right in our javascript code.
+
+we use camelcase to assign properties to the react elements that we write in our JSX
+
+we can mix javascript into our JSX using curly braces.
+
+we can write standard html elements with JSX
+
+and .... we can also invoke custom components.
+
+
+[SC]
+
+[VO]
+remember our index.js file, where we invoked this app function using JSX?     
+
+[SC]
+
+[VO]
+In the next video, I'll focus this most fundamental building block of React, which is called a component.  I'll see you there.
+
+
+
+
+
+
+
+
+
 This function is called a 'stateless functional React component' and it's a great way to write React components. We can write these functions using the function keyword, or as arrow functions. We'll mostly write them as arrow functions in this course, but either way works.
 
 [SC]
@@ -75,7 +180,7 @@ This function is called a 'stateless functional React component' and it's a grea
 
 [VO]
 
-Perhaps the most import thing to remember about these functions is that, in order to be valid React components, they must return one and only one React element. That react element can have many children, but at the top level of the return statement there needs to be just ONE element. So, if for instance, we want to return two divs....
+Perhaps the most import thing to remember about these functions. which we call components, is that, in order to be valid React components, they must return one and only one React element. That react element can have many children, but at the top level of the return statement there needs to be just ONE element. So, if for instance, we want to return two divs....
 
 [SC]
 
@@ -113,29 +218,6 @@ Perhaps the most import thing to remember about these functions is that, in orde
 [VO]
 If you look carefully, you'll see that the App function returns a single react element, a div, which has a child -- a header -- which in turn has several children -- an image, some text, and a link.
 
-[SC]
-
-<div >hi there!</div>
-
-[VO]
-
-Each of these html looking things are actually React elements, nodes on our virtual dom tree.
-That Babel compiler that I was mentioning before -- it interprets this markup....
-
-[SC]
-
-    React.createElement('div', null, 'hi there')
-
-[VO]
-and convert it into javascript that looks like this!
-
-[SC]
-ReactDOM diffing engine graphic
-[VO]
-
-As we talked about in our ReactDOM video, these React elements, get passed into the ReactDOM.render function and that render function decides how to update and build our web page as efficiently as possible.
-
-So, in the big picture, I want you to notice that we're doing something a lot like traditional DOM manipulation, but we're doing it declaratively. We describe the html that we want to create and let React take care of the details.
 
 [SC]
 
@@ -145,6 +227,15 @@ So, in the big picture, I want you to notice that we're doing something a lot li
 Notice that we can give these elements various properties.
 
 We can give them classNames, for css styling, as we would any html element,
+
+[SC]
+
+    <img src={logo} className="App-logo" alt="logo" />
+
+[VO]
+Also notice that we can use javascript expressions directly in our JSX if we wrap them inside curly braces. On this page, we're setting the src of the image tag to be the logo variable that holds the svg image that we imported up above.
+
+
 
 [SC]
 
@@ -159,12 +250,7 @@ We can give them classNames, for css styling, as we would any html element,
 [VO]
 similarly, img and anchor tags have all of the properties that we'd expect from a normal html element.
 
-[SC]
 
-    <img src={logo} className="App-logo" alt="logo" />
-
-[VO]
-Also notice that we can use javascript expressions directly in our JSX if we wrap them inside curly braces. On this page, we're setting the src of the image tag to be the logo variable that holds the svg image that we imported up above.
 
 # end
 

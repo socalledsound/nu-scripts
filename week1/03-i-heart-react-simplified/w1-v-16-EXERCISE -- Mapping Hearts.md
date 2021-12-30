@@ -14,17 +14,14 @@ Welcome back.
 [SC]
 show components
 [VO]
-In the last video, we talked a bit about this idea of using components to compose web pages and web sites.
+In the last video, we talked a bit about this idea of using small modular components to compose web pages.
 
 [SC]
 
 [VO]
-One way to do this
+And now, in this video, we're going to do it.
 
-[SC]
-
-[VO]
-Now we're going to take that simple Heart Component that we previously wrote, and use it to build a whole page full of hearts.
+We're going to take our Heart Component and use it to build a whole page full of hearts.
 
 [SC]
 
