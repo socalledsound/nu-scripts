@@ -2,17 +2,12 @@
 making a change on laptop
 [VO]
 
-Welcome Back. In the last few videos, we've learned the basics of JSX, that HTML-like syntax that we can use to describe the interfaces that we want to build. 
+Welcome Back. In the last video we talked about components, and how theyre the basic building blocks of React applications.  In this video, we're going to write one of our own.
 
 [SC]
 
 [VO]
-In the next few videos
-
-[SC]
-
-[VO]
-We'll start by making a Heart Component.
+It's going to be a Heart Component, and it's going to generate the Heart that you see on the screen now.
 
 [SC]
 animating many hearts being generated

@@ -8,6 +8,7 @@ https://reacttraining.com/blog/jsx-the-confusing-parts/
 [SC]
 JSX
 [VO]
+Welcome back.
 
 In this video, I want to talk about JSX. JSX is one of the most powerful and unique aspects of writing React code, and mastering it is extremely important! The good news is, it's not that hard if you remember a few key things. So Let's get started.
 
@@ -16,7 +17,7 @@ In this video, I want to talk about JSX. JSX is one of the most powerful and uni
     But what is JSX
 
 [VO]
-Now, first of all, what the heck is JSX? And how does it work?
+Now, first of all, what is JSX? 
 
 [SC]
 
@@ -25,21 +26,21 @@ Now, first of all, what the heck is JSX? And how does it work?
     </div>
 
 [VO]
-JSX is a markup language, that lets us write something that looks a lot like HTML, in javascript.
+JSX is a markup language, that lets us write something that looks kind of like HTML, in javascript.
 
 
 
 
 [SC]
-
+jsx snippet
 [VO]
 Now, notice, I said, kind of like HTML.
 
-Here's a little JSX.  You can see, it's not quite HTML.  First off, notice how, instead of writing class, we write className, to add a class?  Where have we seen that before?
+Here's a little JSX.  You can see, it's not quite HTML.  First off, notice how, instead of writing class, we write className, to add a class.  Where have we seen that before?
 
 
 [SC]
- 
+ dom manipulation
 
 [VO]
 Oh, yeah.
@@ -57,7 +58,7 @@ document.createElement('div')
 <div></div>
 
 [VO]
-So instead of writing document.createElement('div'), we just write <div></div>.
+So instead of writing document.createElement and passing in the type of element we want,('div'), we just write div, as we would in html.
 
 Nice, right?
 
@@ -95,7 +96,7 @@ So, in the big picture, I want you to notice that we're doing something a lot li
 [SC]
 show app component in file browser
 [VO]
-To see JSX in action, let's go to the App component, which is in the App.js file. Open it up in vs code now. You'll find it just above the index.js file that we've been looking at, in the file browser.
+To see JSX in action, let's go to the App component, which is in the App.js file. Open it up in vs code now. You'll find it in the src folder of our app, the same folder that holds the index.js file that we've been looking at.
 
 [SC]
 
@@ -103,7 +104,7 @@ To see JSX in action, let's go to the App component, which is in the App.js file
     import './App.css';
 
 [VO]
-At the top are our imports. First, we're importing an svg file, which we then display on our page, and we're also importing some css classes from App.css.
+At the top are our imports. First, we're importing an svg file, which we will  then display on our page, and we're also importing some css classes from App.css.
 
 [SC]
 app function
@@ -122,7 +123,7 @@ For now, I want you to focus on the JSX that it returns.
 [SC]
 
 [VO]
-Notice how we can assign all of the properties you'd expect to be able to assign to an HTML element, for instance, classNames for styling, and in the img tag you can see that we give it both an src attibute and also an alt attribute.
+Notice how we can assign all of the properties you'd expect to be able to assign to an HTML element, for instance, classNames for styling, and in the img tag you can see that we give it both a src attibute and also an alt attribute.
 
 [SC]
 
@@ -144,20 +145,24 @@ we use camelcase to assign properties to the react elements that we write in our
 
 we can mix javascript into our JSX using curly braces.
 
-we can write standard html elements with JSX
+we can create standard html elements with JSX
 
-and .... we can also invoke custom components.
+and .... we can create custom elements.
 
-
-[SC]
-
-[VO]
-remember our index.js file, where we invoked this app function using JSX?     
 
 [SC]
 
 [VO]
-In the next video, I'll focus this most fundamental building block of React, which is called a component.  I'll see you there.
+remember our index.js file, where we created an App element using JSX? 
+
+We imported the App function that we've been looking at, and then invoked it, using JSX.
+
+[SC]
+
+[VO]
+Functions like these are called stateless functional components in React and they are the building blocks with which we build our interfaces.  
+
+In the next video, I want to focus on this most fundamental building block of React.  I'll see you there.
 
 
 
