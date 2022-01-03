@@ -2,7 +2,7 @@
 making a change on laptop
 [VO]
 
-Welcome Back. In the last video we talked about components, and how theyre the basic building blocks of React applications.  In this video, we're going to write one of our own.
+Welcome Back. In the last video we talked about components, and how they're the basic building blocks of React applications.  In this video, we're going to write one of our own.
 
 [SC]
 
