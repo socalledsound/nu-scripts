@@ -1,13 +1,55 @@
 [SC]
+Components and Props
+[VO]
 
-    <App>
-        <MyHeader>
-        <AComponent>
-        <AnotherComponent>
-    </>
+
+[SC]
+show App Component
+[VO]
+In the last video we focused on the JSX in the return expression of this App function.  And I mentioned that, in React, we call functions that return JSX like this one does are called Components in React.  
+
+
+
+ 
+
+In this video I want to talk a little more about components, about how they're just a little different than normal functions and also talk about props, which are how we pass arguments into React components.
+
+
+[SC]
+
+    <div>
+        <Header />
+        <SomeContent />
+        <AnotherComponent />
+    </div>
 
 [VO]
 At their most basic level, React components are ways of bundling together React elements. We use them to declaratively compose user interfaces, and organize chunks of our user interface.
+
+[SC]
+
+<MyComponent />
+
+
+[VO]
+We can invoke those functions using JSX, just by wrapping them in beginning and closing tags.  
+
+
+[SC]
+
+[VO]
+
+Remember how 
+
+
+[SC]
+
+
+[VO]
+For instance, I can take the code you see outlined in fuschia now, and make that a seperate component.I can do that with this take all of the lines that make up the header and put them in their own component. 
+
+
+
 
 [SC]
 
@@ -33,7 +75,7 @@ At their most basic level, React components are ways of bundling together React 
             }
 
 [VO]
-If I want to, I can take all of the lines that make up the header and put them in their own component. I can put this new function in its own file and import it, but for now I'm just going to write it up above, like this. It's just another arrow function, like the App component and like the App component it also has a name that begins with a capital letter. It's a pretty important style guideline to follow -- always start your React components with capital letters.
+It's just another arrow function, like the App component and like the App component it also has a name that begins with a capital letter. It's a pretty important style guideline to follow -- always start your React components with capital letters.
 
 I'm calling it Header, and it's going to have a return expression, and in there I'll just paste everything the header element and everything inside of it.
 

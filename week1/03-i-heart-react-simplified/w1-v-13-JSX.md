@@ -162,7 +162,7 @@ We imported the App function that we've been looking at, and then invoked it, us
 [VO]
 Functions like these are called stateless functional components in React and they are the building blocks with which we build our interfaces.  
 
-In the next video, I want to focus on this most fundamental building block of React.  I'll see you there.
+In the next video, I want to focus on this most fundamental building block of React -- the component.  I'll see you there.
 
 
 

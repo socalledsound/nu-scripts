@@ -20,131 +20,145 @@ And I hope you tried it on your own. And were able to do it! I know it can be pr
 code along header component
 
 [VO]
-I'm going to do it my way now. And it's pretty straightforward. I just want to declare an arrow function named Header up here near the top of the page, or anywhere before I use it down here in the App component. And then I'm going to return a div wioth a class name of App-header and the text, as I gave you in the last video, I heart React. And that's pretty much it.
+I'm going to go ahead and build that Header now, so you can compare yours to mine. And it's pretty straightforward. I just want to declare an arrow function named capital H Header up here near the top of the page, or anywhere before I use it down here in the App component. And that arrow function is goingto return a div. 
+
+ANd the text of that div is going to be I and then I'll copy that heart in there and then React
+
+And I want t be sure to give that div a class name of App-header... 
+
+And then I need t save that and make sure that my dev server is running and if I look in my browser.....
+
 
 [SC]
-not sure what to show here, maybe just the app component?
+show browser
 [VO]
-Now you could very easily make the point right now that that's a lot of extra code to add a single div, which I could have just as easily added just as a one line div in my App component.
+ there it is, our new Header.
 
-And, we're not going to do much with our Header in this little starter App, so you'd be pretty reasonable to say that.
 
-[SC]
 
-[VO]
-But what we're trying to do here is to get into good habits, and often times, like in the nucamp App that we're going to be building, a Header will have a lot more going on, with some kind of site navigation and maybe even a link to a user profile or a shopping cart or who knows what else.
-
-[SC]
-
-[VO]
-And, you're almost definitely going to want to reuse the header on a bunch of different pages, so generally a Header is going to want to be a seperate component.
 
 [SC]
 show page broken up into sections
 [VO]
-And this is a great place for us to talk about the most fundamental conceptual skill that you must master to be a good React developer, which is this idea of breaking up the thing that you want to build into smaller chunks, which we call components.
+And I think that this is a great place for us to talk about the most fundamental conceptual skill that you must master to be a good React developer, which is this idea of breaking up the thing that you want to build into smaller chunks, which we call components.
+
+For instance, we've conceptually managed to break our page up into a Header, and then below that a heart.
+
 
 [SC]
-show page broken up into functions
-[VO]
-As we've seen, we generally write components as functions, and the decisions that we make while writing them are in many cases judgement calls but an important thing to remember about functions and about components is that if we name them well and limit their scope, we will generally be a lot happier, and other people who read our code will have an easier time understanding what we're trying to do.
-
-[SC]
-
-[VO]
-And, you can break down just about any web page you want to build in just this way.
-Soon, you'll be doing it without even thinking about it.
-The key -- and I can't stress this enough! -- to this is to start thinking in terms of components: concise, reusable blocks of javascript -- otherwise known as functions -- which describe a small and focused aspect of the interface that you want to build.
-
-[SC]
-
-PAGE
-HEADER
-PAGE CONTENT
-
-[VO]
-First, we'll often have large components whose primary job is to sever as a container for other components.
-
-[SC]
-
     LoginPage
         Header
-        Login
-
+        LoginForm
 [VO]
-So a login page would be a component composed of smaller components.
-
-We might break it up so it has a Header, and another component called Login.
+If we wanted to add another page -- say a login page? -- it would be really nice that our Header is a seperate component, because we can just drop it in to any new page that we want to add to our site.
 
 [SC]
 
-    Login
+    LoginForm
         TextField
         TextField
-        Submit
-
+        SubmitButton
 [VO]
+And we can apply that same logic to building other, smaller components, as well.
 
-Which in turn is composed of smaller components, maybe two text input fields and a submit form button.
+A login component like the one on the login page we were just looking at might be composed of several components, maybe two instances of a TextField component and a Submit component that would just be a button.
+
 
 [SC]
-
-    Register
+    RegisterForm
         TextField
         TextField
         TextField
         TextField
         TextField
         TextField
-        Submit
-
+       SubmitButton
 [VO]
-We might also have a Register component, which would
-Take those same components from the login page, and add a few more text fields.
-
-[SC]
-LoginPage
-Header
-if(true) { return Login} else {return Register}
-[VO]
-And then, we can use javascript to conditionally render different parts of our interface.
+And this 'login' page can become a 'register' page by simply adding a few more instances of that Textfield component!
 
 [SC]
 
-    HeartList
-    [message1, message2].map(message => HeartWithMessage)
+list of benefits
+
+debugging is easier
+easier to read and understand
+reusability
+start small!
+
+
 
 [VO]
-Or, as we're going to do in the next video, we can use Array.map() to loop over a data set, which might even be changing dynamically, and create our web page's content, that way.
+If you can get in the habit of writing small and specific components, you'll find that  -- 
 
-[SC]
-not sure what graphic here
-[VO]
-Starting to think in terms of small, re-usable components is absolutely crucial to becoming a great React developer. And, I want to say that it really helps! For one thing, if you can start writing small and re-usable components, you'll start building up a library of components that you can re-use in projects.
+it makes it a lot easier to find bugs or problems in your code; 
 
-[SC]
+it makes your code easier to read and understand
 
-[VO]
-But, for a beginner, I think it's even more crucial to remember -- you can break a page or an idea up into smaller chunks. For instance, if you want to build an ecommerce site but it feels a little overwhelming...then just try to find the simplest part of the that site, and start there.
+small and specific components are generally more re-usable.  for instance, the text field from the login page above -- that could be used anywhere you need to build a form.
 
-[SC]
+And finally, breaking your interface up into smaller chunks absolutely makes it easier to get started!  
 
-[VO]
-Set all of the complicated layers and just start with a single catalog item. An image, and some text. And build from there!
+Sometimes it can feel overwhelming to think about making a whole web page, so just make one small component and take it from there.
 
-[SC]
-
-[VO]
-So, the component system is your friend. Love it and it will love you right back.
 
 [SC]
 
+single heart
+
 [VO]
-All right. In the next video, we're going to use Array.map to transform an array of messages into an array of hearts with messages.
+For instance, in the app we're building now, we started with a single heart, and got that working.  And then we added a Header. 
+
+[SC]
+is this another figma thing?
+HeartsList
+    Heart
+    Heart
+
+
+[VO]
+And now, in the next video, we're going to make a HeartsList component, that will use the Heart component that we already made a bunch of times.
+
+[SC]
+
+a bunch of hearts
+
+[VO]
+I think it'll be kind of exciting and kind of fun.  
+
+We're going to take an array of messages and use Array.map() to fill our page with the hearts.
+
 
 I'll see ya there.
 
+
+
 # end
+[message1, message2].map(message => <Heart msg={message}>)
+We'll use Array.map() to iterate over an array of messages and transform them into an array of Hearts. 
+
+
+This app is tiny and simple, so it doesn't really matter that much how we structure this code, but as your apps start getting bigger, you'll be so much happier if you pay close attention to how you name your components and do everything you can to keep them small and specific.  
+
+[SC]
+container component graphic?
+[VO]
+One model that is often very useful to keep in mind is the 'Container' component.
+
+Container components, like for instance our App component, are a great way to organize child components.
+
+
+[SC]
+(this should probably be a graphic of a web page?)
+
+PAGE1
+    HEADER
+    PAGE CONTENT
+
+[VO]
+If we had multiple pages, each page of our app could be a container, in which we could invoke various components.  WE migt have a Header component that we use on every page, and then each page could have other features or content, below that Header.
+
+
+
 
 [SC]
 a few pages with highlighted sections that show components.
