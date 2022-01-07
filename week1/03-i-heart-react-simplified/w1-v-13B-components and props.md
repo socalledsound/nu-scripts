@@ -6,13 +6,13 @@ Components and Props
 [SC]
 show App Component
 [VO]
-In the last video we focused on the JSX in the return expression of this App function.  And I mentioned that, in React, we call functions that return JSX like this one does are called Components in React.  
+In the last video we focused on the JSX in the return expression of this App function.  And I mentioned that, in React, functions like this one, functions that return JSX --  are called Components.  
 
 
 
  
 
-In this video I want to talk a little more about components, about how they're just a little different than normal functions and also talk about props, which are how we pass arguments into React components.
+In this video I want to talk a little more about components and also about props, which are how we pass arguments into React components.
 
 
 [SC]

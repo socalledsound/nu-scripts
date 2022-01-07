@@ -11,7 +11,11 @@ In the last video, we used Array.map to make a page full of heart messages, and 
 [SC]
 colorful hearts
 [VO]
-....which is to add some color to this page.  It's a small cosmetic thing but it will make a big difference to the look of this page.  That said, if you're running beh ind, you can skip this video and head straight to setting up the nucampsite for workshop, I won't be introducing any new React concepts here.
+....which is to add some color to this page.  
+
+
+[next chunk]
+It's a small cosmetic thing but it will make a big difference to the look of this page.  That said, if you're running beh ind, you can skip this video and head straight to setting up the nucampsite for workshop, I won't be introducing any new React concepts here.
 
 [SC]
 
@@ -94,10 +98,17 @@ We're going to focus in on it's parent <g> tag -- just above the path tag. G tag
 So what we're going to do is set that fill color with javascript. We're going to supply the color using a prop, so we'll set it to props.col. And let's also add a stroke, which will be an outline around the edge of the shape. We'll hard code a color and a width for that stroke. And, we're done with that component.
 Now, let's use it.
 
+
+
+And then I'm going to use this component in a new component, in a way very similar to the way that we've used an image tag in our Heart component.
+
+And this new component is going to be called a CandyColoredHeart
+
+
 [SC]
 
 [VO]
-To keep things nice and re-usable, I'm going to suggest that we make a new component named CandyColoredHeart. So again, make a CandyColoredHeart.js file, and open that file up.
+ So I'll make a CandyColoredHeart.js file, and open that file up.
 
 [SC]
 import HeartSVG from "./HeartSVG"

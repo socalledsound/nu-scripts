@@ -4,6 +4,142 @@ https://www.freecodecamp.org/news/array-map-explained-in-4-levels-of-difficulty/
 https://dev.to/adnanbabakan/declarative-programming-with-javascript-2h97
 react = mapping data into react elements
 
+
+[SC]
+
+[VO]
+Welcome back.
+
+In the last video I talked somewhat abstractly about some of the differences between declarative and imperative programming, and one of the key things that I mentioned was that imperative code is lower level, more step by step, while decalarative programming is higher level, and tends to abstract away the details.
+
+And I mentioned that the key to doing this is generally, yep, functions.
+
+But how does this work exactly?
+
+In this video, I want to show you one of my favorite examples of these ideas in action.
+
+And while I do it, I will also give you what will be one of the most important tools in your functional declarative toolbelt.
+
+You're going to use this a LOT in react, like, every day a lot.
+
+So, let's get started.
+
+
+[SC]
+
+const messages = [
+    'how are you doing',
+    'what are you up to',
+    'would you like to get a bite later',
+]
+
+[VO]
+And I want to start with an array of messages.
+
+Now, these messages are fine, but what if we want to make them just a little bit sweeter?
+
+[SC]
+
+const sweetMessages = [
+        'how are you doing, sweetie?',
+        'what are you up to, sweetie?',
+        'would you like to get a bite later, sweetie?',
+]
+
+
+[VO]
+What I want is a new group of messages, where each one ends with a ', sweetie' and then a question mark.
+
+[SC]
+
+[VO]
+Now before we do this, I just want to say that while this might seem like a silly example, it's actually a pretty common thing that you want to do on a web site.
+
+[SC]
+
+const imageURLS = [
+
+]
+
+<div>
+    <img src=`${imageURLS[0]}`/>
+</div>
+<div>
+    <img src=`${imageURLS[1]}`/>
+</div>
+<div>
+    <img src=`${imageURLS[2]}`/>
+</div>
+
+[VO]
+For instance, if you want to make a gallery of images -- you'll need to take some imageURLS and wrap them in some markup, so you can display them on the page.
+
+But we'll get to that soon.
+
+
+[SC]
+
+
+[VO]
+For now, let's focus on that original array, and I'm going to show you two different ways of creating the new array.  The first is an imperative approach.  I'm going to use a for loop.  So we'll start with the original array of messages and then write a for loop to iterate over the array of messages. 
+
+SO something like
+
+
+
+
+# enter the stuff here
+
+[SC]
+
+
+[VO]
+And so we successfull accomplished our task in this highly imperative manner, and one of the hallmarks of imperative code is the use of a for loop, where we specify very explicitly the task that we want accomplished and the steps that it will take, which are directly a function of this counter variable that we wrote.
+
+
+[SC]
+
+[VO]
+Now I want to do the same thing, declaratively, and then I'll talk about the differences.  
+
+So to do it declataratively I'll just create a new constant named sweetMessages and set it equal to Array.map(), and into array.map I will pass a callback function. 
+
+And this callback function will look like this.  It will be an inline arrow functino that takes in a paramter and returns a modified version of that parameter.  In this case, I'm going to call this parameter message and it's going to return the same template literal that I wrote inside the for loop a second ago.
+
+[SC]
+// inside array.map()
+[VO]
+Now, here's the neat part inside Array.map(),  there's a for loop, which iterates over the array, just like we did with our for loop a second ago, and it runs the callback function on each item in the array.  Does that make sense?  
+
+And then the map method returns a new array, which will contain the updated versions of the old array.
+
+[SC]
+
+[VO]
+
+And my final code looks like this: shorter, sweeter and less error prone, because I don't have to rewrite that for loop, I just use the one the array.map supplies.
+
+Notice that the exact same imperative code is lurking under the surface, but it's been abstracted away by the map method.
+
+[SC]
+
+[VO]
+I do want to add that advanced array methods like Array.map() are absolutely crucial and knowing them well is absolutely criticial to writing the ind of javascript that makes people want to hire you.
+
+
+You'll get practice with several in this course.  In addition to Array.map(), we'll also get a lot of use out of Array.filter and Array.reduce, both of which will ebe introduced in a coming lesson.
+
+But...all of the array methods are useful, and though we don't have time in this course for all of them, I recommend spending time learning them all.  You can find the full list of methods at MDN.
+
+[SC]
+
+[VO]
+A
+
+
+
+
+
 [SC]
 
     const doSomethingXTimes = (x, func) => {

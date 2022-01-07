@@ -18,7 +18,7 @@ REACTSTRAP
 We'll use reactstrap -- a React component library for Bootstrap -- for our styling
 
 [SC]
-React Router DOM
+React Router
 [VO]
 We'll use React Router for site navigation
 
@@ -40,7 +40,7 @@ You'll learn React Hooks for component level logic
 [SC]
 REDUX
 REDUX TOOLKIT
-[VO]
+[VO] 
 And Redux and redux toolkit for global state management.
 
 [SC]
@@ -57,7 +57,6 @@ But the main thing you'll learn isn't any of these specific technologies or libr
 [SC]
 JS logo
 [VO]
-Did I just say javascript? Yes, javascript.
 
 I know that you've already learned a little javascript and some of you may have even learned a lot of javascript. That javascript knowledge will serve you well with React.
 

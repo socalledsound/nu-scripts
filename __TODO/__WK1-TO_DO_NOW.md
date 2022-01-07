@@ -1,3 +1,40 @@
+VIDEOS
+
+01 - TOO LONG need nucampsite screengrab; hooks logo and formik logo; what to do for portfolio page? 20 second graphic?
+02 - pretty good
+
+
+functional foundations
+
+03 recording ok
+04 rewrite needed
+05 need to write
+06 
+07
+08 need to write
+09 ned to write
+
+
+I heart react
+
+10 good
+11 no vid
+12 need to do
+13 jsx -need dom diff graphic at 1:40
+13b - components + props - needs writing and recording
+14 - needs download section -- sandbox edit
+15 - done?
+16 - done? need nucampsite screencap?
+17 -  record new chunk comparing components
+    -- need sandbox with colors?
+    need nucampsite screencap
+      
+
+
+
+
+
+
 INTROS
 01 - recorded ?
 02 - recorded ?

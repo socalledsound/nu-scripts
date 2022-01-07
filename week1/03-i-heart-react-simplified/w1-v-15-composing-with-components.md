@@ -20,19 +20,29 @@ And I hope you tried it on your own. And were able to do it! I know it can be pr
 code along header component
 
 [VO]
-I'm going to go ahead and build that Header now, so you can compare yours to mine. And it's pretty straightforward. I just want to declare an arrow function named capital H Header up here near the top of the page, or anywhere before I use it down here in the App component. And that arrow function is goingto return a div. 
+I'm going to go ahead and do it myself now, so you can compare yours to mine. 
 
-ANd the text of that div is going to be I and then I'll copy that heart in there and then React
+It shouldn't take too long.  
 
-And I want t be sure to give that div a class name of App-header... 
+I'll start by declaring that component up above the App component, so I'll say const capital H header and that's equal to an arrow function that's gonna return a single div.
 
-And then I need t save that and make sure that my dev server is running and if I look in my browser.....
+And inside that div I'll say I, and then go over here and copy this heart emoji, so I Heart and then react.
+
+And then to get that header styled I'm going to add a className and make sure that that class name is capital A App-header and notice that the header is lower case. 
+
+ 
+
+And then I need t save that and I'm going to  open up my terminal and make sure that my dev server is running, so I'll type npm start 
+
+and then if I look in my browser.....
 
 
 [SC]
 show browser
 [VO]
  there it is, our new Header.
+
+ So I've now got a Header and below that a Heart
 
 
 
@@ -42,7 +52,7 @@ show page broken up into sections
 [VO]
 And I think that this is a great place for us to talk about the most fundamental conceptual skill that you must master to be a good React developer, which is this idea of breaking up the thing that you want to build into smaller chunks, which we call components.
 
-For instance, we've conceptually managed to break our page up into a Header, and then below that a heart.
+For instance, here we've conceptually managed to break our page up into a Header, and then below that a heart.
 
 
 [SC]
@@ -50,7 +60,7 @@ For instance, we've conceptually managed to break our page up into a Header, and
         Header
         LoginForm
 [VO]
-If we wanted to add another page -- say a login page? -- it would be really nice that our Header is a seperate component, because we can just drop it in to any new page that we want to add to our site.
+So now, if we wanted to add another page -- say a login page? -- it would be really nice that our Header is a seperate component, because we can just drop it in to any new page that we want to add to our site.
 
 [SC]
 
@@ -61,7 +71,7 @@ If we wanted to add another page -- say a login page? -- it would be really nice
 [VO]
 And we can apply that same logic to building other, smaller components, as well.
 
-A login component like the one on the login page we were just looking at might be composed of several components, maybe two instances of a TextField component and a Submit component that would just be a button.
+A login form component  like the one on the login page we were just looking at might be composed of several components, maybe two instances of a TextField component and a Submit Button componen.
 
 
 [SC]
@@ -74,7 +84,16 @@ A login component like the one on the login page we were just looking at might b
         TextField
        SubmitButton
 [VO]
-And this 'login' page can become a 'register' page by simply adding a few more instances of that Textfield component!
+And now, with this modular, component based style of design, if we want to add a Register Form, which is very similar to a login form, we can just add a few more instances of that Textfield component!
+
+
+[SC]
+register page
+[VO]
+
+And then. once again, reuse our Header and just drop in the RegisterForm in place of the login form and just like that, we have a register page, where we can redirect users who don't have an account yet.
+
+
 
 [SC]
 
@@ -88,13 +107,16 @@ start small!
 
 
 [VO]
-If you can get in the habit of writing small and specific components, you'll find that  -- 
+So what I really want you to take away from this video is the importance of getting in the habit of writing small and specific components.
 
-it makes it a lot easier to find bugs or problems in your code; 
+If you can start thinking this way, you'll first of all find that your components are more re-usable. For instance, the text field component that we were hypothetically using in both a login form and a register form -- that could be used anywhere you need to build a form, or get input from a user.
 
-it makes your code easier to read and understand
 
-small and specific components are generally more re-usable.  for instance, the text field from the login page above -- that could be used anywhere you need to build a form.
+And these small and specific components are also easier to debug, in the same way that all small and specific functions are easier to debug.
+
+
+And Small and very specific components like this are not only more re-usable and easier to debug, they also make our code easier to read and understand.  It's very easy to see and understand the difference between a LoginForm and a RegisterForm.
+
 
 And finally, breaking your interface up into smaller chunks absolutely makes it easier to get started!  
 
@@ -123,11 +145,12 @@ And now, in the next video, we're going to make a HeartsList component, that wil
 a bunch of hearts
 
 [VO]
+
+We're going to take an array of messages and use Array.map() to fill our page with the hearts. 
+
 I think it'll be kind of exciting and kind of fun.  
 
-We're going to take an array of messages and use Array.map() to fill our page with the hearts.
-
-
+ 
 I'll see ya there.
 
 

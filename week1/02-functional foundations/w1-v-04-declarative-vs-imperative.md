@@ -98,20 +98,54 @@ Think about it -- do you actually have any idea how <p>how?!</p> is converted in
 [VO]
 But React goes a step further, by allowing us to not only declaratively compose our web page, but also to declaratively express how we want that interface to 'react', or evolve, over time, as the result of user interaction.
 
+Just exactly how React does this is a subject for another video.  Or really, the subject for most of the rest of this course!  
+
 [SC]
 
-const App = () => Interface
-
-ReactDOM.render(App(), target)
+react is declarative
 
 [VO]
-How does it do this? Well...that's the beauty of declarative programming! You don't really need to know! All you REALLY need to know is, React let's us describe our user interface using functions and then we can hand that interface off to the render method of the ReactDOM library and -- presto! We have a React web app.
 
-React declaratively abstracts away all of the imperative steps to make your life easier.
+
+For now, I just want you to remember that React is declarative in nature, and to know that that means that React will declaratively abstract away many of the details of managing our app's interface. 
+
+[sc]
+
+imperative is step by step
+[vo]
+Remember, imperative is generally lower level, more like step by step instructions.
+
+
+[sc]
+imperative is step by step  declarative is higher level
+[vo]
+whereas a declarative approach is often an abstraction layer, or an api that manages imperative steps from us so we don't have to think about them.
 
 [SC]
 
-declarative != imperative
+
+[VO]
+And, if youre ready, in the next video, I'd like to show you one of my favorite javascript examples of this declarative style of programming in action: array.map().  As fate would have it, it's also going to be an absolutely essential tool for creating web pages using React, so be sure to watch this next one.  I'll see you there.
+
+
+
+
+[SC]
+
+
+[VO]
+
+
+[SC]
+
+
+[VO]
+
+
+
+
+
+
 
 [VO]
 So I hope that helps a little bit? And when someone tosses out the words declarative and imperative, you'll have some sense of what they're talking aboout
@@ -120,13 +154,23 @@ But I'm also aware that a high level discussion like this might still leave you 
 
 const newArray = [1,5,6].map((num) => num + 1)
 
-So in the next video I'm going to roll my sleeves up a bit and SHOW you the difference between imperative and declarative code, by teaching you about one of my favorite array methods -- Array.map().
+In the next video I'm going to roll my sleeves up a bit and SHOW you the difference between imperative and declarative code, by teaching you about one of my favorite array methods -- Array.map().
 
 It's the classic example of a declarative API, and it's also a method that you will be using a lot throughout this course and, really, just about every time you build a React app.
 
 So, take a little break, stretch your legs and get yourself a nice strong glass of water. Or coffee. And, I'll see you in the next video.
 
 # end
+
+
+
+#
+
+#
+
+Well...that's the beauty of declarative programming! You don't really need to know! All you REALLY need to know is, React let's us describe our user interface using functions and then we can hand that interface off to the render method of the ReactDOM library and -- presto! We have a React web app.
+
+React declaratively abstracts away all of the imperative steps to make your life easier.
 
 [SC]
 

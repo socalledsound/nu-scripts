@@ -55,10 +55,10 @@ That means that there are countless tutorials and code-alongs out there and any 
 [SC]
 Why React?
 
-So why did React become so popular?
+React is the dominant front end framework
 
 [VO]
-So, one great reason to use React is that there's a lot of demand for React developers and another is, it's a little bit easier to learn, because there are so many React developers. But then, the next obvious question is....WHY are there so many React developers and jobs? Obviously, being born at facebook helped. But why, after it's introduction in 2013, did React so quickly take over the web?
+But all three of these great reasons to learn React are really just different ways to say that React is currently the dominant front end library.  Which is empirically true.  What I haven't talked about yet, are some of the reasons why so many developers have chosen React in the first place.
 
 <!-- [SC]
 (relatively) easy to learn
@@ -104,12 +104,12 @@ FUNCTIONAL JAVASCRIPT
 [VO]
 In all of this, React and the react ecosystem leans heavily on functional, or declarative javascript. For many, React is the gateway to functional programming, and the popularity of React and it's declarative approach to building UI has led to an equally explosive growth in the popularity of the functional programming paradigm.
 
-To understand React and become a rockstar React developer, it really helps to understand the functional programming concepts on which is is based.
+So, to understand React and become a rockstar React developer, it really helps to understand the functional programming concepts on which is is based.
 
 [SC]
 
 [VO]
-So in the next section of this course, we'll take a brief look at the big ideas of functional programming, and introduce it's key concepts: composing using pure functions, avoiding data mutation and carefully managing side effects.
+Inpm installn the next section of this course, we'll take a brief look at the big ideas of functional programming, and introduce it's key concepts: composing using pure functions, avoiding data mutation and carefully managing side effects.
 
 In the next video, we'll start our journey into functional programming by talking a little bit about the key ingredient in functional programming which is, yeah, you guessed it -- functions. I'll see you there.
 

@@ -41,17 +41,17 @@ Inside the src folder, t's also important that you leave the index.js, index.css
 [SC]
 a simple app file
 [VO]
-In a simple, fun one-off project, it's perfectly ok to write all of your code in the App.js file, and not bother with any imports or exports. You can write all of your components on a single page if you want to.
+In a simple, fun one-off project, it's perfectly ok to write all of your code in the App.js file, and not bother with any imports or exports. You can write all of your components on a single page if you want to.  You probably remember that we started our i heart react project that way.
 
 [SC]
 a long app file
 [VO]
-But fairly quickly, you'll likely find that the amount of code on that page gets overwhelming. At that point, it's time to think about organizing the files in a way that makes sense.
+But fairly quickly, as we did in that project, you'll most likely find that the amount of code on that page gets overwhelming. At that point, it's time to think about organizing the files in a way that makes sense.
 
 [SC]
 
 [VO]
-In our heart react project you saw that we had a folder for components and another one for utility functions. It's a great idea to get in the habit of keeping folders like these in your projects, and also a great idea to try to think about writing your components and utility functions in such a way that they will be re-usable in other projects!
+In our heart react project you saw that we had a folder for components. It's a great idea to get in the habit of keeping folders like these in your projects, and also a great idea to try to think about writing your components and utility functions in such a way that they will be re-usable in other projects!
 
 [SC]
 
