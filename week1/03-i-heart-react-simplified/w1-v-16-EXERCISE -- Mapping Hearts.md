@@ -14,12 +14,14 @@ Welcome back.
 [SC]
 show components
 [VO]
-In the last video, we talked a bit about this idea of using small modular components to compose web pages.
+In the last video, I talked a bit about this idea of using small modular components to compose web pages.
+
+And now, in this video, we're going to do it.   
 
 [SC]
 
 [VO]
-And now, in this video, we're going to do it.
+
 
 We're going to take our Heart Component and use it to build a whole page full of hearts.
 
@@ -60,13 +62,32 @@ And in our components folder we're going to make a few javascript files, one for
 
 Next, we'll just copty our Header into Header.js -- and all that we have to add is an export statement. So at the bottom of the file we'll say export default Header
 
+RERECORD
+
+
+[SC]
+
+[VO] 
+And then we're gonna go back to our App.js file.  And up at the top we'll say import Header from  period/components and then in the components folder, Header.  And remember that, thaks to the Babel compiler we don't need to add the .js on javascript files, we can just import it right like this. 
 [SC]
 
 [VO]
-And then we'll import that into our App component.
-[SC]
+And now we're gonna do the same thing with our heart, we're going to cut it out and then paste it into Heart.js
 
-[VO]
+And then we need to remember to export whoops export default whoa, we're gonna export default Heart.
+
+ANd we're also going to need the HeartLogo.
+
+So, click on the App.js file and we'll cut it out of there and then paste it into our Heart.js file.
+
+So at the top we'll paste that import statement.
+
+But we need to change the path, because now we're trying to import it from inside the components folder, so now we're going to be out one level so .. backslash  and then into the assets folder and then heart.svg 
+
+
+
+
+
 And then we'll copy our Heart component into the Heart.js file and also be sure to export that. 
 
 

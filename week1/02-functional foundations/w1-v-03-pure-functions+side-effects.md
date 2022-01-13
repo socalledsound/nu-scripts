@@ -10,7 +10,7 @@ Welcome back.
 
 In the last video, I talked about some of the big ideas of React, and made a big point out of the fact that React utilizes functional javascript.
 
-In fact, I think you could safely say that the wild growth of functional and declarative javascript over the last decade goes hand in hand with the wild and explosive growth of React -- the two are inextricably linked.
+In this video, I want to talk a little about what that means.
 
 [SC]
 
@@ -22,31 +22,49 @@ At it's core, functional programming is actually a pretty simple idea: the goal 
 [SC]
 (data) => InterfaceElement(data)
 [VO]
-In React, for example, we use functions to create and update small and specific user interface elements, like a button or a list item, and then we combine those together to build a web page or an app.
+In React, for example, we use functions to create and update small and specific user interface elements, like a button or a list item, which we call components, and then we combine those together to build a web page or an app.
 
 [SC]
 
-    (a, b) => a + b
-
 [VO]
-So, let's get started by reviewing the humble, flexible and oh so powerful function.
+So, the first big idea of functional programming is that we can use functions to help us structure programs, reduce repetition and give us a way to usefully name blocks of code.  And I think this is easy enough to understand.
 
 [SC]
 
-    functions
-    can be declared
-    can be invoked
-    can be named or anonymous
-    can be immediately invoked
-    have scope
+[VO]
+The second big idea -- which is the use of immutable data -- is a little harder to grasp, partiularly if you haven't written a lot of software before, and it has to do with how data is handled.
 
-    can return a value
-    can be pure
+It's also super important -- perhaps the most important thing -- to understanding how React works.
+ 
+
+In functional programming, data is treated as a flow, that passes from function to function.    
+
+Now, in order to preserve the quality of that data, we strive at all costs to avoid mutating it as it moves from function to function.
+
+Instead, we create new data, and add it to the stream.  
+
+And then we alert the parts of the program that need to know about this change to update their data feeds to point at the new data.
+
+This is a bit of an oversimplification and the distinction may seem minor, but believe me, it's a total game changer when you're building a complex user interface that has asynchronous communication built in as a key principle, as most website do.
+
+[SC]
 
 [VO]
-Functions are, as Marijn Haverbeke says in 'Eloquent Javascript', one of the alltime classic javascript books, 'the bread and butter of javascript'.
+In order to accomplish this task of avoiding data mutation, we need to create functions which are pure.  What's a pure function?  That's the topic of this video.
 
-Functions help us structure programs, reduce repetition and give us a way to usefully name blocks of code.
+[VO]
+So to begin with, by way of review, let's take a look at a function declaration.  
+
+We can declare a function with the function keyword, and we can add a name so that we can access that function later.
+
+Or, we can assign that function to a variable and access it later that way.
+
+We can also declare a function using arrow notation, and assign it to a variable.  Most often, in React, we'll use arrow notation.  
+
+
+
+
+
 
 [SC]
 
@@ -61,7 +79,9 @@ Functions help us structure programs, reduce repetition and give us a way to use
     }
 
 [VO]
-So, for starters, as you probably remember, we can declare a function with the function keyword, or with the arrow syntax. The curly braces denote the scope of the function. Variables declared inside that function are not available elsewhere in the program.
+
+
+The curly braces of a function denote the scope of the function. Variables declared inside that function scope are not available outside that scope.  There are some really neat and subtle details related to function scope in javascript but for now we'll just think about the scope of a function as being the curly braces of that function, which is generally the case.
 
 [SC]
 
@@ -70,14 +90,32 @@ So, for starters, as you probably remember, we can declare a function with the f
         console.log(secret)
     }
 
-    const notSecret = () => {
-        console.log(`not ${secret}`)  // undefined
+    const secretFail = () => {
+        console.log(secret + 'in another function')   // undefined
     }
+
+    console.log(secret + 'outside scope'  )  // undefined
 
 [VO]
 Function scope is tremendously useful for keeping your data pure. This is called encapsulation.
 
-Here the variable named secret can't be accessed from outside of the scope of the function in which it is defined.
+Here, I've defined a variable named friend inside the scope of the function named logSecret.  Apparently our friend named Sam has a secret.  
+
+Notice that I'm attempting to access that secret in several other scopes, inside both the scope of this function named secretFail and also in the global scope.
+
+If I open up the terminal and use node to run this javascript code, notice that I get undefined, in the global scope.
+
+And, if I comment that global scope attempt out, then the code works and logSecret does it's thing.
+
+ 
+
+And I want to say that errors like these are actually great errors to get!  You'll probably get your share of them as you build React sites.  And when you get an undefined error like this, it will generally be because you're trying to access a variable that isn't defined in the current scope.
+
+  
+
+Now, if I move that secret variable  to the global scope, you can see that this sweet secret message has become , well, sort of a bummer.
+
+Of course, one thing we can and should do is to use a const instead of a let keyword to define our variable, which helps prevent data mutations.  But, as we'll see with arrays and objects -- const only prevents re-assigning the contents of a variable, it doesn't prevent modifying the contents, so it's much safer to simply encapsulate this variable, if we want to actually keep it secret.
 
 [SC]
 
@@ -87,7 +125,7 @@ Here the variable named secret can't be accessed from outside of the scope of th
     logMessage('hi')
 
 [VO]
-Functions can accept one or more parameters.
+Now, another thing that you may already know about functions is that they can also accept parameters.
 
 [SC]
 const logMessage = (msg = 'hi') => {
@@ -96,7 +134,23 @@ console.log(msg)
 logMessage() // hi
 logMessage('we will be using this soon') // we will be using this soon
 [VO]
-And those input parameters can have default values! So here, you see, we've got a parameter named msg and it has a default value of hi. So if I don't pass in any value, then that default value will be the value of the parameter, but if I do pass in a value, the value that I pass in will be the value of the parameter.
+Those input parameters can have default values! So here, you see, we've got a parameter named msg and it has a default value of hi. So if I don't pass in any value, then that default value will be the value of the parameter, but if I do pass in a value, the value that I pass in will be the value of the parameter.
+
+[SC]
+
+
+const map = (func) => {
+    const priorValue = 10
+    return func(priorValue)
+}
+
+const add10 = (x) = x + 10
+map(add10) // 20
+
+[VO]
+
+And, perhaps most exciting -- functions can be passed into other functions as input parameters.  A function that is passed into another function like this is known as a callback function.
+
 
 [SC]
 function sum(a,b){
@@ -115,6 +169,31 @@ const sum = (a,b) => a + b
 
 [VO]
 And if we want to return a value from a single line arrow function we can get rid of the curly braces and return a value like this.
+
+[SC]
+function logMessage(punctuation){
+return (msg) => console.log(msg + punctuation)
+}
+
+[VO]
+
+And functions can also return other functions!
+
+[SC]
+DOUBLE MIND BLOWN EMOJI
+[VO]
+
+[SC]
+HIGHER ORDER FUNCTIONS
+[VO]
+When a function is returned from a function, or passed into a function as an input parameter, we call that a 'higher order function'. They can be a bit daunting at first but don't worry -- in this course and in your career as a React developer you'll get plenty of exposure to these ideas and, as with everything, with a little practice it will become second-nature.
+
+We'll get a little practice with higher order functions soon.
+
+For now, I want to focus on something a little more fundamental -- the difference between pure and impure functions.
+
+
+
 
 [SC]
 const sum = (a,b) => a + b
@@ -278,3 +357,30 @@ Or, we can assign the returned function to a new variable, and invoke it later. 
 
 [SC]
 TRIPLE MIND BLOWN EMOJI
+
+
+
+
+[SC]
+
+    functions
+    can be declared
+    can be invoked
+    can be named or anonymous
+    can be immediately invoked
+    have scope
+
+    can return a value
+    can be pure
+
+[VO]
+<!-- As Marijn Haverbeke says in the classic javascript book 'Eloquent Javascript', 'functions are the bread and butter of javascript'. -->
+
+Functions 
+
+
+
+
+[SC]
+
+[VO]

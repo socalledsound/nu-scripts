@@ -9,7 +9,18 @@ Welcome back. In this video we're going to review what is perhaps the most basic
 DOM graphic here
 [VO]
 
-the D.O.M. in DOM stands for Document Object Model. And, really, that's just what the DOM is. The Document in of that document object model is is a representation of a web page as an object, and the model of the document object model is an API, or set of rules for altering web pages using a programming language like javascript.
+the D.O.M. in DOM stands for Document Object Model. 
+
+The Document in that DOM is an abstract way of representing a web page.  It's like a tree, with nodes, and every element of a web page has a place in that tree.
+
+We can access that document in javascript as an object which is, appropriately enough, called document.  In the console of a web browser, you can, for instance, log the document and see it.
+
+But, really, what the DOM is is an API for manipulating that document.  The DOM has an extensive list of methods you can call on any DOM node.  We'll look at a few in this video, but we won't go into depth, since this isn't really the focus of this course
+
+
+
+
+And, really, that's just what the DOM is. The Document in of that document object model is is a representation of a web page as an object, and the model of the document object model is an API, or set of rules for altering web pages using a programming language like javascript.
 
 [SC]
 DOM graphic here

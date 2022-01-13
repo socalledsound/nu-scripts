@@ -18,7 +18,11 @@ And, as I said in the intro to this section, we're ultimately going to use that 
 scrolling down the page
 
 [VO]
-But before we start writing our new Heart component, I want you to first, scroll just a little down the exercise page and notice that there are links to two files that I want you to add to this project.
+But before we start writing our new Heart component, I want you to download two files that you can find download links for in the text instructions below the video in the learning portal.
+
+The first is a file called heart.svg, which I want you to put right here, in the src directory of your I Heart React project.  
+
+And the second is a css file called App.css, which I want you to put in the same directory, so it will replace the current App.css file. 
 
 [SC]
 

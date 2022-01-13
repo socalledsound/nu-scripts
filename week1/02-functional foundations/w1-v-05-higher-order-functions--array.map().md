@@ -16,7 +16,56 @@ And I mentioned that the key to doing this is generally, yep, functions.
 
 But how does this work exactly?
 
-In this video, I want to show you one of my favorite examples of these ideas in action.
+In this video, I want to show you.
+
+[SC]
+
+const messages = [
+    'how are you doing',
+    'what are you up to',
+    'would you like to get a bite later',
+]
+
+[VO]
+
+S
+
+
+I'm going to do it by coding an array transformation with you.  
+
+const sweetMessages = [
+        'how are you doing, sweetie?',
+        'what are you up to, sweetie?',
+        'would you like to get a bite later, sweetie?',
+]
+
+
+and we're going to transform it into an array of sweet messages, meaning we'll just add a comma and then the word sweetie and a question mark to each of them.
+
+[SC]
+
+[VO]
+To do that, we're going to use the template literal syntax that you should be familiar with from the template literal code challenge that you've hopefully already completed.
+
+[SC]
+
+
+[VO]
+But just by way of review, template literals in javascript allow us to mix strings with javascript variables using a very terse syntax.
+
+Instead of wrappping the strings in either double or single quotes as we do a normal string, we wrap the expression in backticks, that key at the top left of your keyboard.
+
+Then, inside the backticks, we can mix normal text with javascript.  The javascript part of the expression begins with a dollar sign and then two curly braces.  Inside those curly braces, we can include a javascript variable, or a function invocation, or any javascript that we want to include.
+
+
+[SC]
+
+[VO]
+
+So, for instance, we can 
+
+
+ one of my favorite examples of these ideas in action.
 
 And while I do it, I will also give you what will be one of the most important tools in your functional declarative toolbelt.
 
@@ -58,6 +107,7 @@ Now before we do this, I just want to say that while this might seem like a sill
 [SC]
 
 const imageURLS = [
+    'img/
 
 ]
 
@@ -89,6 +139,36 @@ SO something like
 
 
 # enter the stuff here
+
+
+
+
+
+That callback function is usually written as an arrow function and it can take from one to three parameters.
+
+And each of these parameters is coming from the instance of an array that is....our array.  If that makes sense.
+
+And the array will supply our callback function with those three parameters for each element in the array.
+
+So, this first parameter, which I've named el here, will be available inside the body of the function.  That function will run for each element in the array, so the first time it runs it will log a, the second time it runs the value of el will be b, so b will be logged, and the third time, c.
+
+This second parameter is also available in the function and it will bring the index of that particular element into the function, so the first time it will be 0 and then 1 and then 2.
+
+The third parameter will always be the entire array.  As I said, I can vaguely imagine a few cases where that might be useful but I haven't ever used it.
+
+The first parameter will be the contents of that element in the array.
+
+The second parameter -- which is optional -- will be the index number of that element in the array.
+
+And the third parameter, which is also optional and is rarely used, in fact I don't think I've ever used it -- is the entire array.
+
+Those parameters are then available in the body of the callback function.
+
+And I think it might help to look at an example of Array.map(), to help understand this.
+
+
+
+
 
 [SC]
 

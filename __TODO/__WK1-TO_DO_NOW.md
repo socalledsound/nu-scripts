@@ -1,36 +1,54 @@
 VIDEOS
 
-01 - TOO LONG need nucampsite screengrab; hooks logo and formik logo; what to do for portfolio page? 20 second graphic?
-02 - pretty good
+!! 01 - done
+!! 02 - done
 
 
 functional foundations
 
-03 recording ok
-04 rewrite needed
-05 need to write
-06 
-07
-08 need to write
-09 ned to write
+** 03 -- download link
+    -- simplify challenge
+    -- rerecord chunk about challenge   
+    -- rework apologia
+    -- re record partial application
+    --add chunk about running it in the terminal
+    ALT -- make a version without challenge
+    
+** 03B write
+** 04 rewrite needed
+$$ 05 
+    -- redo start with folder  
+    -- fix array.map description
+    -- add array.forEach? 
+$$ 06 
+    -- redo start with folder
+    -- need some graphics 
+$$ 07 
+    -- redo start with folder
+    -- redo area after first challenge
+    -- redo dom property description
+    -- redo the props part
+** 08 virtual DOM need to write
+09 import/export need to write/easy
 
 
 I heart react
 
-10 good
-11 no vid
-12 need to do
-13 jsx -need dom diff graphic at 1:40
-13b - components + props - needs writing and recording
-14 - needs download section -- sandbox edit
-15 - done?
-16 - done? need nucampsite screencap?
-17 -  record new chunk comparing components
-    -- need sandbox with colors?
-    need nucampsite screencap
+!! 10 done
+11 no vid? or can be with 12
+** 12 need to do
+!! 13 jsx done
+** 13b - components + props - needs writing and recording
+!! 14 - done
+!! 15 - done
+!! 16 - done
+!! 17 -  done
       
 
-
+** 18
+** 19
+** 20
+** 21
 
 
 
@@ -65,3 +83,17 @@ NUCAMPSITE
 19 - IS THIS A VIDEO?
 20 - FINISH (short)
 21 - WRITE THIS (short)
+
+
+Timesheet first week jan
+
+mon 8
+tues 8
+weds 8
+thurs 8
+fri 1
+sat 6
+sun 6
+
+mon 5
+tues 

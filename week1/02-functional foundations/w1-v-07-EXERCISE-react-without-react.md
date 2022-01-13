@@ -11,7 +11,11 @@ Welcome back. In the last video, I went over some basic DOM manipulation. Nothin
 [SC]
 
 [VO]
-In this video, I'm going to ask you to code along with me as I refactor that code a bit to be more declarative. We're going to write a function that creates DOM elements and use it to create a string of emojis.
+In this video, I'm going to ask you to code along with me as I refactor that code a bit to be more declarative. 
+
+I'm going to 
+
+We're going to write a function that creates DOM elements and we'll use it to display a string of emojis on the page.
 
 [SC]
 emoji string here
@@ -43,26 +47,139 @@ It's at a link like the one that I'm showing here on the screen, which you shoul
 [VO]
 Ok, so if I open this folder up in vs code, I can see that there's an index.html file, and in that code, there's a root div, and a few css classnames, and a script tag that points to an index.js file.
 
-You should also see three javascript files in this folder. One called index.js that just has the code I wrote last time, and then two others that have the code as it will be at the end of this video, and another that will have the code at the end of the next video. But try not to peek at this! It will be good practice for you and hoepfully even kind of interesting for you if you can do the work yourself as we go along.
+You should also see two javascript files in this folder. There's called index.js that just has the code I wrote last time, commented out, and then the string of emojis that we'll be using.  And I went ahead and added the reference to the root div for us.
+
+There's also a file called finished.js, which you can look at for reference if you get lost, or your code isn't working.
+
+But try not to peek at this!  If you can solve any issues you're having on your own, you'll get a lot more out of this exercise.
 
 [SC]
 
 [VO]
-So let's start by looking at the index.js file, which has the code that I wrote in the last video.
+So let's start by clicking on the index.js file, which has the code that I wrote in the last video.
 
-You may need to pause this video while you get set up and find that code.
+
 
 [SC]
 const emojis = ['👊','⬆️','🐰','📤','🎩']
 const root = document.getElementById('root')
-const newDiv = document.createElement('div')
+
+<!-- const newDiv = document.createElement('div')
 newDiv.innerText = '🐰'
 newDiv.className = 'emoji-lg'
 console.log(newDiv)
-root.appendChild(newDiv)
+root.appendChild(newDiv) -->
 
 [VO]
-Ok, so, if we look at the code from last time, we can see a very imperative way of working with the DOM, where we create a new div and assign it to a variable, modify its properties and then append it to a target node. Which works fine.
+Ok, so, let's start by looking at the code from last time, and thinking about how to abstract it into a function that we could use to create any element we want, similar to the way that array.map abstracts away a for loop.
+
+And let's start writing that function now.
+
+The function that we're going to write is going to be create elements, so let's do the boring thing and name it createElement.  It's usually a pretty good idea to be unoriginal and descriptive with your function names -- the key thing is to be succinct and also name it something that is easy to understand.
+
+And, looking at the code from last time, I can see two different types of things that we're going to want to do here.
+
+First we're creating an element, and to do it we need to pass in the type of element that we want to make.  We're just making divs but let's be smart and make this function capable of creating any type of element.
+
+So, how do we do that?  I'll pause briefly here and let you think about it.
+
+So, if you said, 'we add an input parameter', then you are today's double diamond winner.  Please visit the coat check to claim your prize.
+
+I'm going to add an input parameter called 'type'.  And then in the body of the function I'll create a constant called el, short for element, and then I'll set that equal to document.createElement and pass in that input parameter type.
+now we just need to return that el, and we've already got a function that creates elements.
+
+--
+
+But the other thing we need to add is some way to set the inner text and the class name. Now before you say, 'let's add some more input parameters, one for each', I want to show you all of the possible properties we could have.
+
+And as you can see...there's a lot.  As I scroll down here we can see className and then further down, innerText, and a lot of other things.
+
+So, what I'm going to recommend is, we plan for other possibilities, and instead of taking in specific properties, lets take in just, properties, or, props for short.
+
+Now, the way that we're going to handle these is kind of nifty and it's a technique that you're going to find very useful, so, if it seems a bit daunting at first, just stay with me.  This kind of thing is very common in declarative javascript.  So common that I think it will become second nature for you soon, and you'll find yourself writing your own projects like this.  And when it does, you are going to be ready to get a job as a javascript developer.
+
+SO first off, let's look at how we're going to call this createElement function.
+
+Down below the function, I'm going to make a constant named rabbitEmoji and I'm going to set it equal to createElement('div') and then for the second parameter I'm going to pass in an object.  Yep, that's right.  And it will have keys for innerText, which I will set equal to the rabbit emoji, and className, which I will set to emoji-sm.  And obviously, if I wanted to add different properties, or change these properties I could.
+
+So this structure is nicely flexible, but we haven't figured out how to assign these keys to the element in our createElement function.
+
+Wouldn't it be super nice if we could use our new friend Array.map(), or something like that?  If we could just say props.map() and pull off each key and then assing div[key] to props[key].  Or, if you've been doing your homework, you'll have noticed that we're not returning an array so we're mutating data, so....we should probably use .forEach instead.  It's a small thing, but it will communicate to potential employers that you have your act together, so get in the habit of knowing the difference!
+
+Unfortunately, props is not an array.  So i we try to run this, it will fail.  
+
+And as an aside, this kind of reminds me of a great children's book, where the main character, who is a kid, bounces wildly between unfortunate events, like, 'unfortunately, he was about to land on a hundred alligators' and then you turn the page and it says...'fortunately, he landed on a passing hot air balloon.'  and then... unfortunately, the hot air balloon started to sink....and so on.  But I digress.
+
+And I want to say....FORTUNATELY, javascript has our backs.  We can convert the keys of our props object into an iterable, which is for all intents and purposes an array.  And to do it we'll just say 
+
+Object.keys(props) 
+
+and then we can forEach that as we said we would.  And, just to anticipate the case where no props object gets passed in, I'm going to assign a default value for this input parameter and it's just going to be an empty array.  
+
+And, if we open this with live server.....holy cow we are in business, I see a rabbit in the browser.  I love this game!
+
+
+----
+
+
+Now before we celebrate, I want to mention that there's one more capability this function is going to want.  As I'm sure you already know, it's very common that we might want an element to be able to have a child node.  Or maybe a bunch of child nodes.  
+
+Like for instance, in an image gallery.  We'd probably have a parent div to contain it, and then maybe each image would also have a parent div, which and it might have some siblings as well.  So I think -- in fact, I know, that we're going to want a way to assign children to an element.
+
+We're going to need that capability to make this page look the way we want, because if we look at the classnames in our index.html you can see that these small emojis are going to have a parent div, which is going to be a flex box container.
+
+So how do you think we should do it?  Go ahead and pause the video here and think on it for a minute.  It's ok if you don't know, just work that brain a little and think about it.  I'll wait.
+
+So what I'm going to do is, write an input paramenter named....children.  And it's going to have a default value of an empty array.
+
+And then we're going to use....can you guess?  children.forEach(), because we're going to generate a side effect, and we're going to pull off each child and then say el.appendChild(child)
+
+Isn't that elegant?  Isn't that nice?  I really love javascript sometimes.
+
+Now, let's use it.  And, I can tell you, I can pull a rabbit out of my hat in one line.  Can you?  Think about it for a minute, pause the video and see if you can do it.
+
+All right here goes. 
+
+I'm going to root.appenchChild() and inside there I'm going to createElement
+ root.appendChild(createElement('div', {className: 'app-container'}, emojis.map(emoji => createElement('div', {className: 'emoji-sm', innerText: emoji}))))
+
+
+And if I go to the browser....it works, just fine.  
+
+
+But, holy cow what an ugly mess that is.  Now I did that on purpose for a few reasons.  First, I wanted to show off.  Which is often why people go over board with the whole one line declarative javascript thing.  It's showboating.  And second, I just wanted a chance to show you how ugly that is and show you how I'd fix it.  And, I'll admit, the reason I'd fix it the way that I'm about to fix it is directly due to my experience as a React developer, because what I'm about to do will be immediately recognizable to you as a pattern after you've coded a little in React.
+
+Remember when I said back in the first video that coding React would make you a better javascript developer?  It's really true, at least it has been for me.
+
+So what I'll do is make an App function.  And it will just return the thing in the root.appendChild.  And that function's only real job in this case will be to clean up this code, because now we can just call App and it looks a lot cleaner.  
+
+And we can actually make another one called EmojiElement and clean this up further...
+
+   const EmojiElement = (emoji) => {
+        return createElement('div', {className: 'emoji-sm', innerText: emoji})
+   }
+
+And now, this one liner has become a many liner but, look at how nicely it reads.  Concise is not always best.
+
+Now ou'll see functions just like in React, in fact we'll be writing an App function very soon.  And I want to say that although they will look very similar, React components, which is what we call functions like this that return elements -- actually have the ability to quite a bit more useful than this, as we'll learn next week.  But that can wait.
+
+For now, just take a minute to celebrate.  That was some really nice code you just wrote.  Or, we just wrote.  And, although you may not know it now, what we just did is going to really help you when it comes to react, in exactly the same way that iterating over the elements of an array using a for loop helps you understand how array.map works.
+
+So, take a break, stretch those legs, and then come back and watch the next video, where I'm going to talk a little bit about how what we just did relates to React, and also discuss that wonder of wonders known as the virtual DOM.  I'll see you there.
+
+
+
+
+
+
+
+Because of course one of the 
+
+
+
+
+
+
 
 [SC]
 
@@ -73,6 +190,20 @@ Ok, so, if we look at the code from last time, we can see a very imperative way 
     root.appendChild(newDiv2)
 
 [VO]
+
+
+
+
+
+
+
+
+
+
+
+
+# previous script
+
 And if we want to add another emoji, and want to continue in this highly imperative fashion, we can simply go through all of those steps again, with a new variable name and a new text.
 
 But I hope that you can immediately see that this has what we commonly call 'code smell'.
