@@ -12,11 +12,14 @@ Welcome back.
 
 In the last video I talked somewhat abstractly about some of the differences between declarative and imperative programming, and one of the key things that I mentioned was that imperative code is lower level, more step by step, while decalarative programming is higher level, and tends to abstract away the details.
 
-And I mentioned that the key to doing this is generally, yep, functions.
-
 But how does this work exactly?
 
 In this video, I want to show you.
+
+
+
+To get started, we're going to be in the funcitonal foundations folder again, but this time we'll be in the 03-mapping-messages folder.
+
 
 [SC]
 
@@ -28,19 +31,23 @@ const messages = [
 
 [VO]
 
-S
+What we're ging to do is code an array transformation.
 
+We're going to take an array of messages and 
 
-I'm going to do it by coding an array transformation with you.  
-
+[SC]
 const sweetMessages = [
         'how are you doing, sweetie?',
         'what are you up to, sweetie?',
         'would you like to get a bite later, sweetie?',
 ]
 
+[VO]
+  and we're going to transform it into an array of sweet messages, meaning we'll just add a comma and then the word sweetie and a question mark to each of them.
 
-and we're going to transform it into an array of sweet messages, meaning we'll just add a comma and then the word sweetie and a question mark to each of them.
+
+
+
 
 [SC]
 
@@ -62,44 +69,13 @@ Then, inside the backticks, we can mix normal text with javascript.  The javascr
 
 [VO]
 
-So, for instance, we can 
+So, for instance, wit our sweet messages, we can make a variable named sweetMessage and set that = to the backticks and then inside there we'll put a dollar sign and then the curly braces and inside the curly braces we'll say messages[0] to get the first element in that array
 
 
- one of my favorite examples of these ideas in action.
-
-And while I do it, I will also give you what will be one of the most important tools in your functional declarative toolbelt.
-
-You're going to use this a LOT in react, like, every day a lot.
-
-So, let's get started.
+and then outside the curly braces we can say ',sweetie?'.
 
 
-[SC]
-
-const messages = [
-    'how are you doing',
-    'what are you up to',
-    'would you like to get a bite later',
-]
-
-[VO]
-And I want to start with an array of messages.
-
-Now, these messages are fine, but what if we want to make them just a little bit sweeter?
-
-[SC]
-
-const sweetMessages = [
-        'how are you doing, sweetie?',
-        'what are you up to, sweetie?',
-        'would you like to get a bite later, sweetie?',
-]
-
-
-[VO]
-What I want is a new group of messages, where each one ends with a ', sweetie' and then a question mark.
-
-[SC]
+ 
 
 [VO]
 Now before we do this, I just want to say that while this might seem like a silly example, it's actually a pretty common thing that you want to do on a web site.
@@ -113,7 +89,7 @@ const imageURLS = [
 
 <div>
     <img src=`${imageURLS[0]}`/>
-</div>
+</div> 
 <div>
     <img src=`${imageURLS[1]}`/>
 </div>
@@ -131,20 +107,20 @@ But we'll get to that soon.
 
 
 [VO]
-For now, let's focus on that original array, and I'm going to show you two different ways of creating the new array.  The first is an imperative approach.  I'm going to use a for loop.  So we'll start with the original array of messages and then write a for loop to iterate over the array of messages. 
-
-SO something like
-
-
-
-
+ 
+@3:20
 # enter the stuff here
 
 
 
 
 
-That callback function is usually written as an arrow function and it can take from one to three parameters.
+That callback function is usually written as an arrow function. That callback function will run for each element of the array and whatever gets returned from the callback function will replace the old contents of the array in the new array that gets returned.  And that's the mapping process, it's basically a conversion of an array of values into a new set of values.
+
+Like, for instance, a conversion of an array of messages into an array of sweetMessages.
+
+
+That function can take from one to three parameters.
 
 And each of these parameters is coming from the instance of an array that is....our array.  If that makes sense.
 
