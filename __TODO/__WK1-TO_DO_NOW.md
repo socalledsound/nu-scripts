@@ -6,29 +6,22 @@ VIDEOS
 
 functional foundations
 
-** 03 -- download link
-    -- simplify challenge
-    -- rerecord chunk about challenge   
-    -- rework apologia
-    -- re record partial application
-    --add chunk about running it in the terminal
-    ALT -- make a version without challenge
+** 03 done
     
-** 03B write
-** 04 rewrite needed
-$$ 05 
-    -- redo start with folder  
-    -- fix array.map description
-    -- add array.forEach? 
+** 04write
+** 05 rewrite needed
 $$ 06 
-    -- redo start with folder
-    -- need some graphics 
+    done
 $$ 07 
+    DONE
+$$ 08 
     -- redo start with folder
     -- redo area after first challenge
     -- redo dom property description
     -- redo the props part
-** 08 virtual DOM need to write
+** 09 virtual DOM need to write
+
+OUT
 09 import/export need to write/easy
 
 

@@ -8,41 +8,38 @@ In the last video, I talked about some of the big ideas of React, and made a big
 
 So, in this first series of videos, we're going to make sure that you have a solid foundation in functional javascript, so that you'll be prepared to write React code, and really understand what you're writing.  
 
-And we'll lay the groundwork for those videos here in this video, by reviewing functions in javascript.  
+And that solid foundation starts here in this video, where we will make sure you know the things that you absolutely positively need to know about the weird and wonderful javascript function.  
 
-Functions are the absolute bread and butter of a javascript developer's life.  Javascript is among the handful of programming languages in which functions are first class citizens, meaning, they can be assigned to variables, and they can be both passed into and returned from other functions.
+But, before we get started, I want you to download the code for this first section of the course from the link down below on this exercise page that says 'functional foundations'.
 
-So, when we talk about reviewing functions, trust me, I have a lot to say.  But, before we get started, I want you to download the code for this first section of the course from the link down below on this exercise page that says 'functional foundations'.
+After you download and unzip that file, open up that folder in vs code.  
 
-# 
+You can see that there are several folders, one for each of the code exercises that we'll do in this first section of the course.
 
-After you download it, go ahead and open up that functional foundations folder in vs code.  Then, in the file browser, navigate to the folder labeled '01-functions'.  Click on the file titled question.js.  And try not to peek at the one titled answer.js!  
+Click folder labeled '01-functions', then select the file named question.js.  And try not to peek at the one titled answer.js!  
 
-In this file you see a little code, just a few functions.
+In the question.js file you see a little code, a message variable and then a few functions.
 
-Now, if there's anything in here that's unfamiliar, don't fret.  In this video, we're going to review functions, and I'll explain all of the syntax here along the way.  
+Now, I want to start by saying -- if there's anything in here that's unfamiliar, don't fret.  In this video, we're going to review functions, and I'll explain all of the syntax here along the way.  
 
-But I want to start this course with a little challenge for you.
 
-You can see that there's a message variable at the top, which contains a fact -- your phone number is contained somewhere in the digits of pi.  
+Functions are the absolute bread and butter of a javascript developer's life.  Javascript is among the handful of programming languages in which functions are first class citizens, meaning, they can be assigned to variables, and they can be both passed into and returned from other functions. 
 
-And then there's two functions, each of which logs a different reaction emoji to the console.  
+Which is what's happening here, in that third function -- a function is being returned from another function.
 
-Then, there's a function called saySomethingAndReact that's just a little more complex.  
+Now here's my challenge for you.  Invoke the third function here, saySomethingAndReact in such a way that it logs first the message that you can see at the top of this page, and then a reaction, which you can generate by invoking one of the two reaction functions.  And you can decide whether you want to react with a surprised face or with sunglasses.  
 
-Your challenge is to use this function to log first the message and then a reaction to the console.  And I'll give you a pretty big clue.  You can see right here that there's a place to pass in a reaction, and then that reaction is invoked in the next line.
+Now, depending on your familiarity with javascript functions, this might be a bit of puzzle for you.  And, I hope you like puzzles!  Getting comfortable with that mental struggle, that process where you calmly wade through completely immaterial frustrations is a huge part of learning to code!
 
-Now, depending on your familiarity with javascript functions, this might be a bit of puzzle for you.  And, I hope you like puzzles!  Getting comfortable with that mental struggle, that process where you wade through immaterial frustrations is a huge part of learning to code!
+Learning to code is a lifelong process and there will never be a point where you know everything -- I've been coding in half a dozen languages for nearly thirty years and I still regularly come across things that I struggle to understand.  
 
-With coding, there will never be a point where you know everything -- I've been coding in half a dozen languages for nearly thirty years and I still regularly come across things that confuse me.  
+And when I do, I actually get pretty excited!  Because things that I don't understand are opportunities to learn.
 
-And when I do, I actually get pretty excited!  Because confusion is nearly always an opportunity to learn.
-
-So if and when you come across things you don't understand -- which may happen a lot in this course! -- my recommendation to you is to breathe deeply...and give yourself the space to get comfortable with these new ideas, without judging yourself and without feeling anxiety about whether you're good at this, or not.  If you give yourself the space to learn and you work diligently at your goals, you will get to where you want to go.  And all of us here at nucamp will help you get there.
+So if and when you come across things you don't understand, or things that you just can't figure out,  my recommendation to you is to breathe deeply...and give yourself the space to get comfortable with these new ideas, without judging yourself and without feeling anxiety about whether you're good at this, or not.  These things take time and effort but if you give yourself the space to learn and you work diligently at your goals, you will get to where you want to go.  And all of us here at nucamp will help you get there.
 
 All right so, with that dharma talk complete, let's get to work. 
 
-If you want to try solving this puzzle, you can run this code using the node interpreter.
+If you want to try solving this puzzle, you can run this code using the node interpreter, which you should have already installed.
 
 To do that, first open up the terminal, and then you can check to see if you've got the node interpreter installed with node -v.  Hit enter and it should show you the version.  If it doesn't show you a version for node, go back to the installing node exercise that preceded this and install node.
 
@@ -195,29 +192,45 @@ logMessage('!!!!!')('this is pretty cool') // logs 'this is pretty cool!!!!!'
 
 And functions can also return other functions!  
 
-MIND BLOWN EMOJI
-
-Now, before I say anything else, I want to say this is the last example in this video, so that means...we've come to the explanation for the original challenge question.  So bear with me.  
 
 So here we have a function named LogMessage that takes in some punctuation, and then uses that punctuation in the function that it returns.
 
 So the return value of the logMessage function is... a FUNCTION.
 
-We can store that function that gets returned in a variable, and log it to the console and see that it is indeed a function.
-
-And we can also invoke the function that we just stored in that variable, and pass in some more information.  
-
-So in a sense, this 'logMessage' function is written in a way that allows us to convert it into a more specific type of function.... or, actually, into a wide variety of more specific functions, as you can see in the next lines, where we have a logExcited function, which passes in a series of exclamation marks instead.
-
-And then, below that, you see that we can acheive the same output in one step, by first invoking logMessage and passing in the punctuation and then immmediately invoking the returned function and passing in a message.
-
-Now, the technical term for this kind of thing is called partial application, and it's just one of the many wonders of functional programming in javascript that await you!
-
+MIND BLOWN EMOJI
 
 [SC]
 HIGHER ORDER FUNCTIONS
 [VO]
-And, I want to repeat what I said at the beginning of this video -- when a function is returned from a function, or passed into a function as an input parameter, then we call that a 'higher order function'. These usages can be a bit daunting at first but don't worry -- in this course and in your career as a React developer you'll get plenty of exposure to these ideas and, as with everything, with a little practice it will become second-nature.  Just remember to breathe deeply and give yourself the time and space to get good at this stuff and, trust me, you will.
+And, I want to just pause here to point out that right here, we are coming to the answer to the challenge question that started this video, which means....this video is almost over.  ANd I bet that you're not unhappy about that, this has been a pretty long video.  
+
+And I want to repeat what I said at the beginning of this video -- that when a function is returned from a function, or passed into a function as an input parameter, then we call that a 'higher order function'. 
+
+These usages can be a bit daunting at first but don't worry -- in this course and in your career as a React developer you'll get plenty of exposure to these ideas and, as with everything, with a little practice it will become second-nature.  Just remember to breathe deeply and give yourself the time and space to get good at this stuff and, trust me, you will.
+
+
+So back to this example.
+ 
+
+You can see that we can store the function that gets returned from logMessage in a variable, and log it to the console and see that it is indeed a function.
+
+And I'll just open up my terminal here and run it and...yep.  A function.
+
+And we can also invoke the function that we just stored in that variable, and pass in the message that that function wants in its input parameter up here and, we get the message along with the punctuation that is stored in that function.
+
+Make sense?
+
+And what I want you to notice is that this 'logMessage' function is written in a way that allows us to convert it into a more specific type of function.... or, actually, into a wide variety of more specific functions, as you can see in the next lines, where we have a logExcited function, which passes in a series of exclamation marks instead.
+
+And then, below that, you see that we can acheive the same output in one step, by first invoking logMessage and passing in the punctuation and then immmediately invoking the returned function and passing in a message.
+
+If you hadn't already noticed, all of these code examples are in the file called function.js that's in the same folder as the original challenge question.  You can play with this example and the various outputs that are possible if you want to.
+
+<!-- Now, the technical term for this kind of thing is called partial application, and it's just one of the many wonders of functional programming in javascript that await you!
+
+And I hope that excites you!  Wrapping your brain around this stuff takes time, but it's also pretty fun once you get the hang of it. -->
+
+
 
 
 [SC]
@@ -239,7 +252,7 @@ const saySomethingAndReact = (msg='you forgot to submit a message') => {
 saySomethingAndReact()
 [VO]
 
-And now, I think we have all the knowledge we need to go back to the challenge at the beginning of this video.
+And now, I think we have all the knowledge we need to go back to the challenge at the beginning of this video and tackle it.
 
 If we look again at the function saySomethingAndReact, we can see that it returns a function.  
 
@@ -249,7 +262,9 @@ To properly invoke this function we'll say saySomethingThenReact() and pass in t
 
 And now, I recommend taking a little break and stretching those legs and arms a bit.  There was quite a bit of information in there, and I hope it was a little bit interesting for you.  
 
-Oh and by the way.....if there's any math nerds out there, then you'll know that thing about pi containing your phone number is really true, since it's infinite.  There's a pretty nice video linked at the bottom of this exercise page called 'Are shakespeare's plays encoded within pi?' that might be a fun way to take a break.
+Oh and by the way.....if there's any math nerds out there, then you'll know that thing about pi containing your phone number is really true, since it's infinite.  
+
+And there's a pretty fun video linked at the bottom of this exercise page called 'Are shakespeare's plays encoded within pi?' that has some fun with that idea -- it might be a fun way to take a break of you want to get away from javascript for a minute.
 https://www.youtube.com/watch?v=uXoh6vi6J5U
 
 

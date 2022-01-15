@@ -13,6 +13,76 @@ DECLARATIVE VS IMPERATIVE
 
 <!-- As you've probably gathered by now, functional programming is declarative in nature. By bundling functionality into these things called functions, we abstract away the imperative aspects of code. -->
 
+'Declarative' is a term that often comes up when people talk about functional programming -- and about React.
+
+But what does this mean?  Like, what actually do they mean in the React docs when they call it a 'declarative approach to managing user interfaces'?
+
+In this video I'll try to explain.
+
+And I'll start with an example of a declarative process.
+
+If you have a smartphone and need to get to someone's house, what do you do?
+
+You ask them for their address.  
+
+And then you enter that into a map app, and it provides you with a route that you can follow.  And, generally your phone will give you those steps as they come up and if you're driving you probably don't even look at the list of steps, you just listen and do what the assistant says.
+
+So, you started with one piece of useful information, and you fed it into a process, and now you're at your friend's house.
+
+And that's pretty declarative in nature.  
+
+Now, what about when your Dad comes to visit, and he doesn't have a smartphone.  This is a true story, by the way.  He's staying in a hotel a couple of miles away, and he's someone that really likes to talk about directions, and how you get places.  He doesn't have access to a map app or any of the tools that a smartphone provides.
+
+So you spend half an hour outlining each step that he'll have to take to get to your house, all of the turns, left on Harrison, go two blocks, right on Grand, etc etc etc.
+
+And probably several times along the way he gets lost -- most likely due to some mutated data -- and has to call and you go through the whole process again.
+
+And here we are, detailing each step of the way, and guess what?  That's imperative.
+
+Now, the comparison doesn't hold up one to one with coding, but I hope you get the idea.
+
+CHART HERE
+As you can see in this chart,
+
+IMperative is step by stepbvcx
+
+
+[SC]
+
+[VO]
+So when we talk about React being a 'declarative' approach to building user interfaces, we mean, we that React presents us with an API that let's us describe how we want our user interface to look and React takes care of building that interface for us, and it helps us manage that interface as it evolves due to user interaction.
+
+There are a number of technologies that React leverages to facilitate this declarative managing of a user interface.  
+
+
+[SC]
+<div>{username}</div>
+[VO]
+React has its own markup language, called JSX, that you're going to become a pro at soon.  
+
+It looks quite a bit like HTML but guess what -- it isn't.  It's actually a syntax extension for javascriopt, which is a fancy way of saying that it's a simplified way to declaratively describe the HTML that you want your javascript code to generate.  
+
+[SC]
+
+[VO]
+
+And if that doesn't make sense yet, don't worry, I think it will, a few videos from now, when we'll also talk about the other huge declarative bonus that React brings us, which is the virtual DOM, which is a declarative way to optimize the management of any updates that we need to make to our user interface as a result of either user interaction or changes in the data of our app.  
+
+[SC]
+
+[VO]
+
+And we'll get to these exciting things soon.  But first, I want to stick with this declarative vs imperative thing in plain old vanilla javascript.
+
+In the next video we'll work with what I consider to be the finest and possible most useful example of a declarative process in javascript: the Array.map() method.  
+
+I'll see you there.
+
+
+
+
+# end
+
 In this video I want to talk a bit about what these declarative and imperative approaches to programming are, so that the notion of the 'declarative approach to building user interfaces' which React is so famous for offering actually starts to make a little sense.
 
 [SC]

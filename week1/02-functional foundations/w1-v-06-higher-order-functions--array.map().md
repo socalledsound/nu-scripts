@@ -140,7 +140,71 @@ And the third parameter, which is also optional and is rarely used, in fact I do
 
 Those parameters are then available in the body of the callback function.
 
-And I think it might help to look at an example of Array.map(), to help understand this.
+
+
+Amd speaking of using it, let's use it now to map opver our array of messages and return an array of sweet messages.
+
+
+
+
+
+#
+
+
+#
+SO that's a lot short, it's more succint and less prone to errors because we don't hjav
+
+
+
+and that for loop is in the map method
+
+so let's take a quick look at a simplified implementation of a map method.
+
+Now in reality, this map method is part of a javascript class, but we haven't learned that syntax yet so I've written it as a kind of pseudo code, just to illustrate how that callback function works in the map method, because I think it kind of helps clear up the magical part of the map method.
+
+And you can see that the map method takes in the callback function and invokes it inside the body of the for loop, passing in those parameters that are available to you when you call Array.map.
+
+And, notice that that for loop is still there.
+
+But since we've got this function named map, which comes with an API that explains what the function needs and what it does, we can skip writing that for loop ourselves.  And I think that's pretty nifty.
+
+Now before we go, I do want to mention that Array.map() has a brother, who's kind of the black sheep in the family and so doesn't get talked about as much.  
+
+And that brother is a method called Array.forEach(),  which is almost exactly like Array.map(), except that it doesn't return a new Array.
+
+In fact, as you can see here, it doesn't return anything at all.
+
+And if you've been doing your homework then I think you know what that means.  Array.forEach generates side effects.  And the reason that I'm mentioning this now is that it's actually kind of useful to use it in those situations where you want to generate a side effect, as a way of letting anyone who is reading your code base know both that a side effect is occuring and that you know a side effect is occurring.  
+ 
+And this sort of distinction is exactly the type of quesiton that tends to come up in job interviews, as senior developers try to find out just how knowledgeable you really are about javascript, so it's a good thing to know and remember.
+
+Now, go take a break. Congratulations on making it this far!  You've learned some hard stuff and you're just about ready to start coding in React.   
+
+When you're done breaking, head over to the Array.map() challenge page.  You'll see there that there's also a challenge for Array.forEach().  Again, I can't recommend enough that you get comfortable with these methods and start using them in your own code.  They are going to be extremely useful in your React projects.
+
+I'll see you in the next video.
+
+<!-- In the next video, we'll review the role of the DOM in javascript.  The DOM is, basically how we can use javascript to make pretty pictures on web pages, so this course is about to get a lot more fun.  
+
+I'll see you soon. -->
+
+
+
+
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
 
 
 

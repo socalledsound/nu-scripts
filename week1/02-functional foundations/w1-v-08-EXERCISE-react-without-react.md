@@ -20,11 +20,15 @@ We're going to write a function that creates DOM elements and we'll use it to di
 [SC]
 emoji string here
 [VO]
+
+You can see that emoji string here.
+
 Someone shared it with me and I thought it was a little bit funny and a little bit appropriate.
+
 It's supposed to mean
 [SC]
 [VO]
-pull
+pulling
 
 [SC]
 [VO]
@@ -32,10 +36,15 @@ a rabbit
 
 [SC]
 [VO]
-out of a hat.
+out 
+
+[SC]
+[VO] 
+of a hat.
 
 [SC]
 SC downloading
+
 
 [VO]
 I want you to start by downloading a folder that has some code in it.
@@ -57,6 +66,8 @@ But try not to peek at this!  If you can solve any issues you're having on your 
 
 [VO]
 So let's start by clicking on the index.js file, which has the code that I wrote in the last video.
+ As well as the string of emojis that we're going to ned and a reference to the root div
+
 
 
 
@@ -75,26 +86,115 @@ Ok, so, let's start by looking at the code from last time, and thinking about ho
 
 And let's start writing that function now.
 
-The function that we're going to write is going to be create elements, so let's do the boring thing and name it createElement.  It's usually a pretty good idea to be unoriginal and descriptive with your function names -- the key thing is to be succinct and also name it something that is easy to understand.
+The function that we're going to write is going to be create an  element, so let's do the boring thing and name it createElement.  It's usually a pretty good idea to be unoriginal and descriptive with your function names -- the key thing is to be succinct and also name it something that is easy to understand.
 
 And, looking at the code from last time, I can see two different types of things that we're going to want to do here.
 
 First we're creating an element, and to do it we need to pass in the type of element that we want to make.  We're just making divs but let's be smart and make this function capable of creating any type of element.
 
-So, how do we do that?  I'll pause briefly here and let you think about it.
+So, how do we do that?  I'll pause briefly here and let you think about itSo, what we want is flexibility with regard to what type of element we make, so I'm going to add an input parameter and I'm going to call it type.
 
-So, if you said, 'we add an input parameter', then you are today's double diamond winner.  Please visit the coat check to claim your prize.
+And then I'm going to make a new constant named el  and set it equal to document.createElement.
 
-I'm going to add an input parameter called 'type'.  And then in the body of the function I'll create a constant called el, short for element, and then I'll set that equal to document.createElement and pass in that input parameter type.
-now we just need to return that el, and we've already got a function that creates elements.
+And I'm going to  pass in that type.
+
+N ow we just need to return that el, and we've already got a function that creates whatever type of element that we specify when we call this function.
 
 --
 
-But the other thing we need to add is some way to set the inner text and the class name. Now before you say, 'let's add some more input parameters, one for each', I want to show you all of the possible properties we could have.
+And now the other thing we need to add is some way to set the inner text and the class name. 
 
-And as you can see...there's a lot.  As I scroll down here we can see className and then further down, innerText, and a lot of other things.
+ But again, just like with the type of element, I'd like to try to keep this flexible, so that we can add any property that we might want to add.
 
-So, what I'm going to recommend is, we plan for other possibilities, and instead of taking in specific properties, lets take in just, properties, or, props for short.
+And if I log that rabbit div from last time to the console,  and look at the possible properties we m ight want to add, you can see that there are actually quite a few.  
+
+But, we don't really need to concern ourselves with how many elements there can be, what we're going to do is just take the properties in, as an object.  So we'll have a parameter named props, which is a little shorter than properties.
+
+And when we get to React, you'll see why I chose props and not properties.
+
+Now, before we get to how we're going to handle this props object in our function, let's look at how we're going to invoke this function that we haven't finished writing yet.
+
+I'll create a constant named RabbitEmoji and then I'll set it equal to createElement() and I'll pass in first the type and then an object.  And that object will have a key for className and I'll set that to emoj-lg, just as I did before, and it will have a key for innerText, which I will set to this rabbit emoji.
+
+Now let's go inside our function and think about how we're going to take in these props.
+
+If you notice, what we want to do, is take some unknown number of keys on this props object and set the corresponding key on our element named el to the value that's stored in that key.
+
+So for instance, el[innerText] = props[innerText]
+
+And boy wouldn't it be nice if there was a function named forEach that we could call on each key of this props object, and then we could pass in a callback function that takes each key and sets the el[key] to the props[key]?
+
+And the amazingly good news is that javascript has a very straightforward way to convert the keys of an object into....an array, which HAS THAT FOREACH METHOD.
+
+And all we need to do is say Object.keys() -- so this is a method of the Object class -- and pass in the props object and we get an array of those keys, which we can then call forEach on and set an key on the props object to a corresponding key on the el element.  
+
+And now if we just append that rabbit emoji to our root div and open up our index.html file in live server.....it works!  I love it. 
+
+
+
+
+
+
+
+Now let's take a look at the best way to handle this pro
+
+ and then we can specify which property we want to set with a key and also give each key a value.
+
+So I think that, rather than taking in a parameter for each of the possible properties, I'm going to just do what the DOM does, and set this up to be an object with properties, so I can just take in one parameter called properties, or props for short, and then when I call this function, I'll pass in an object.
+
+And you'll see this sort of thing a lot, not just in React code but more generally in all declaratively written javascript, because it is very concise and very flexible.
+
+So when I call this function, it will look like this.
+
+
+
+Now, we just need a way to deal with this props object in our createElement function.  And I think you're going to like this, or I hope you will.  We're going to use a friend from a previous video.  Can you guess what it is?  
+
+Well let me give you a hint.
+
+What we need to do is take the keys of our props object and map them to the keys of our el variable, right?  
+
+Up above here, we are setting the keys of our newDiv, we set first an innerText and then a className.
+
+Our props object has two keys, innerText and className.
+
+And we need to say el[innerText] = props[innerText].
+
+So what would be really neat would be if we could say props.map(key => {
+    el[key] = props[key]
+})
+
+am i right?
+
+And the wonderful amazing thing that is javascript just so happens to have the ability to convert the keys of an object into an array.
+
+All we have to do is say
+
+Object.keys(props), and we get an array that looks like this:
+[innerText, className]
+
+SO we did it!  
+
+Or, almost.  I'm just going to change this map to a forEach, because as you know, if you don't use the array, you should use Array.forEach instead of map.
+
+And now if we just append that rabbit Emoji to the root div like this....it works!
+
+And I know that was a lot.  I'm not pulling any punches here.  My goal is to get you to be professional javascript developers and I know you can take it.
+
+And I'm sorry not sorry to say, we have more work to do.
+
+I'll explain by showing you the thing that we want to build again, and sort of outline how we're going to construct it.
+
+Now in this case, since we want to lay these emojis out horizontally, we can't just drop them into the root div.
+
+What we need to do is make a container, and then add each one of these emojis as children.
+
+
+But the amazing thing is that if we use the tools we've already learned, we can do this.
+
+Remember how Array.map iterates over all of the contents of an array?
+
+Well, what if we somehow had 
 
 Now, the way that we're going to handle these is kind of nifty and it's a technique that you're going to find very useful, so, if it seems a bit daunting at first, just stay with me.  This kind of thing is very common in declarative javascript.  So common that I think it will become second nature for you soon, and you'll find yourself writing your own projects like this.  And when it does, you are going to be ready to get a job as a javascript developer.
 
