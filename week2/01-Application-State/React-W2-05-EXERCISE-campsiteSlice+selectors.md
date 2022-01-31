@@ -14,12 +14,17 @@ EXERCISE
 
 ##### SC
 
-
+title card:
+Excercise: campsitesSlice + selectors
 
 ##### VO
 Welcome back.
 
-In the last video, I talked a bit about state.  I outlined some important practices and considerations for implementing state in any piece of software and also discussed some considerations for implmenting state in a react application, and laid out the path that we're going to follow to introduce it into our nucampsite.
+In the last video, I talked a bit about state.  I outlined some important practices and considerations for implementing state in any piece of software and also discussed some considerations for implmenting state in a react application.
+
+I also discussed what a slice is, and that we can export selector functions from a slice to select specific subsets of a slice of our application's data, and some of the advantages that this approach to app development brings with it.
+
+In this video,  we're going to get ready to implement this CampsitesPage that we're about to build, by creating a camspitesSlice.
 
 ---
 
@@ -29,7 +34,7 @@ make campsitesSlice.js
 ##### VO
 
 
-In this video,  we're going to get ready to implement this CampsitesPage that we're about to build, by creating a camspitesSlice.
+
 
 So let's start by making a campsitesSlice.js file.
 
