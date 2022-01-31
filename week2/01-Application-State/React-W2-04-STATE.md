@@ -159,7 +159,7 @@ const state: {
 Or it can be a state object that maintains the state of our entire application, which will 
 be maintained inside the scope of the store of our application.  
 
-Complex global state in React is usually handled by a state library, such as redux, which you'll be learning about in depth in week 4.  Depending on the complexity of our application, we may or may not have a need for global application state manager like redux.
+Complex global state in React is usually handled by a state library, such as redux, which you'll be learning about in depth in week 4.  But depending on the complexity of our application, you may or may not have a need for global application state manager like redux.
 
 ---
 
@@ -169,10 +169,7 @@ keep state as local as possible!
 
 ##### VO
 
-One very important thing to keep in mind as you design your application is that it's a good idea to always try to and locate state as close to the place where you're going to use it.  In other words, keep state as local as you can.
-
-
-
+One very important thing to keep in mind as you design your application is that it's a good idea to always try to and locate state as close to the place where you're going to use it.  In other words, keep state as local as you can.  
 
 
 ---
@@ -304,17 +301,6 @@ focus arrow on second line
 
 Reducer functions are used to manage global application state -- state which is shared between components.
 
----
-
-##### SC
-useReducer hook example here
-
-##### VO
-
-There's a hook called useReducer, which is useful if an application doesn't need redux, 
-or, if you're using redux, as we'll be doing, you can write a reducer function for each slice of your global application state.
-
-So, in a few weeks, we'll be writing a number of reducer functions that will update our global application state in our store.
 
 --- 
 
@@ -325,7 +311,8 @@ import counterReducer from '../features/counter/counterSlice';
 
 
 ##### VO
-If you look the top of our store.js page, you can see that our store is importing a counterReducer from a file inside the counter feature called counterSlice.
+
+We'll explore reducer functions in week 4, but for now, just notice that, at the top of our store.js page, you can see that our store is importing a counterReducer from a file inside the counter feature called counterSlice.
 
 ---
 
@@ -348,6 +335,8 @@ For each feature in our application, we'll create a corresponding portion of our
 
 A Slice is the part of an application's state relevant to a specific feature
 
+(show a pie chart here with state as a circle and then several pie slices?)
+
 ##### VO
 
 A slice is, basically, the portion or slice of an application's state that pertains to a specific feature.
@@ -359,11 +348,23 @@ Using slices, we can locate that logic close to the components that use it -- ke
 
 ##### SC
 
+focus outline around camspitesSlice when we start talking about it
+
+list slices:
+
+    campsitesSlice
+    partnersSlice
+    promotionsSlice
+    commentsSlice
+    userSlice
+
+    (show pie chart again but with  each slice labeled?)
 
 ##### VO
 
+Ultimately, we're going to be making a slice for each of the datasets that we have in our shared folder, and another one to manage state for a currently logged in user.
 
-In the next exercise, we're going to start creating our first slice, in our campsites feature.  We're not going to integrate redux just yet, so we won't need to write a reducer.  
+In the next exercise, we're going to start creating our first slice, our campsitesSlice.  We're not going to integrate redux just yet, so we won't need to write a reducer.  
 
 ---
 
@@ -400,8 +401,46 @@ export const selectCampsitesAboveElevation = (elevation) => {
 ##### VO
 And then we'll write a few selector functions, which we can use to select specific portions of the data stored in our campsitesSlice.
 
-Eventually, we'll move our data into our store, and reconfigure these selectors to select data from our store, but for now, this structure will be a good way to start getting into the habit of keeping the data -- and the logic associated with that data -- for a particular feature in a slice that corresponds with that feature.
+---
 
+##### SC
+
+export const selectCampsitesAboveElevation = (elevation) => {
+    return CAMPSITES.filter(campsite => campsite.elevation > elevation)
+}
+
+
+##### VO
+
+As you can see in this example, selectors are just functions that return specific pieces of data.  Here, we have a selector which filters out an campsites with an elevation above the value that is passed in as an input parameter.
+
+We might use a selector like this if we wanted to give users the ability to screen out certain campsites, perhaps using a search bar.
+
+
+##### SC
+
+graphic
+
+    Seperation of concerns
+
+state / data           view / components
+
+
+##### VO
+
+This approach -- using slices and selectors, might seem like a lot of extra work at first, but it's an extremely important bit of extra work, sort of like laying a decent foundation for a house before you start building it.
+
+This way, we can keep any reference to our data here, in the slice.
+
+If we decide to alter or replace our CAMPSITES data, we only need to update it here, in the slice.
+
+Any time we want to select a new portion of that campsites data, we'll come here and write a new selector function.
+
+And if we have two or even twenty components that need to have access to the CAMPSITES data, they will all come here -- to this slice -- for that data.
+
+So this file will become the single source of truth for everything campsite related, and we'll know, if something is going wrong with our campsites data, it will be here, not in one of our many campsites related components, which can then focus on what their job, which is taking data and rendering it to the screen.
+
+Make sense?
 
 
 ---
@@ -417,7 +456,7 @@ the state of our application is the current status of all of the stateful variab
 
 Now  -- I know that this video had a lot of pretty high level and abstract information!  So let's review the important things you should take away from this video.
 
-First of all, what is state?  The State of our application is the current status of all of the stateful variables in our application.
+F`irst of all, what is state?  The State of our application is the current status of all of the stateful variables in our application.
 
 And, eventually, we'll be using redux to help us manage our application state.
 
@@ -441,7 +480,7 @@ Local state refers to the state of a specific component, for instance, the statu
 ##### SC
 
  STATE
-
+`
 the state of our application is the collection of all stateful variables in our application
 local state is the state of a specific component
 keep state as local as possible
@@ -513,6 +552,21 @@ And finally, all of the logic pertaining to state management for a specific feat
 
 And we can use a type of function called a selector to select a specific portion of that slice. 
 
+
+---
+
+##### SC
+
+graphic
+
+    Seperation of concerns
+
+state / data           view / components
+##### VO
+
+And finally, I mentioned that in everything state-related, we should strive to seperate the code that generates what we see on the screen -- what we call the view layer -- in other words, our React components, from the data and logic that it will display.
+
+
 And I hope that that kinda sorta makes sense!  If not, don't fret too much, this idea of state is tricky, even for seasoned developers.  
 ---
 
@@ -535,7 +589,9 @@ IN the next video, we'll make that campsuitesSlice and also write a few selector
 
 # END
 # below here just dead ends and stuff I cut out
+# END
 
+# END
 
 
 
