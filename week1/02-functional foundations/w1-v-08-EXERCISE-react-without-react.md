@@ -39,7 +39,7 @@ a rabbit
 out 
 
 [SC]
-[VO] 
+[VO]  
 of a hat.
 
 [SC]
@@ -47,16 +47,20 @@ SC downloading
 
 
 [VO]
-I want you to start by downloading a folder that has some code in it.
+And,as I said before, we're going to write a function that helps us do that.
 
-It's at a link like the one that I'm showing here on the screen, which you should be able to see on the page down below the video. After you download the folder from that link, go ahead and open it up in your vs code editor. GO ahead and pause the video if you need some time to download that folder now.
+So let's get started.  And this time we're going to once again be in the functional foundations folder but this time we'll be in the folder called 04-react-without-react
+
+And I can see that there's three files in there.
+
+And first of all there's an index.html and that index.html has a few css classes and also a root  div as well  script tag that leads to and index.html file
 
 [SC]
 
 [VO]
 Ok, so if I open this folder up in vs code, I can see that there's an index.html file, and in that code, there's a root div, and a few css classnames, and a script tag that points to an index.js file.
 
-You should also see two javascript files in this folder. There's called index.js that just has the code I wrote last time, commented out, and then the string of emojis that we'll be using.  And I went ahead and added the reference to the root div for us.
+You should  also see two javascript files in this folder. There's called index.js that just has the code I wrote last time, commented out, and then the string of emojis that we'll be using.  And I went ahead and added the reference to the root div for us.
 
 There's also a file called finished.js, which you can look at for reference if you get lost, or your code isn't working.
 
@@ -94,7 +98,7 @@ First we're creating an element, and to do it we need to pass in the type of ele
 
 So, how do we do that?  I'll pause briefly here and let you think about itSo, what we want is flexibility with regard to what type of element we make, so I'm going to add an input parameter and I'm going to call it type.
 
-And then I'm going to make a new constant named el  and set it equal to document.createElement.
+And then I'm going   to make a new constant named el  and set it equal to document.createElement.
 
 And I'm going to  pass in that type.
 
@@ -112,13 +116,14 @@ But, we don't really need to concern ourselves with how many elements there can 
 
 And when we get to React, you'll see why I chose props and not properties.
 
-Now, before we get to how we're going to handle this props object in our function, let's look at how we're going to invoke this function that we haven't finished writing yet.
+Now, before we get to how we're going to handle this props object in our function, let's look at how we're going to invoke this function that we haven't finished writing yet. 
 
 I'll create a constant named RabbitEmoji and then I'll set it equal to createElement() and I'll pass in first the type and then an object.  And that object will have a key for className and I'll set that to emoj-lg, just as I did before, and it will have a key for innerText, which I will set to this rabbit emoji.
 
-Now let's go inside our function and think about how we're going to take in these props.
 
-If you notice, what we want to do, is take some unknown number of keys on this props object and set the corresponding key on our element named el to the value that's stored in that key.
+Now let's go inside our function and think about how we're going to handle this props object.
+
+And what we want is some way to take in this object and basically map the contents of this object to the element that we've named el, right?
 
 So for instance, el[innerText] = props[innerText]
 
@@ -172,59 +177,39 @@ All we have to do is say
 
 Object.keys(props), and we get an array that looks like this:
 [innerText, className]
-
+ 
 SO we did it!  
 
 Or, almost.  I'm just going to change this map to a forEach, because as you know, if you don't use the array, you should use Array.forEach instead of map.
 
 And now if we just append that rabbit Emoji to the root div like this....it works!
 
-And I know that was a lot.  I'm not pulling any punches here.  My goal is to get you to be professional javascript developers and I know you can take it.
-
-And I'm sorry not sorry to say, we have more work to do.
-
-I'll explain by showing you the thing that we want to build again, and sort of outline how we're going to construct it.
-
-Now in this case, since we want to lay these emojis out horizontally, we can't just drop them into the root div.
-
-What we need to do is make a container, and then add each one of these emojis as children.
 
 
-But the amazing thing is that if we use the tools we've already learned, we can do this.
-
-Remember how Array.map iterates over all of the contents of an array?
-
-Well, what if we somehow had 
-
-Now, the way that we're going to handle these is kind of nifty and it's a technique that you're going to find very useful, so, if it seems a bit daunting at first, just stay with me.  This kind of thing is very common in declarative javascript.  So common that I think it will become second nature for you soon, and you'll find yourself writing your own projects like this.  And when it does, you are going to be ready to get a job as a javascript developer.
-
-SO first off, let's look at how we're going to call this createElement function.
-
-Down below the function, I'm going to make a constant named rabbitEmoji and I'm going to set it equal to createElement('div') and then for the second parameter I'm going to pass in an object.  Yep, that's right.  And it will have keys for innerText, which I will set equal to the rabbit emoji, and className, which I will set to emoji-sm.  And obviously, if I wanted to add different properties, or change these properties I could.
-
-So this structure is nicely flexible, but we haven't figured out how to assign these keys to the element in our createElement function.
-
-Wouldn't it be super nice if we could use our new friend Array.map(), or something like that?  If we could just say props.map() and pull off each key and then assing div[key] to props[key].  Or, if you've been doing your homework, you'll have noticed that we're not returning an array so we're mutating data, so....we should probably use .forEach instead.  It's a small thing, but it will communicate to potential employers that you have your act together, so get in the habit of knowing the difference!
-
-Unfortunately, props is not an array.  So i we try to run this, it will fail.  
-
-And as an aside, this kind of reminds me of a great children's book, where the main character, who is a kid, bounces wildly between unfortunate events, like, 'unfortunately, he was about to land on a hundred alligators' and then you turn the page and it says...'fortunately, he landed on a passing hot air balloon.'  and then... unfortunately, the hot air balloon started to sink....and so on.  But I digress.
-
-And I want to say....FORTUNATELY, javascript has our backs.  We can convert the keys of our props object into an iterable, which is for all intents and purposes an array.  And to do it we'll just say 
-
-Object.keys(props) 
-
-and then we can forEach that as we said we would.  And, just to anticipate the case where no props object gets passed in, I'm going to assign a default value for this input parameter and it's just going to be an empty array.  
-
-And, if we open this with live server.....holy cow we are in business, I see a rabbit in the browser.  I love this game!
+##
 
 
-----
+And I know that was a lot, it's fairly complex code and I went rather fast.  
+
+But I know you can pause me if you want to, and even revisit this video if you need to.
+
+And I want to say, this sort of technique is very common in declarative javascript, so I recommend really letting this idea sink in, until you get to the point where you are seeing possibilities to implement structures everywhere in the code you are writing.
+
+Because those opportunities will be there, trust me.
+
+And now I'm sorry not sorry to say, that we have more work to do, because there's one more capability that this function is going to want.
 
 
-Now before we celebrate, I want to mention that there's one more capability this function is going to want.  As I'm sure you already know, it's very common that we might want an element to be able to have a child node.  Or maybe a bunch of child nodes.  
 
-Like for instance, in an image gallery.  We'd probably have a parent div to contain it, and then maybe each image would also have a parent div, which and it might have some siblings as well.  So I think -- in fact, I know, that we're going to want a way to assign children to an element.
+
+
+##
+
+As you already know, it's very common that we might want an element to be able to have a child node.  Or maybe a bunch of child nodes.  
+
+Like for instance, in an image gallery.  We'd probably have a parent div to contain the whole gallery, and then each image would also have a parent div, which would contain not just the image but also perhaps a description of the image or a little heart logo so we could like the image
+
+So I think -- in fact, I know, that we're going to want a way to assign children to an element.
 
 We're going to need that capability to make this page look the way we want, because if we look at the classnames in our index.html you can see that these small emojis are going to have a parent div, which is going to be a flex box container.
 
@@ -232,7 +217,38 @@ So how do you think we should do it?  Go ahead and pause the video here and thin
 
 So what I'm going to do is, write an input paramenter named....children.  And it's going to have a default value of an empty array.
 
-And then we're going to use....can you guess?  children.forEach(), because we're going to generate a side effect, and we're going to pull off each child and then say el.appendChild(child)
+And then we're going to use....can you guess?  children.forEach(), and in case I wasn't clear before, in both of these cases the reason that we're using Array.forEach instead of Array.map is because we're not using the array that results from this transformation....and of course that means that we're generating a side effect. 
+
+And in the callback function, we're just going to pull off each child and then we'll call el.appendChild and append that child to the element.
+
+SO now, if there are children, they will be well parented, and that's pretty satisfying, isn't it.
+
+Now let's use this function and there's a couple of different ways we could do this.
+
+One would be to just extend what we've already written inside this root.appendChild....but I've got a better idea.
+
+
+
+I called this video react without react because that's pretty much what we've just done.  We've made a kind of naive version of a key function in the React library, which is called React.createElement.  Just like ours, it takes in a type, it takes in props and it takes in children.  
+
+Now, I mentioned before that React apps are structured using functions, or components as they're called in React.
+
+And a component is just a function that returns the result of a call to React.createElement.
+
+SO you know what I want to do? 
+
+I want to write a function called App and all it's going to do is return the result of a call to our createElement function.  and that element is going to be a div and it's going to have a className of App-container and it's not going to have any other properties but it IS going to have children, as we'll see in a second.
+
+
+
+
+
+
+It turns out that 
+
+
+
+because we're going to generate a side effect, and we're going to pull off each child and then say el.appendChild(child)
 
 Isn't that elegant?  Isn't that nice?  I really love javascript sometimes.
 

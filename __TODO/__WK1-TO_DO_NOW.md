@@ -1,3 +1,28 @@
+WK1 still to do
+    02 re-record
+    import export ??
+    04 slides plus recording
+    11 neeeds a lot
+    13 need to write
+    18 small bits
+    19 out?
+    20 small bits
+    21 workshop video
+
+IN THIS ORDER:
+
+21
+11
+
+13
+04
+rerecord 02
+19
+import export
+
+
+
+
 VIDEOS
 
 !! 01 - done
@@ -8,41 +33,40 @@ functional foundations
 
 ** 03 done
     
-** 04write
-** 05 rewrite needed
-$$ 06 
-    done
-$$ 07 
-    DONE
-$$ 08 
-    -- redo start with folder
-    -- redo area after first challenge
-    -- redo dom property description
-    -- redo the props part
-** 09 virtual DOM need to write
+** 04 re-writing
+!! 05 DONE
+!! 06 DONE
+!! 07 DONE
+!! 08 DONE
+!!09 DONE
 
-OUT
-09 import/export need to write/easy
 
 
 I heart react
 
 !! 10 done
-11 no vid? or can be with 12
-** 12 need to do
-!! 13 jsx done
-** 13b - components + props - needs writing and recording
+11  transcribe then rerecord screncast install 
+!! 12 jsx done
+** 13 - components + props - needs writing and recording
 !! 14 - done
 !! 15 - done
 !! 16 - done
 !! 17 -  done
       
 
-** 18
-** 19
-** 20
-** 21
+** 18 site config               needs edit
 
+
+
+
+** 19 reactstrap short thing    needs record
+** 20 app component              done-ish - needs one explanatory chunk at begin
+
+** 21 do i want a video explaining the difference between components and features and pages?
+
+
+WORKSHOP
+workshop video
 
 
 

@@ -1,0 +1,15 @@
+10/25 2021
+mon 0
+tues 0
+weds 0
+thurs 0
+fri 2
+sat 1
+sun 2
+mon 1
+tues 0
+weds 0
+thurs 2
+fri 1
+sat 0
+sun 0

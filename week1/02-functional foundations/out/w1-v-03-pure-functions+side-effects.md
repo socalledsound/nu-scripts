@@ -41,7 +41,7 @@ In functional programming, data is treated as a flow, that passes from function 
 
 Now, in order to preserve the quality of that data, we strive at all costs to avoid mutating it as it moves from function to function.
 
-Instead, we create new data, and add it to the stream.  
+Instead, we create a new version of that data, and add it to the stream.  
 
 And then we alert the parts of the program that need to know about this change to update their data feeds to point at the new data.
 
