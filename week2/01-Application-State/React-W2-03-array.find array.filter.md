@@ -1,11 +1,18 @@
 wk2-03-array.filter and array.find
 
+---
+##### SC
+title card:
+Array.filter and array.find
+
+
 Welcome back.
 
 
 ---
 ##### SC
 
+const newArray = Array.map(callbackFunction)
 
 
 ##### VO
@@ -15,6 +22,10 @@ Last week, you learned an Array method called Array.map(), which takes in a call
 
 
 ##### SC
+
+
+const newArray = Array.filter(callbackFunction)
+const value = Array.find(callbackFunction)
 
 ##### VO
 
@@ -247,6 +258,8 @@ And here's my answer.  Since we know that we're looking for a single item, we'll
 
 ---
 ##### SC
+
+show code challenge page
 
 ##### VO
 
