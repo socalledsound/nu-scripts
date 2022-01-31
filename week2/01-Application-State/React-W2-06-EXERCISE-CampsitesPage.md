@@ -5,6 +5,9 @@ React-W2-06-EXERCISE-CampsitesPage
 
 ##### SC
 
+title card:
+Exercise: Campsites Page part 1
+
 ##### VO
 
 Welcome back.  
@@ -22,7 +25,7 @@ show campsitesSlice.js
 
 
 
-In the last video, we created a campsitesSlice -- a central space for handling everything in the state of our application that pertains to campsites.  We imported our CAMPSITES arrayinto that slice and we exported some selector functions that we can use to get specific pieces of data from that slice.
+In the last video, we created a campsitesSlice -- a central space for handling everything in the state of our application that pertains to campsites.  We imported our CAMPSITES array into that slice and we exported some selector functions that we can use to get specific pieces of data from that slice.
 
 And then we used the selectAllCampsite selector in our campsitesList, instead of directly importing the array of campsites.
 
