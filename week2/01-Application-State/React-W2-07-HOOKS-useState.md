@@ -1,4 +1,25 @@
 React-W2-07-HOOKS-useState
+https://reactjs.org/docs/hooks-rules.html
+
+https://overreacted.io/why-do-hooks-rely-on-call-order/
+
+
+---
+A FEW QUESTIONS LINGER IN MY MIND:
+is this enough for now on hooks, generally?
+should I be more thorough when introducing hooks, like, mention a list of all of the hooks? -- it seems to me that it might be more just offputting and overwhelming to get the big list, particularly because I don't have plans to talk about all of them.
+ -- and on this topic -- 
+    --should I plan to introduce hooks like useContext and useReducer before we go to redux?
+    -- should I plan to teach them custom hooks, like a useModal hook, for instance?
+do we need to explore other aspects of useState?
+do I need to explicitly refer back to the state object I mentioned in the state video?
+and, along those lines, clarify that useState can (but shouldn't) instantiate something like an object?
+https://reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables
+
+but, these thoughts aside, I think it's a pretty good introduction?
+my current thinking is to just get started with useState here, and then provide some more context in the FP vs class component video.  
+sound good?
+
 
 
 ---
@@ -77,9 +98,11 @@ The reason for this is very simple.  React only re-renders a component when a va
 
 ##### SC
 
+useState is a hook that let's us hook into React's state
+
 ##### VO
 
-  
+There are a number of different ways we can do this, but the best way, in a case like this, is to use the useState hook.
 
 
 ---
@@ -87,11 +110,38 @@ The reason for this is very simple.  React only re-renders a component when a va
 
 ##### SC
 
-useState is a hook that let's us hook into React's state
+animate each line as voice over speaks it
+
+Hooks are functions that let us use React features
+useState gives us to access React's state
+useEffect give us access to React's lifecycle methods
+we can write custom hooks
+external libraries often use custom hooks
+
+
+    
+
+
 
 ##### VO
 
-The solution to this problem is to use the useState hook to hook into React's state.
+But first -- what's a hook?  A hook is a function that let's us tap into a feature in the React API.  
+
+So, we can use the useState hook to tap into React's state
+
+And we can use the useEffect hook to tap into React's lifecycle features, in other words, for orchestrating how updates happen over time.
+We'll explore that next week when we learn how to create animations with react spring.
+
+There are other hooks, but these are the most important hooks and you should definitely get a grip on these before you explore any others.
+
+We can also write custom hooks, that let us create logic that we can re-use in multiple components.
+
+And external libraries, such as react-router, often use hooks in just this way, to encapsulate certain features.
+
+We'll see a few of these later this week!
+
+
+But for now, let's keep it simple, and start with the useState hook.
 
 ---
 
@@ -127,8 +177,6 @@ export MyComponent
 
 ##### VO
 
-
-And, for reasons that we'll explore soon, it can only be invoked from inside a React compmonent.  
 
 Here you can see that we have a pretty simple component that is just going to render the text in this variable called 'myVariable'.
 
@@ -235,6 +283,32 @@ which will ultimately force a new render to occur, and show the new text on the 
 ---
 
 
+---
+
+
+##### SC
+
+to use useState:
+1. import { useState } from 'react';
+
+2. useState must be invoked at the top level of a React component.
+
+3. use destructuring assignment to convert the array that useState returns into a stateful variable and an update function 
+
+4. hooks cannot be called inside another javascript expression
+
+##### VO
+So, by way of review, the key points to remember with regard to the useState are:
+ 
+
+first, we have to import useState to use it,
+second, useState can only be invoked at the top level of a React Component.  So in other words, we can't call them from inside a for loop, or as part of a conditional expression like an if statement.
+third, we use a destructuring assignment to get both a stateful variable that we can use in our component and a function that we can use to update that stateful variable.  
+
+And remember -- as we said a few videos ago -- in React, we never ever ever update stateful variables directly!  So, we can only update that variable with the update function that useState returns, we can't try to modify it in any other way.
+
+
+
 ##### SC
 
 show CampsitesPage again
@@ -243,9 +317,147 @@ show CampsitesPage again
 
 Now, I think you probably have everything you need to update our CampsitesPage using a hook.  So, try doing that on your own now!
 
+---
+
+##### SC
+
+focus arrow on the import statement
+
+import { useState } from 'react';
+
+
+import {
+    Container,
+    Row,
+    Col,
+    Button,
+} from 'reactstrap';
+import CampsiteDetail from '../features/campsites/CampsiteDetail';
+import CampsitesList from '../features/campsites/CampsitesList';
+import { selectRandomCampsite } from '../features/campsites/campsiteSlice';
+
+const CampsitesPage = () => {
+    
+    let selectedCampsite = selectRandomCampsite();
+    
+    const toggleCampsite = () => {
+        selectedCampsite = selectRandomCampsite();
+        console.log(selectedCampsite);
+    }
+
+    return (
+        <Container>
+            <Button onClick={() => toggleCampsite()}>select random campsite</Button>
+            <Row>
+                <Col md="7" sm="5">
+                    <CampsitesList />
+                </Col>
+                <Col md="5" sm="7">
+                    <CampsiteDetail campsite={selectedCampsite}/>
+                </Col>
+            </Row>
+        </Container>
+    );
+}
+
+export default CampsitesPage;
+
+
+##### VO
+
+remember, first we need to import useState at the top of the page.
+---
+
+
+##### SC
+
+1. focus outline around area between arrows below, then delete it
+
+    const CampsitesPage = () => {
+
+    -- >  
+
+        let selectedCampsite = selectRandomCampsite();
+        
+        const toggleCampsite = () => {
+            selectedCampsite = selectRandomCampsite();
+            console.log(selectedCampsite);
+        }
+
+    < --
+
+        return (
+            <Container>
+                <Button onClick={() => toggleCampsite()}>select random campsite</Button>
+                <Row>
+                    <Col md="7" sm="5">
+                        <CampsitesList />
+                    </Col>
+                    <Col md="5" sm="7">
+                        <CampsiteDetail campsite={selectedCampsite}/>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
+
+    export default CampsitesPage;
+
+
+
+##### VO
+
+1. What I want you to do is to first delete this block of code here 
+
+and replace it with a call to useState.  
+
+
+---
+
+##### SC
+
+1. focus outline around useState invocation
+then on
+2. onClick prop of the Button
+
+    const CampsitesPage = () => {
+
+        const [selectedCampsite, toggleCampsite ] = useState(selectRandomCampsite())
+
+        return (
+            <Container>
+                <Button onClick={() => toggleCampsite()}>select random campsite</Button>
+                <Row>
+                    <Col md="7" sm="5">
+                        <CampsitesList />
+                    </Col>
+                    <Col md="5" sm="7">
+                        <CampsiteDetail campsite={selectedCampsite}/>
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
+
+    export default CampsitesPage;
+
+    ##### VO
+
+1. Your call to useState will return an array, which you should destructure.  
+
+The first element in this array will be your selectedCampsite, and the second will be your click handler.
+
+To set an initial value -- a random campsite -- you can just pass in your selectRandomCampsite selector, and invoke it.
+
+2. 
+But I'm going to leave it up to you to figure out how to finish implementing this click handler, so that it updates our selectedCampsite variable with a new random campsite.
+
+
 Don't spend too long on it if you're struggling, but....I believe in you!
 
 And in the next video, I'll be back to show you how I'd do it.  
+
+And then we'll go one step further and, rather than just selecting a random campsite, we'll do something a little bit more helpful, and show a CampsiteDetail when an element in the CampsitesList is clicked.
 
 
 I'll see you there.
