@@ -1,4 +1,8 @@
-FIXES STILL NEEDED
+React-W1-18-exercise-nucampsite-configuration
+
+
+
+FIXES STILL NEEDED??
 
 
 redo/rewrite the index.js part

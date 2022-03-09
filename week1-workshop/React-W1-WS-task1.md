@@ -1,5 +1,3 @@
-features/CampsiteCard.js
-
 repo wk1-ws-task1
 
 1. make new folder called campsites in features folder.  make a new file in features/campsites called CampsiteCard.js

@@ -20,7 +20,11 @@ Welcome back.
 
 ##### VO
 
-In the last video we reviewed functions and their role as the vital building blocks of javascript.  Using functions we can seperate out and name pieces of code, and then use them to compose larger blocks of code.
+In the last video we reviewed functions and their role as the vital building blocks of javascript.  Using functions we can seperate out and name pieces of code, 
+
+
+
+And, as we saw in the last video, we can also combine these functions in various ways to compose larger blocks of code.
 
 ---
 
